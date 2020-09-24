@@ -17,7 +17,8 @@ class CreateDonosTable extends Migration
             $table->id();
             $table->timestamps();
 
-	    $table->integer('petid');
+	    $table->integer('pet_id');
+	    $table->foreign('pet_id')->references('id')->on('pets')->onDelete('cascade');
 	    $table->integer('cpf');
 	    $table->string('nome');
 	    $table->integer('contato');

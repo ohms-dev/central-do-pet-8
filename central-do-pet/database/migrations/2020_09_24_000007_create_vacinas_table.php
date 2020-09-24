@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRacasTable extends Migration
+class CreateVacinasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateRacasTable extends Migration
      */
     public function up()
     {
-        Schema::create('racas', function (Blueprint $table) {
+        Schema::create('vacinas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-	    $table->integer('petid');
-	    $table->string('especie');
-	    $table->string('porte');
-	    $table->string('cor');
+	    $table->integer('historico_id');
+	    $table->foreign('historico_id')->references('id')->on('historicos')->onDelete('cascade');
+	    $table->string('vacina');
+	    $table->date('data');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateRacasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('racas');
+        Schema::dropIfExists('vacinas');
     }
 }

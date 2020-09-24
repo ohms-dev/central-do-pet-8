@@ -17,7 +17,8 @@ class CreateDoencasTable extends Migration
             $table->id();
             $table->timestamps();
 
-	    $table->integer('historicoid');
+	    $table->integer('historico_id');
+	    $table->foreign('historico_id')->references('id')->on('historicos')->onDelete('cascade');
 	    $table->string('doenca');	
 	    $table->date('data');	
         });

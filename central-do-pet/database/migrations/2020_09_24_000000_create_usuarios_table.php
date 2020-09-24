@@ -17,7 +17,6 @@ class CreateUsuariosTable extends Migration
             $table->id();
             $table->timestamps();
 
-	    $table->integer('userid');
 	    $table->string('nome');
 	    $table->integer('contato');
 	    $table->string('endereco');
