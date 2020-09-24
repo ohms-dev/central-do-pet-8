@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransfusaosTable extends Migration
+class CreateHistoricosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTransfusaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('transfusaos', function (Blueprint $table) {
+        Schema::create('historicos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-	    $table->integer('historicoid');
-	    $table->date('data');
+	    $table->integer('pet_id');
+	    $table->foreign('pet_id')->references('id')->on('pets')->onDelete('cascade');
+	    $table->string('alergias');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateTransfusaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transfusaos');
+        Schema::dropIfExists('historicos');
     }
 }

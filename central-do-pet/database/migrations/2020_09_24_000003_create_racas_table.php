@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoricosTable extends Migration
+class CreateRacasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateHistoricosTable extends Migration
      */
     public function up()
     {
-        Schema::create('historicos', function (Blueprint $table) {
+        Schema::create('racas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-	    $table->integer('petid');
-	    $table->string('alergias');
+	    $table->integer('pet_id');
+	    $table->foreign('pet_id')->references('id')->on('pets')->onDelete('cascade');
+	    $table->string('especie');
+	    $table->string('porte');
+	    $table->string('cor');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateHistoricosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historicos');
+        Schema::dropIfExists('racas');
     }
 }
