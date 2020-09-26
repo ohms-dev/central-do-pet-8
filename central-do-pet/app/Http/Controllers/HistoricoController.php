@@ -17,5 +17,14 @@ class HistoricoController extends Controller
 
     }
 
+    public function adicionar(Request $request){
+        $historico = new \app\Models\historico();
+        $historico->pet_id = $request->pet_id;
+        $historico->alergias = $request->alergias;
+        $historico->save();
+        return redirect('/listar/historicos');
+
+    }
+
 
 }
