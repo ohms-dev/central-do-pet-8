@@ -10,11 +10,11 @@ class DoencaController extends Controller
 {
   public function listar(){
     $doencas = \App\Models\doenca::all();
-    return view('listaDoencas', ['doencas' => $doencas]);
+    return view('Doenca/listaDoencas', ['doencas' => $doencas]);
   }
 
   public function prepararAdicionar(Request $request){
-    return view('adicionarDoencas');
+    return view('Doenca/adicionarDoencas');
   }
 
   public function adicionar(Request $request){
@@ -28,7 +28,7 @@ class DoencaController extends Controller
 
   public function editar(Request $request){
     $doenca = \App\Models\doenca::find($request->id);
-    return view('editarDoencas', ['doenca' => $doenca]);
+    return view('Doenca/editarDoencas', ['doenca' => $doenca]);
   }
 
   public function atualizar(Request $request){
