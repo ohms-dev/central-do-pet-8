@@ -12,5 +12,10 @@ class HistoricoController extends Controller
         return view('Historico/listaHistoricos', ['historicos' => $historicos]);
     }
 
+    public function prepararAdicionar(Request $request){
+        return view('Historico/adicionarHistorico');
+
+    }
+
 
 }
