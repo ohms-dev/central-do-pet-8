@@ -22,6 +22,8 @@ class DoencaController extends Controller
     $doenca->doenca = $request->doenca;
     $doenca->historico_id = $request->historico_id;
     $doenca->data = $request->data;
+    $doenca->save();
+    return redirect("listar/doencas");
   }
 
   public function editar(Request $request){
