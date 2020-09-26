@@ -24,4 +24,9 @@ class DoencaController extends Controller
     $doenca->data = $request->data;
   }
 
+  public function editar(Request $request){
+    $doenca = \central-do-pet\doenca::find($request->id);
+    return view('editarDoencas', ['doenca' => $doenca]);
+  }
+
 }
