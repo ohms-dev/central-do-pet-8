@@ -14,7 +14,7 @@ class DonoController extends Controller
 
     public function editar(Request $request) {
         $dono = dono::find($request->id);
-        return view('dono/editar', ['dono' => $dono]);
+        return redirect('dono/editar', ['dono' => $dono]);
     }
 
     public function prepararAdicionar(){
@@ -32,7 +32,7 @@ class DonoController extends Controller
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento = $request-> data_de_nascimento;
         $dono-> save();
-        return view('/dono/adicionar');
+        return view('dono/adicionar');
     }
 
     public function atualizar(Request $request){
@@ -44,9 +44,9 @@ class DonoController extends Controller
         $dono-> endereco = $request-> endereco;
         $dono-> sexo = $request-> sexo;
         $dono-> email = $request-> email;
-        $dono-> data_de_nascimento -> $request-> data_de_nascimento;
+        $dono-> data_de_nascimento = $request-> data_de_nascimento;
         $dono-> dono::update();
-        return redirect("/dono/atualizar");
+        return redirect("dono/atualizar");
     }
 
     public function remover(Request $request){
