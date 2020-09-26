@@ -12,5 +12,9 @@ class DoencaController extends Controller
     $doencas = \central-do-pet\doenca::all();
     return view('listaDoencas', ['doencas' => $doencas]);
   }
-    
+
+  public function prepararAdicionar(Request $request){
+    return view('adicionarDoencas');
+  }
+  
 }
