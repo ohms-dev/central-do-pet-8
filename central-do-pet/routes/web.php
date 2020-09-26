@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', function () {
-    return view('teste');
-});
+Route::get('/prepararAdcionarUsuario', "\App\Http\Controllers\UsuarioController@prepararAdicionar");
+Route::get('/adicionarUsuario', "\App\Http\Controllers\UsuarioController@adicionar");
+Route::get('/listarUsuario', "\App\Http\Controllers\UsuarioController@listar");
+Route::get('/editarUsuario', "\App\Http\Controllers\UsuarioController@editar");
+Route::get('/AtualizarUsuario', "\App\Http\Controllers\UsuarioController@atualizar");
+Route::get('/adicionarUsuario', "\App\Http\Controllers\UsuarioController@adicionar");

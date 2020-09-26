@@ -9,12 +9,12 @@ class UsuarioController extends Controller{
 
     public function listar(){
         $usuarios = \app\Models\usuario::all();
-        return view('listarUsuarios', ['usuarios' => $usuarios]);
+        return view('Usuario/listarUsuarios', ['usuarios' => $usuarios]);
 
     }
 
     public function prepararAdicionar(Request $request){
-        return view('adicionarUsuario');
+        return view('Usuario/adicionarUsuario');
     }
 
     public function adicionar(Request $request){
@@ -28,13 +28,13 @@ class UsuarioController extends Controller{
         $usuario->sexo = $request->sexo;
         $usuario->data_de_nascimento = $request->data_de_nascimento;
         $usuario->save();
-        return  redirect('\listar\usuarios');
+        return  redirect('Usuario\listar\usuarios');
 
     }
 
     public function editar(Request $request){
         $usuario = \app\Models\usuario::find($request->id);
-        return view('editarUsuario', ['usuario' => $usuario]);
+        return view('Usuario/editarUsuario', ['usuario' => $usuario]);
     }
 
     public function atualizar(Request &$request){
@@ -48,14 +48,14 @@ class UsuarioController extends Controller{
         $usuario->sexo = $request->sexo;
         $usuario->data_de_nascimento = $request->data_de_nascimento;
         $usuario->update();
-        return redirect('/listar/usuarios');
+        return redirect('Usuario/listar/usuarios');
 
     }
 
     public function remover(Request $request){
         $usuario = \app\Models\usuario::find($request->id);
         $usuario->delete();
-        return redirect('/listar/categorias');
+        return redirect('Usuario/listar/categorias');
     }
 
 
