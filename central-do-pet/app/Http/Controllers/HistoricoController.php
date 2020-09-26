@@ -40,5 +40,11 @@ class HistoricoController extends Controller
         return redirect('Historico/listar/historicos');
     }
 
+    public function remover(Request $request){
+        $historico = historico::find($request->id);
+        $historico->delete();
+        return redirect('Historico/listar/categorias');
+    }
+
 
 }
