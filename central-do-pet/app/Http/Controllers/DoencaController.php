@@ -29,4 +29,13 @@ class DoencaController extends Controller
     return view('editarDoencas', ['doenca' => $doenca]);
   }
 
+  public function atualizar(Request $request){
+    $doenca = \central-do-pet\doenca::find($request->id);
+    $doenca->doenca = $request->doenca;
+    $doenca->historico_id = $request->historico_id;
+    $doenca->data = $request->data;
+    $doenca->update();
+    return redirect("/listar/doencas");
+  }
+
 }
