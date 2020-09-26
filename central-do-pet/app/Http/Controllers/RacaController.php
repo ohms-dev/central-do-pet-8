@@ -37,13 +37,13 @@ class RacaController extends Controller
         $raca->especie = $request->especie;
         $raca->porte = $request->porte;
         $raca->cor = $request->cor;
-        $raca->raca::update();
+        $raca->update();
         return redirect("listar/racas");
     }
 
     public function remover(Request $request){
         $raca = raca::find($request->id);
-        $raca->raca::delete();
-        return redirect("/listar/racas");
+        $raca->delete();
+        return redirect("listar/racas");
     }
 }

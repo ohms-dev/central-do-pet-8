@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DonoController extends Controller
 {
     public function listar() {
-        $donos = \App\Models\dono::all();
+        $donos = dono::all();
         return view('Dono/listaDonos', ['donos' => $donos]);
     }
 
@@ -17,7 +17,7 @@ class DonoController extends Controller
     }
 
     public function adicionar(Request $request) {
-        $dono = new \App\Models\dono();
+        $dono = new dono();
         $dono-> pet_id = $request-> pet_id;
         $dono-> cpf = $request-> cpf;
         $dono-> nome = $request-> nome;
@@ -31,12 +31,12 @@ class DonoController extends Controller
     }
 
     public function editar(Request $request) {
-        $dono = \App\Models\dono::find($request->id);
+        $dono = dono::find($request->id);
         return redirect('Dono/atualizarDono', ['dono' => $dono]);
     }
 
     public function atualizar(Request $request){
-        $dono = \App\Models\dono::find($request->id);
+        $dono = dono::find($request->id);
         $dono-> pet_id = $request-> pet_id;
         $dono-> cpf = $request-> cpf;
         $dono-> nome = $request-> nome;
@@ -45,13 +45,13 @@ class DonoController extends Controller
         $dono-> sexo = $request-> sexo;
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento = $request-> data_de_nascimento;
-        $dono-> dono::update();
+        $dono-> update();
         return redirect("listar/donos");
     }
 
     public function remover(Request $request){
-        $dono = \App\Models\dono::find($request->id);
-        $dono-> dono::delete();
+        $dono = dono::find($request->id);
+        $dono-> delete();
         return redirect("/listar/donos");
     }
 }
