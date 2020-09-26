@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsuarioController extends Controller
-{
+class UsuarioController extends Controller{
+
+    public function listar(){
+        $usuarios = \app\Models\usuario::all();
+        return view('listarUsuarios', ['usuarios' => $usuarios]);
+
+    }
+
     public function adicionar(Request $request){
         $usuario = new \app\Models\usuario();
         $usuario->nome = $request->nome;
@@ -20,4 +26,6 @@ class UsuarioController extends Controller
         return  redirect('\listar\usuarios');
 
     }
+
+
 }
