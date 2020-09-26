@@ -12,6 +12,10 @@ class UsuarioController extends Controller{
 
     }
 
+    public function prepararAdicionar(Request $request){
+        return view('adicionarUsuario');
+    }
+
     public function adicionar(Request $request){
         $usuario = new \app\Models\usuario();
         $usuario->nome = $request->nome;
