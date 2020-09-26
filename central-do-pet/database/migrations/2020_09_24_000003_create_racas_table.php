@@ -14,7 +14,7 @@ class CreateRacasTable extends Migration
     public function up()
     {
         Schema::create('racas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
 
 	    $table->integer('pet_id');
