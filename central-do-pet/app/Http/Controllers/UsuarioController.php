@@ -50,7 +50,12 @@ class UsuarioController extends Controller{
         $usuario->update();
         return redirect('/listar/usuarios');
 
+    }
 
+    public function remover(Request $request){
+        $usuario = \app\Models\usuario::find($request->id);
+        $usuario->delete();
+        return redirect('/listar/categorias');
     }
 
 
