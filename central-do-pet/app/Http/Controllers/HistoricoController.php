@@ -9,7 +9,7 @@ class HistoricoController extends Controller
 {
     public function listar(){
         $historicos = historico::all();
-        return view('listaHistoricos', ['historicos' => $historicos]);
+        return view('Historico/listaHistoricos', ['historicos' => $historicos]);
     }
 
 
