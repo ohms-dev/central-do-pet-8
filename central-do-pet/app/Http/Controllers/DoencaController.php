@@ -38,4 +38,10 @@ class DoencaController extends Controller
     return redirect("/listar/doencas");
   }
 
+  public function remover(Request $request){
+    $doenca = \central-do-pet\doenca::find($request->id);
+    $doenca->delete();
+    return redirect("/listar/doencas");
+  }
+
 }
