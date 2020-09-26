@@ -8,21 +8,16 @@ use Illuminate\Http\Request;
 class DonoController extends Controller
 {
     public function listar() {
-        $donos = dono::all();
-        return view('dono/lista', ['donos' => $donos]);
-    }
-
-    public function editar(Request $request) {
-        $dono = dono::find($request->id);
-        return redirect('dono/editar', ['dono' => $dono]);
+        $donos = \App\Models\dono::all();
+        return view('Dono/listaDonos', ['donos' => $donos]);
     }
 
     public function prepararAdicionar(){
-        return view('dono/adicionar');
+        return view('Dono/adicionarDono');
     }
 
     public function adicionar(Request $request) {
-        $dono = new dono();
+        $dono = new \App\Models\dono();
         $dono-> pet_id = $request-> pet_id;
         $dono-> cpf = $request-> cpf;
         $dono-> nome = $request-> nome;
@@ -32,11 +27,16 @@ class DonoController extends Controller
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento = $request-> data_de_nascimento;
         $dono-> save();
-        return view('dono/adicionar');
+        return view('listar/donos');
+    }
+
+    public function editar(Request $request) {
+        $dono = \App\Models\dono::find($request->id);
+        return redirect('Dono/atualizarDono', ['dono' => $dono]);
     }
 
     public function atualizar(Request $request){
-        $dono = dono::find($request->id);
+        $dono = \App\Models\dono::find($request->id);
         $dono-> pet_id = $request-> pet_id;
         $dono-> cpf = $request-> cpf;
         $dono-> nome = $request-> nome;
@@ -46,12 +46,12 @@ class DonoController extends Controller
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento = $request-> data_de_nascimento;
         $dono-> dono::update();
-        return redirect("dono/atualizar");
+        return redirect("listar/donos");
     }
 
     public function remover(Request $request){
-        $dono = dono::find($request->id);
+        $dono = \App\Models\dono::find($request->id);
         $dono-> dono::delete();
-        return redirect("/dono/remover");
+        return redirect("/listar/donos");
     }
 }

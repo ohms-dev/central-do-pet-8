@@ -21,7 +21,6 @@ Route::get('/editar/Usuario/{id}', "\App\Http\Controllers\UsuarioController@edit
 Route::get('/Atualizar/Usuario', "\App\Http\Controllers\UsuarioController@atualizar");
 Route::get('/remover/Usuario', "\App\Http\Controllers\UsuarioController@remover");
 
-#RotasDeDoenca
 Route::get('/listar/doencas', '\App\Http\Controllers\DoencaController@listar');
 Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaController@editar');
 Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaController@remover');
@@ -29,7 +28,6 @@ Route::get('/atualizar/doencas', '\App\Http\Controllers\DoencaController@atualiz
 Route::get('/adicionar/doencas', '\App\Http\Controllers\DoencaController@prepararAdicionar');
 Route::post('/adicionar/doencas', '\App\Http\Controllers\DoencaController@adicionar');
 
-#RotasDePet
 Route::get('/listar/pets','App\Http\Controllers\PetController@listar');
 Route::get('/adicionar/pet','App\Http\Controllers\PetController@prepararAdicionar');
 Route::get('/editar/pet/{id}','App\Http\Controllers\PetController@editar');
@@ -40,7 +38,7 @@ Route::post('/adicionar/pet','App\Http\Controllers\PetController@adicionar');
 #Rotas de dono
 Route::get('/adicionar/dono', '\App\Http\Controllers\DonoController@prepararAdicionar');
 Route::post('/adicionar/dono', '\App\Http\Controllers\DonoController@adicionar');
-Route::get('/listar/dono', '\App\Http\Controllers\DonoController@listar');
-Route::get('/editar/dono', '\App\Http\Controllers\DonoController@editar');
+Route::get('/listar/donos', '\App\Http\Controllers\DonoController@listar');
+Route::get('/editar/dono/{id}', '\App\Http\Controllers\DonoController@editar');
 Route::post('/atualizar/dono', '\App\Http\Controllers\DonoController@atualizar');
-Route::get('/remover/dono', '\App\Http\Controllers\DonoController@remover');
+Route::get('/remover/dono/{id}', '\App\Http\Controllers\DonoController@remover');
