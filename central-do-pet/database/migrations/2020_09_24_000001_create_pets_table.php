@@ -20,8 +20,8 @@ class CreatePetsTable extends Migration
 	    $table->string('nome');
 	    $table->string('sexo');
 	    $table->boolean('castrado');
-	    $table->string('necessidades especiais');
-	    $table->date('data de nascimento');
+	    $table->string('necessidades_especiais');
+	    $table->date('data_de_nascimento');
         });
     }
 

@@ -25,7 +25,7 @@ class CreateDonosTable extends Migration
 	    $table->string('endereco');
 	    $table->string('sexo');
 	    $table->string('email');
-	    $table->date('data de nascimento');
+	    $table->date('data_de_nascimento');
         });
     }
 
