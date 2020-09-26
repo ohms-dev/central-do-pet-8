@@ -16,9 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/prepararAdcionarUsuario', "\App\Http\Controllers\UsuarioController@prepararAdicionar");
-Route::get('/adicionarUsuario', "\App\Http\Controllers\UsuarioController@adicionar");
-Route::get('/listarUsuario', "\App\Http\Controllers\UsuarioController@listar");
-Route::get('/editarUsuario', "\App\Http\Controllers\UsuarioController@editar");
-Route::get('/AtualizarUsuario', "\App\Http\Controllers\UsuarioController@atualizar");
-Route::get('/adicionarUsuario', "\App\Http\Controllers\UsuarioController@adicionar");
+
+#RotasDeUsuario
+Route::get('/prepararAdicionarUsuario', "\App\Http\Controllers\UsuarioController@prepararAdicionar");
+Route::get('/adicionar/Usuario', "\App\Http\Controllers\UsuarioController@adicionar");
+Route::get('/listar/Usuario', "\App\Http\Controllers\UsuarioController@listar");
+Route::get('/editar/Usuario/{id}', "\App\Http\Controllers\UsuarioController@editar");
+Route::get('/Atualizar/Usuario', "\App\Http\Controllers\UsuarioController@atualizar");
+Route::get('/remover/Usuario', "\App\Http\Controllers\UsuarioController@remover");
+
+#RotasDeDoenca
+Route::get('/listar/doencas', '\App\Http\Controllers\DoencaController@listar');
+Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaController@editar');
+Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaController@remover');
+Route::get('/atualizar/doencas', '\App\Http\Controllers\DoencaController@atualizar');
+Route::get('/adicionar/doencas', '\App\Http\Controllers\DoencaController@prepararAdicionar');
+Route::post('/adicionar/doencas', '\App\Http\Controllers\DoencaController@adicionar');
+
+
+
+
+

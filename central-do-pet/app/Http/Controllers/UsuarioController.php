@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UsuarioController extends Controller{
 
     public function listar(){
-        $usuarios = \app\Models\usuario::all();
+        $usuarios = usuario::all();
         return view('Usuario/listarUsuarios', ['usuarios' => $usuarios]);
 
     }
@@ -18,10 +18,10 @@ class UsuarioController extends Controller{
     }
 
     public function adicionar(Request $request){
-        $usuario = new \app\Models\usuario();
+        $usuario = new \App\Models\usuario();
         $usuario->nome = $request->nome;
         $usuario->contato = $request->contato;
-        $usuario->endereco = &$request->endereco;
+        $usuario->endereco = $request->endereco;
         $usuario->senha = $request->senha;
         $usuario->funcao = $request->funcao;
         $usuario->email = $request->email;
