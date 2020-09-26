@@ -42,3 +42,11 @@ Route::get('/listar/donos', '\App\Http\Controllers\DonoController@listar');
 Route::post('/editar/dono/{id}', '\App\Http\Controllers\DonoController@editar');
 Route::get('/atualizar/dono', '\App\Http\Controllers\DonoController@atualizar');
 Route::get('/remover/dono/{id}', '\App\Http\Controllers\DonoController@remover');
+
+#Rotas de raca
+Route::get('/adicionar/raca', '\App\Http\Controllers\RacaController@prepararAdicionar');
+Route::post('/adicionar/raca', '\App\Http\Controllers\RacaController@adicionar');
+Route::get('/listar/racas', '\App\Http\Controllers\RacaController@listar');
+Route::post('/editar/raca/{id}', '\App\Http\Controllers\RacaController@editar');
+Route::get('/atualizar/raca', '\App\Http\Controllers\RacaController@atualizar');
+Route::get('/remover/raca/{id}', '\App\Http\Controllers\RacaController@remover');
