@@ -14,13 +14,13 @@ class CreateDoencasTable extends Migration
     public function up()
     {
         Schema::create('doencas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
 
 	    $table->integer('historico_id');
 	    $table->foreign('historico_id')->references('id')->on('historicos')->onDelete('cascade');
-	    $table->string('doenca');	
-	    $table->date('data');	
+	    $table->string('doenca');
+	    $table->date('data');
         });
     }
 
