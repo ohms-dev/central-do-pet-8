@@ -10,6 +10,6 @@ class doenca extends Model
     use HasFactory;
 
     public function historico(){
-      return this->belongsTo('central-do-pet\Historico');
+      return $this->belongsTo('central-do-pet\Historico');
     }
 }
