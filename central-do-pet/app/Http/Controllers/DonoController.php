@@ -12,4 +12,9 @@ class DonoController extends Controller
         return view('listarDono', ['donos' => $donos]);
     }
 
+    public function editar(Request $request) {
+        $dono = dono::find($request->id);
+        return view('editarDono', ['dono' => $dono]);
+    }
+
 }
