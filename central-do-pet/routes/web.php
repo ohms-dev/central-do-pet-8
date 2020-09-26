@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Models;
+use \App\Http\Controllers\DonoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('teste');
 });
+
+Route::get('/teste', '\App\Http\Controllers\DonoController@prepararAdicionar');

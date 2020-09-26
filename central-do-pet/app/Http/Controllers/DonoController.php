@@ -9,16 +9,16 @@ class DonoController extends Controller
 {
     public function listar() {
         $donos = dono::all();
-        return view('listaDonos', ['donos' => $donos]);
+        return view('dono/listaDonos', ['donos' => $donos]);
     }
 
     public function editar(Request $request) {
         $dono = dono::find($request->id);
-        return view('editarDono', ['dono' => $dono]);
+        return view('dono/editarDono', ['dono' => $dono]);
     }
 
     public function prepararAdicionar(){
-        return view('adicionarDono');
+        return view('dono/prepararAdicionarDono');
     }
 
 
@@ -33,7 +33,7 @@ class DonoController extends Controller
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento -> $request-> data_de_nascimento;
         $dono -> dono::save();
-        return redirect("/listar/donos");
+        return redirect("/dono/donos");
     }
 
     public function atualizar(Request $request){
@@ -47,12 +47,12 @@ class DonoController extends Controller
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento -> $request-> data_de_nascimento;
         $dono-> dono::update();
-        return redirect("/listar/donos");
+        return redirect("/dono/donos");
     }
 
     public function remover(Request $request){
         $dono = dono::find($request->id);
         $dono-> dono::delete();
-        return redirect("/listar/donos");
+        return redirect("/dono/donos");
     }
 }
