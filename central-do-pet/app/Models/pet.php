@@ -10,15 +10,15 @@ class pet extends Model
     use HasFactory;
 
     public function historico(){
-      return this->hasOne('central-do-pet\Historico');
+      return $this->hasOne('central-do-pet\Historico');
     }
 
     public function raca(){
-      return this->hasOne('central-do-pet\Raca');
+      return $this->hasOne('central-do-pet\Raca');
     }
 
     public function dono(){
-      return this->hasOne('central-do-pet\Dono');
+      return $this->hasOne('central-do-pet\Dono');
     }
 
 }
