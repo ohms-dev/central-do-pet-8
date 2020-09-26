@@ -31,5 +31,10 @@ class UsuarioController extends Controller{
 
     }
 
+    public function editar(Request $request){
+        $usuario = \app\Models\usuario::find($request->id);
+        return view('editarUsuario', ['usuario' => $usuario]);
+    }
+
 
 }
