@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 #RotasDeUsuario
 Route::get('/prepararAdicionarUsuario', "\App\Http\Controllers\UsuarioController@prepararAdicionar");
 Route::get('/adicionar/Usuario', "\App\Http\Controllers\UsuarioController@adicionar");
