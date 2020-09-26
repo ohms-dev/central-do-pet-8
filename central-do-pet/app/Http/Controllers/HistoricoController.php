@@ -22,7 +22,13 @@ class HistoricoController extends Controller
         $historico->pet_id = $request->pet_id;
         $historico->alergias = $request->alergias;
         $historico->save();
-        return redirect('/listar/historicos');
+        return redirect('Historico/listar/historicos');
+
+    }
+
+    public function editar(Request $request){
+        $historico = historico::find($request->id);
+        return view('Historico/editarHistorico', ['historico' => $historico]);
 
     }
 
