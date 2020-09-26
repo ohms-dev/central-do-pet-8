@@ -17,6 +17,11 @@ class DonoController extends Controller
         return view('editarDono', ['dono' => $dono]);
     }
 
+    public function prepararAdicionar(){
+        return view('adicionarDono');
+    }
+
+
     public function adicionar(Request $request) {
         $dono = new dono();
         $dono-> pet_id = $request-> pet_id;
