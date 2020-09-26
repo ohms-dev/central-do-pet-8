@@ -10,6 +10,6 @@ class dono extends Model
     use HasFactory;
 
     public function pet(){
-        return $this->belongsTo('central-do-pet\Pet');
+      return $this->belongsTo('central-do-pet\Pet');
     }
 }
