@@ -14,7 +14,7 @@ class CreateTransfusaosTable extends Migration
     public function up()
     {
         Schema::create('transfusaos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
 
 	    $table->integer('historico_id');

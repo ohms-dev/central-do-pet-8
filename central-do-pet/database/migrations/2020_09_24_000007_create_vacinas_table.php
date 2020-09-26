@@ -14,7 +14,7 @@ class CreateVacinasTable extends Migration
     public function up()
     {
         Schema::create('vacinas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
 
 	    $table->integer('historico_id');

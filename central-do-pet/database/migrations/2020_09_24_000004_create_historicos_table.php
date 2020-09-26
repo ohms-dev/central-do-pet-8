@@ -14,7 +14,7 @@ class CreateHistoricosTable extends Migration
     public function up()
     {
         Schema::create('historicos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
 
 	    $table->integer('pet_id');
