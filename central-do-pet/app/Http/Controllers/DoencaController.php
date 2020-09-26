@@ -16,5 +16,12 @@ class DoencaController extends Controller
   public function prepararAdicionar(Request $request){
     return view('adicionarDoencas');
   }
-  
+
+  public function adicionar(Request $request){
+    $doenca = new \App\Models\doenca();
+    $doenca->doenca = $request->doenca;
+    $doenca->historico_id = $request->historico_id;
+    $doenca->data = $request->data;
+  }
+
 }
