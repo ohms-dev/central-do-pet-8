@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DoencaController extends Controller
 {
   public function listar(){
-    $doencas = \central-do-pet\doenca::all();
+    $doencas = \App\Models\doenca::all();
     return view('listaDoencas', ['doencas' => $doencas]);
   }
 
@@ -25,12 +25,12 @@ class DoencaController extends Controller
   }
 
   public function editar(Request $request){
-    $doenca = \central-do-pet\doenca::find($request->id);
+    $doenca = \App\Models\doenca::find($request->id);
     return view('editarDoencas', ['doenca' => $doenca]);
   }
 
   public function atualizar(Request $request){
-    $doenca = \central-do-pet\doenca::find($request->id);
+    $doenca = \App\Models\doenca::find($request->id);
     $doenca->doenca = $request->doenca;
     $doenca->historico_id = $request->historico_id;
     $doenca->data = $request->data;
@@ -39,7 +39,7 @@ class DoencaController extends Controller
   }
 
   public function remover(Request $request){
-    $doenca = \central-do-pet\doenca::find($request->id);
+    $doenca = \App\Models\doenca::find($request->id);
     $doenca->delete();
     return redirect("/listar/doencas");
   }
