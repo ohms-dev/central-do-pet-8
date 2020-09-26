@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PrepararAdicionarDono</title>
+    <title>ADICIONAR</title>
 </head>
-<body>
+    <body>
+        <h1>Cadastrar Dono</h1>
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Nome: <input type="text" nome="nome" />
+            <br>
 
-</body>
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Sexo: <input type="text" sexo="sexo" />
+            <br>
+
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Email: <input type="text" email="email" />
+            <br>
+
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Contato: <input type="text" contato="contato" />
+            <br>
+
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Pet id: <input type="text" pet_id="pet_id" />
+            <br>
+
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Cpf: <input type="text" cpf="cpf" />
+            <br>
+
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Data de nascimento: <input type="text" data_de_nascimento="data_de_nascimento" />
+            <br>
+
+            <input type="hidden" name=" token" value="{{ csfr_token() }}">
+            Endereco: <input type="text" endereco="endereco" />
+            <br>
+            <input type="submit" value="cadastrar" />
+    </body>
 </html>

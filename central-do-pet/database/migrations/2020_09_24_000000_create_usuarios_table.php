@@ -24,7 +24,7 @@ class CreateUsuariosTable extends Migration
 	    $table->string('funcao');
 	    $table->string('email');
 	    $table->string('sexo');
-	    $table->date('data de nascimento');
+	    $table->date('data_de_nascimento');
         });
     }
 
