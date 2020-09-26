@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/listar/pets','App\Http\Controllers\PetController@listar');
+Route::get('/adicionar/pet','App\Http\Controllers\PetController@prepararAdicionar');
+Route::get('/editar/pet/{id}','App\Http\Controllers\PetController@editar');
+Route::get('/remover/pet/{id}','App\Http\Controllers\PetController@remover');
+Route::post('/atualizar/pet','App\Http\Controllers\PetController@atualizar');
+Route::post('/adicionar/pet','App\Http\Controllers\PetController@adicionar');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
