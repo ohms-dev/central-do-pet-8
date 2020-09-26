@@ -41,7 +41,13 @@ Route::post('/remover/pet/{id}', '\App\Http\Controllers\PetController@remover');
 Route::post('/atualizar/pet', '\App\Http\Controllers\PetController@atualizar');
 Route::post('/adicionar/pet', '\App\Http\Controllers\PetController@adicionar');
 
-
+#Rotas de dono
+Route::get('/adicionar/dono', '\App\Http\Controllers\DonoController@prepararAdicionar');
+Route::post('/adicionar/dono', '\App\Http\Controllers\DonoController@adicionar');
+Route::get('/listar/dono', '\App\Http\Controllers\DonoController@listar');
+Route::get('/editar/dono', '\App\Http\Controllers\DonoController@editar');
+Route::post('/atualizar/dono', '\App\Http\Controllers\DonoController@atualizar');
+Route::get('/remover/dono', '\App\Http\Controllers\DonoController@remover');
 
 
 
