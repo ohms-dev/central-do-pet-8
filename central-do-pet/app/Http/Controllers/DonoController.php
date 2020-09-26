@@ -9,12 +9,12 @@ class DonoController extends Controller
 {
     public function listar() {
         $donos = dono::all();
-        return view('dono/listarDono', ['donos' => $donos]);
+        return view('dono/lista', ['donos' => $donos]);
     }
 
     public function editar(Request $request) {
         $dono = dono::find($request->id);
-        return view('dono/editarDono', ['dono' => $dono]);
+        return view('dono/editar', ['dono' => $dono]);
     }
 
     public function prepararAdicionar(){
