@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/listar/doencas', '\App\Http\Controllers\DoencaController@listar');
+Route::get('/listar/doencas', '\App\Http\Controllers\DoencaListarController@listar');
 Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaController@editar');
 Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaController@remover');
 Route::get('/atualizar/doencas', '\App\Http\Controllers\DoencaController@atualizar');
