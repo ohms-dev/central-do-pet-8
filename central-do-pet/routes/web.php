@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/listar/doencas', '\App\Http\Controllers\DoencaListarController@listar');
-Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaController@editar');
-Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaController@remover');
-Route::get('/atualizar/doencas', '\App\Http\Controllers\DoencaController@atualizar');
-Route::get('/adicionar/doencas', '\App\Http\Controllers\DoencaController@prepararAdicionar');
-Route::post('/adicionar/doencas', '\App\Http\Controllers\DoencaController@adicionar');
+Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaEditarController@editar');
+Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaRemoverController@remover');
+Route::get('/atualizar/doencas', '\App\Http\Controllers\DoencaAtualizarController@atualizar');
+Route::get('/adicionar/doencas', '\App\Http\Controllers\DoencaPrepararAdicionarController@prepararAdicionar');
+Route::post('/adicionar/doencas', '\App\Http\Controllers\DoencaAdicionarController@adicionar');
 
 Route::get('/listar/pets','App\Http\Controllers\PetController@listar');
 Route::get('/adicionar/pet','App\Http\Controllers\PetController@prepararAdicionar');
