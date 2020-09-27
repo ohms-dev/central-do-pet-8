@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RemoverDoencasController extends Controller
+class DoencaRemoverController extends Controller
 {
     public function remover(Request $request){
         $doenca = \App\Models\doenca::find($request->id);

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdicionarDoencasController extends Controller
+class DoencaAdicionarController extends Controller
 {
     public function adicionar(Request $request){
         $doenca = new \App\Models\doenca();

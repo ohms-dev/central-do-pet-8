@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AtualizarDoencasController extends Controller
+class DoencaAtualizarController extends Controller
 {
     public function atualizar(Request $request){
         $doenca = \App\Models\doenca::find($request->id);
