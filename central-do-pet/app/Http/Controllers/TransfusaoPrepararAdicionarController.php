@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class TransfusaoPrepararAdicionarController extends Controller
 {
     public function prepararAdicionar(Request $request){
-        return view('transfusao/adicionarTransfusao');
+        return view('Transfusao/adicionarTransfusao');
     }
 }

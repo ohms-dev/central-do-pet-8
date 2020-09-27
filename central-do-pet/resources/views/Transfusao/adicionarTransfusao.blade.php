@@ -7,9 +7,9 @@
 <h1>Cadastrar Transfusao</h1>
 <form action="/adicionar/transfusao" method="post">
     {{ csrf_field() }}
-    Historido Id: <input type="text" name="Historico_id" />
+    Historico Id: <input type="text" name="historico_id" />
     <br>
-    Data: <input type="text" name="data" />
+    Data: <input type="date" name="data" />
     <br>
     <input type="submit" value="cadastrar" />
 </form>
