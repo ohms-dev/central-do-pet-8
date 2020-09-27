@@ -17,7 +17,7 @@
       <br>
       Data de nascimento: <input type="date" name="data_de_nascimento" />
       <br>
-      <input type="submit" value="cadastrar" />
+      <input type="submit" value="atualizar" />
     </form>
   </body>
 </html>

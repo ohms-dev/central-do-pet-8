@@ -62,10 +62,17 @@ Route::post('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarCon
 Route::get('/remover/historico/{id}', '\App\Http\Controllers\HistoricoRemoverController@remover');
 
 #Rotas de vacina
-
 Route::get('/adicionar/vacina', '\App\Http\Controllers\VacinaPrepararAdicionarController@prepararAdicionar');
 Route::post('/adicionar/vacina', '\App\Http\Controllers\VacinaAdicionarController@adicionar');
 Route::get('/listar/vacinas', '\App\Http\Controllers\VacinaListarController@listar');
 Route::get('/editar/vacina/{id}', '\App\Http\Controllers\VacinaEditarController@editar');
 Route::post('/atualizar/vacina', '\App\Http\Controllers\VacinaAtualizarController@atualizar');
 Route::get('/remover/vacina/{id}', '\App\Http\Controllers\VacinaRemoverController@remover');
+
+#Rotas de usuario
+Route::get('/adicionar/usuario', '\App\Http\Controllers\UsuarioPrepararAdicionarController@prepararAdicionar');
+Route::post('/adicionar/usuario', '\App\Http\Controllers\UsuarioAdicionarController@adicionar');
+Route::get('/listar/usuarios', '\App\Http\Controllers\UsuarioListarController@listar');
+Route::get('/editar/usuario/{id}', '\App\Http\Controllers\UsuarioEditarController@editar');
+Route::post('/atualizar/usuario', '\App\Http\Controllers\UsuarioAtualizarController@atualizar');
+Route::get('/remover/usuario/{id}', '\App\Http\Controllers\UsuarioRemoverController@remover');

@@ -17,7 +17,7 @@ class UsuarioAdicionarController extends Controller
         $usuario->sexo = $request->sexo;
         $usuario->data_de_nascimento = $request->data_de_nascimento;
         $usuario->save();
-        return  redirect('Usuario\listar\usuarios');
+        return  redirect('listar\usuarios');
 
     }
 }

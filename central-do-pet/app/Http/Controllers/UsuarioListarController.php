@@ -9,7 +9,7 @@ class UsuarioListarController extends Controller
 {
     public function listar(){
         $usuarios = usuario::all();
-        return view('Usuario/listarUsuarios', ['usuarios' => $usuarios]);
+        return view('Usuario/listaUsuarios', ['usuarios' => $usuarios]);
 
     }
 }
