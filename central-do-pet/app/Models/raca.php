@@ -9,10 +9,6 @@ class raca extends Model
 {
     use HasFactory;
 
-    public static function find($id)
-    {
-    }
-
     public function pet(){
       return $this->belongsTo('central-do-pet\Pet');
     }
