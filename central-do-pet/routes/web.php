@@ -13,14 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-#RotasDeUsuario
-Route::get('/prepararAdicionarUsuario', "\App\Http\Controllers\UsuarioController@prepararAdicionar");
-Route::get('/adicionar/Usuario', "\App\Http\Controllers\UsuarioController@adicionar");
-Route::get('/listar/Usuario', "\App\Http\Controllers\UsuarioController@listar");
-Route::get('/editar/Usuario/{id}', "\App\Http\Controllers\UsuarioController@editar");
-Route::get('/Atualizar/Usuario', "\App\Http\Controllers\UsuarioController@atualizar");
-Route::get('/remover/Usuario', "\App\Http\Controllers\UsuarioController@remover");
-
 Route::get('/listar/doencas', '\App\Http\Controllers\DoencaController@listar');
 Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaController@editar');
 Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaController@remover');

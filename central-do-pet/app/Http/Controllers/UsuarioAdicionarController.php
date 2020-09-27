@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UsuarioAdicionarController extends Controller
+{
+    public function adicionar(Request $request){
+        $usuario = new \App\Models\usuario();
+        $usuario->nome = $request->nome;
+        $usuario->contato = $request->contato;
+        $usuario->endereco = $request->endereco;
+        $usuario->senha = $request->senha;
+        $usuario->funcao = $request->funcao;
+        $usuario->email = $request->email;
+        $usuario->sexo = $request->sexo;
+        $usuario->data_de_nascimento = $request->data_de_nascimento;
+        $usuario->save();
+        return  redirect('Usuario\listar\usuarios');
+
+    }
+}
