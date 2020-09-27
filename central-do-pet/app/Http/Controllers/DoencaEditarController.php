@@ -8,7 +8,7 @@ class DoencaEditarController extends Controller
 {
     public function editar(Request $request){
         $doenca = \App\Models\doenca::find($request->id);
-        return view('Doenca/editarDoencas', ['doenca' => $doenca]);
+        return view('Doenca/editarDoenca', ['doenca' => $doenca]);
     }
 
 }

@@ -13,7 +13,7 @@ class CreateVacinasTable extends Migration
      */
     public function up()
     {
-        Schema::create('vacinas', function (Blueprint $table) {
+        Schema::create('vacina', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
 
@@ -31,6 +31,6 @@ class CreateVacinasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacinas');
+        Schema::dropIfExists('vacina');
     }
 }
