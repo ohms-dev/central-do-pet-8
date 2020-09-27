@@ -8,8 +8,8 @@
       @foreach ($vacinas as $vacina)
         <tr>
           <td>{{ $vacina->id }}</td>
-          <td>{{ $vacina->nome }}</td>
-          <td><a href='/editar/vacina/{{ $vacina->id }}'>Editar</a>
+          <td>{{ $vacina->vacina }}</td>
+            <td><a href='/editar/vacina/{{ $vacina->id }}'>Editar</a>
               <a href='/remover/vacina/{{ $vacina->id }}'>Remover</a></td>
         </tr>
       @endforeach
