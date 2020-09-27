@@ -9,7 +9,7 @@ class RacaRemoverController extends Controller
 {
     public function remover(Request $request){
         $raca = raca::find($request->id);
-        $raca->raca::delete();
+        $raca->delete();
         return redirect("/listar/racas");
     }
 }

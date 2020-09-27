@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class RacaListarController extends Controller
 {
     public function listar(){
-        $raca = raca::all();
-        return view('Raca/listaRacas',['raca' => $raca]);
+        $racas = raca::all();
+        return view('Raca/listaRacas',['racas' => $racas]);
     }
 }

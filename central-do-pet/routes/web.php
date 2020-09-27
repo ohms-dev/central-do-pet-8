@@ -62,7 +62,6 @@ Route::post('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarCon
 Route::get('/remover/historico/{id}', '\App\Http\Controllers\HistoricoRemoverController@remover');
 
 #Rotas de vacina
-
 Route::get('/adicionar/vacina', '\App\Http\Controllers\VacinaPrepararAdicionarController@prepararAdicionar');
 Route::post('/adicionar/vacina', '\App\Http\Controllers\VacinaAdicionarController@adicionar');
 Route::get('/listar/vacinas', '\App\Http\Controllers\VacinaListarController@listar');

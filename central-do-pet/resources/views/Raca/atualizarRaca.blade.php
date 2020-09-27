@@ -8,15 +8,13 @@
 <form action="/atualizar/raca" method="post">
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{$raca->id}}">
-    Nome: <input type="text" name="nome" />
+    Pet id: <input type="text" name="pet_id" />
     <br>
-    Sexo: <input type="text" name="sexo" />
+    Especie: <input type="text" name="especie" />
     <br>
-    Castrado: <input type="checkbox" name="castrado" />
+    Porte: <input type="text" name="porte" />
     <br>
-    Necessidades Especiais: <input type="text" name="necessidades_especiais" />
-    <br>
-    Data de nascimento: <input type="date" name="data_de_nascimento" />
+    Cor: <input type="text" name="cor" />
     <br>
     <input type="submit" value="atualizar" />
 </form>

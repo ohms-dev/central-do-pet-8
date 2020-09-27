@@ -13,7 +13,7 @@ class RacaAtualizarController extends Controller
         $raca->especie = $request->especie;
         $raca->porte = $request->porte;
         $raca->cor = $request->cor;
-        $raca->raca::update();
+        $raca->update();
         return redirect("listar/racas");
     }
 }
