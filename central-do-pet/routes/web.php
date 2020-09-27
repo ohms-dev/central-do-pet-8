@@ -51,4 +51,10 @@ Route::post('/editar/raca/{id}', '\App\Http\Controllers\RacaController@editar');
 Route::get('/atualizar/raca', '\App\Http\Controllers\RacaController@atualizar');
 Route::get('/remover/raca/{id}', '\App\Http\Controllers\RacaController@remover');
 
-
+#Rotas de transfusão
+Route::get('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoPrepararAdicionarController@prepararAdicionar');
+Route::post('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoAdicionarController@adicionar');
+Route::get('/listar/transfusaos', '\App\Http\Controllers\TransfusaoListarController@listar');
+Route::post('/editar/transfusao/{id}', '\App\Http\Controllers\TransfusaoEditarController@editar');
+Route::get('/atualizar/transfusao', '\App\Http\Controllers\TransfusaoAtualizarController@atualizar');
+Route::get('/remover/transfusao/{id}', '\App\Http\Controllers\TransfusaoRemoverController@remover');
