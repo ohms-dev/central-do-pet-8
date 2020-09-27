@@ -9,10 +9,6 @@ class dono extends Model
 {
     use HasFactory;
 
-    public static function find(\Illuminate\Http\Request $request)
-    {
-    }
-
     public function pet(){
       return $this->belongsTo('central-do-pet\Pet');
     }
