@@ -4,13 +4,13 @@
     <title>Hello</title>
     <head>
 <body>
-<h1>Editar Transfusao</h1>
+<h1>Editar Pet</h1>
 <form action="/atualizar/transfusao" method="post">
     {{csrf_field()}}
-    <input type="hidden" name="id" value="{{$transufsao->id}}">
-    Historido Id: <input type="text" name="Historico_id" />
+    <input type="hidden" name="id" value="{{$transfusao->id}}">
+    Historico Id: <input type="text" name="historico_id" />
     <br>
-    Data: <input type="text" name="data" />
+    Data: <input type="date" name="data" />
     <br>
     <input type="submit" value="atualizar" />
 </form>

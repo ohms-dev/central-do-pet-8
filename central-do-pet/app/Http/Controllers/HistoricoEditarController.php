@@ -9,7 +9,7 @@ class HistoricoEditarController extends Controller
 {
     public function editar(Request $request){
         $historico = historico::find($request->id);
-        return view('Historico/editarHistorico', ['historico' => $historico]);
+        return view('Historico/atualizarHistorico', ['historico' => $historico]);
 
     }
 }

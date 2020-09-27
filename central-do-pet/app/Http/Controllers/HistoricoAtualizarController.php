@@ -12,6 +12,6 @@ class HistoricoAtualizarController extends Controller
         $historico->pet_id = $request->pet_id;
         $historico->alergias = $request->alergias;
         $historico->update();
-        return redirect('Historico/listar/historicos');
+        return redirect('listar/historicos');
     }
 }

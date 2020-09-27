@@ -12,14 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-#Rotas de doencas
+
+#Routes doenca
 Route::get('/listar/doencas', '\App\Http\Controllers\DoencaListarController@listar');
 Route::get('/editar/doencas/{id}', '\App\Http\Controllers\DoencaEditarController@editar');
 Route::get('/remover/doencas/{id}', '\App\Http\Controllers\DoencaRemoverController@remover');
-Route::get('/atualizar/doencas', '\App\Http\Controllers\DoencaAtualizarController@atualizar');
+Route::post('/atualizar/doencas', '\App\Http\Controllers\DoencaAtualizarController@atualizar');
 Route::get('/adicionar/doencas', '\App\Http\Controllers\DoencaPrepararAdicionarController@prepararAdicionar');
 Route::post('/adicionar/doencas', '\App\Http\Controllers\DoencaAdicionarController@adicionar');
-#Rotas de pets
+
+#Routes pets
 Route::get('/listar/pets','App\Http\Controllers\PetListarController@listar');
 Route::get('/adicionar/pet','App\Http\Controllers\PetPrepararAdicionarController@prepararAdicionar');
 Route::get('/editar/pet/{id}','App\Http\Controllers\PetEditarController@editar');
@@ -31,30 +33,31 @@ Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicio
 Route::get('/adicionar/dono', '\App\Http\Controllers\DonoController@prepararAdicionar');
 Route::post('/adicionar/dono', '\App\Http\Controllers\DonoController@adicionar');
 Route::get('/listar/donos', '\App\Http\Controllers\DonoController@listar');
-Route::post('/editar/dono/{id}', '\App\Http\Controllers\DonoController@editar');
-Route::get('/atualizar/dono', '\App\Http\Controllers\DonoController@atualizar');
+Route::get('/editar/dono/{id}', '\App\Http\Controllers\DonoController@editar');
+Route::post('/atualizar/dono', '\App\Http\Controllers\DonoController@atualizar');
 Route::get('/remover/dono/{id}', '\App\Http\Controllers\DonoController@remover');
 
 #Rotas de raca
 Route::get('/adicionar/raca', '\App\Http\Controllers\RacaPrepararAdicionarController@prepararAdicionar');
 Route::post('/adicionar/raca', '\App\Http\Controllers\RacaAdicionarController@adicionar');
 Route::get('/listar/racas', '\App\Http\Controllers\RacaListarController@listar');
-Route::post('/editar/raca/{id}', '\App\Http\Controllers\RacaEditarController@editar');
-Route::get('/atualizar/raca', '\App\Http\Controllers\RacaAtualizarController@atualizar');
+Route::get('/editar/raca/{id}', '\App\Http\Controllers\RacaEditarController@editar');
+Route::post('/atualizar/raca', '\App\Http\Controllers\RacaAtualizarController@atualizar');
 Route::get('/remover/raca/{id}', '\App\Http\Controllers\RacaRemoverController@remover');
 
 #Rotas de transfusão
 Route::get('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoPrepararAdicionarController@prepararAdicionar');
 Route::post('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoAdicionarController@adicionar');
 Route::get('/listar/transfusaos', '\App\Http\Controllers\TransfusaoListarController@listar');
-Route::post('/editar/transfusao/{id}', '\App\Http\Controllers\TransfusaoEditarController@editar');
-Route::get('/atualizar/transfusao', '\App\Http\Controllers\TransfusaoAtualizarController@atualizar');
+Route::get('/editar/transfusao/{id}', '\App\Http\Controllers\TransfusaoEditarController@editar');
+Route::post('/atualizar/transfusao', '\App\Http\Controllers\TransfusaoAtualizarController@atualizar');
 Route::get('/remover/transfusao/{id}', '\App\Http\Controllers\TransfusaoRemoverController@remover');
+
 #Rotas de historico
 Route::get('/adicionar/historico', '\App\Http\Controllers\HistoricoPrepararAdicionarController@prepararAdicionar');
 Route::post('/adicionar/historico', '\App\Http\Controllers\HistoricoAdicionarController@adicionar');
-Route::get('/listar/historico', '\App\Http\Controllers\HistoricoListarController@listar');
-Route::post('/editar/historico/{id}', '\App\Http\Controllers\HistoricoEditarController@editar');
-Route::get('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarController@atualizar');
+Route::get('/listar/historicos', '\App\Http\Controllers\HistoricoListarController@listar');
+Route::get('/editar/historico/{id}', '\App\Http\Controllers\HistoricoEditarController@editar');
+Route::post('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarController@atualizar');
 Route::get('/remover/historico/{id}', '\App\Http\Controllers\HistoricoRemoverController@remover');
 
