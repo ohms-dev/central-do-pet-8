@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}"
+<html lang="{{ app()->getLocale() }}">
   <head>
     <title></title>
   </head>
@@ -10,8 +10,8 @@
           <td>{{ $doenca->id }}</td>
           <td>{{ $doenca->doenca }}</td>
           <td>{{ $doenca->data }}</td>
-          <td><a href='/editar/doenca/{{ $doenca->id }}'>Editar</a> -
-              <a href='/remover/doenca/{{ $doenca->id }}'>Remover</a></td>
+          <td><a href='/editar/doencas/{{ $doenca->id }}'>Editar</a> -
+              <a href='/remover/doencas/{{ $doenca->id }}'>Remover</a></td>
         </tr>
       @endforeach
     </table>

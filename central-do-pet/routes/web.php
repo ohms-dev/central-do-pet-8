@@ -61,3 +61,4 @@ Route::get('/editar/historico/{id}', '\App\Http\Controllers\HistoricoEditarContr
 Route::post('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarController@atualizar');
 Route::get('/remover/historico/{id}', '\App\Http\Controllers\HistoricoRemoverController@remover');
 
+

@@ -9,8 +9,11 @@
       {{ csrf_field() }}
       Nome da doença: <input type="text" name="doenca" />
       <br>
-      Data que pegou a doença: <input type="date" name="data" />
+        Historico id: <input type="text" name="historico_id" />
+        <br>
+      Data: <input type="date" name="data" />
       <br>
+
       <input type="submit" value="cadastrar" />
     </form>
   </body>
