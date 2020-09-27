@@ -50,3 +50,5 @@ Route::get('/listar/racas', '\App\Http\Controllers\RacaController@listar');
 Route::post('/editar/raca/{id}', '\App\Http\Controllers\RacaController@editar');
 Route::get('/atualizar/raca', '\App\Http\Controllers\RacaController@atualizar');
 Route::get('/remover/raca/{id}', '\App\Http\Controllers\RacaController@remover');
+
+
