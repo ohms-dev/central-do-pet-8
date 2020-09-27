@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\DonoControllers;
 use Illuminate\Http\Request;
 
-class ListarDonosController extends Controller
+class DonoListarController extends  Illuminate\Routing\Controller
 {
     public function listar() {
         $donos = \App\Models\dono::all();

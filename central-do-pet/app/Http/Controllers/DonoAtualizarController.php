@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdicionarDonosController extends Controller
+class DonoAtualizarController extends Controller
 {
-    public function adicionar(Request $request) {
-        $dono = new \App\Models\dono();
+    public function atualizar(Request $request){
+        $dono = \App\Models\dono::find($request->id);
         $dono-> pet_id = $request-> pet_id;
         $dono-> cpf = $request-> cpf;
         $dono-> nome = $request-> nome;
@@ -16,8 +16,6 @@ class AdicionarDonosController extends Controller
         $dono-> sexo = $request-> sexo;
         $dono-> email = $request-> email;
         $dono-> data_de_nascimento = $request-> data_de_nascimento;
-        $dono-> save();
-        return view('listar/donos');
-    }
-
-}
+        $dono-> dono::update();
+        return redirect("listar/donos");
+    }}
