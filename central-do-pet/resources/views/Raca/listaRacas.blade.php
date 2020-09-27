@@ -8,7 +8,9 @@
     @foreach ($racas as $raca)
         <tr>
             <td>{{ $raca->id }}</td>
-            <td>{{ $raca->nome }}</td>
+            <td>{{ $raca->especie }}</td>
+            <td>{{ $raca->porte }}</td>
+            <td>{{ $raca->cor }}</td>
             <td><a href='/editar/raca/{{ $raca->id }}'>Editar</a>
                 <a href='/remover/raca/{{ $raca->id }}'>Remover</a></td>
         </tr>
