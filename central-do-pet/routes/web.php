@@ -30,12 +30,12 @@ Route::post('/atualizar/pet','App\Http\Controllers\PetAtualizarController@atuali
 Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicionar');
 
 #Rotas de dono
-Route::get('/adicionar/dono', '\App\Http\Controllers\DonoController@prepararAdicionar');
-Route::post('/adicionar/dono', '\App\Http\Controllers\DonoController@adicionar');
-Route::get('/listar/donos', '\App\Http\Controllers\DonoController@listar');
-Route::get('/editar/dono/{id}', '\App\Http\Controllers\DonoController@editar');
-Route::post('/atualizar/dono', '\App\Http\Controllers\DonoController@atualizar');
-Route::get('/remover/dono/{id}', '\App\Http\Controllers\DonoController@remover');
+Route::get('/adicionar/dono', '\App\Http\Controllers\DonoPrepararAdicionarController@prepararAdicionar');
+Route::post('/adicionar/dono', '\App\Http\Controllers\DonoAdicionarController@adicionar');
+Route::get('/listar/donos', '\App\Http\Controllers\DonoListarController@listar');
+Route::get('/editar/dono/{id}', '\App\Http\Controllers\DonoEditarController@editar');
+Route::post('/atualizar/dono', '\App\Http\Controllers\DonoAtualizarController@atualizar');
+Route::get('/remover/dono/{id}', '\App\Http\Controllers\DonoRemoverController@remover');
 
 #Rotas de raca
 Route::get('/adicionar/raca', '\App\Http\Controllers\RacaPrepararAdicionarController@prepararAdicionar');
