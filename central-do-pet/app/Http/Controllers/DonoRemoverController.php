@@ -8,6 +8,6 @@ class DonoRemoverController extends Controller
 {
     public function remover(Request $request){
         $dono = \App\Models\dono::find($request->id);
-        $dono-> dono::delete();
+        $dono->delete();
         return redirect("/listar/donos");
     }}
