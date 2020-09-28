@@ -16,11 +16,6 @@ class VacinaSeeder extends Seeder
      */
     public function run()
     {
-        $ids = DB::table('historicos')->first();
-        for($i=0;$i<5;$i++)
-            DB::table('vacinas')->insert(["historico_id"=>$ids->id,
-                "vacina"=>Str::random(10),
-                "data"=>Date::today(),
-            ]);
+        \App\Models\vacina::factory()->count(5)->create();
     }
 }
