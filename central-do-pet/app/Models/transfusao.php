@@ -15,7 +15,7 @@ class transfusao extends Model implements Authenticatable
     public static $rules = ['historico_id'=>'required', 'data'=>'required'];
 
     public static $messages = ['historico_id.*' => 'O campo Historico Id é obrigatório',
-                                'data'=>'required'];
+                                'data.*'=>'O campo data é obrigatório'];
 
     public function historico(){
       return $this->belongsTo('central-do-pet\Historico');
