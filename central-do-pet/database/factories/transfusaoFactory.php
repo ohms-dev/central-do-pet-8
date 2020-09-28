@@ -12,7 +12,6 @@ class transfusaoFactory extends Factory{
 
     public function definition(){
         $ids = DB::table('historicos')->first();
-
         return [
             "historico_id"=>$ids->id,
             'data' => $this->faker->date(),
