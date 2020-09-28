@@ -9,7 +9,7 @@ class usuarioFactory extends Factory{
     protected $model = usuario::class;
 
     public function definition(){
-        $gender = $this->faker->randomElement(['masculino', 'feminino']);
+        $gender = $this->faker->randomElement(['masculino', 'feminino', "nao binario"]);
         $funcao = $this->faker->randomElement(['medico', 'usuario']);
 
         return [
