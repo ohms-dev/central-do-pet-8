@@ -16,12 +16,6 @@ class RacaSeeder extends Seeder
      */
     public function run()
     {
-        $ids = DB::table('pets')->first();
-        for($i=0;$i<5;$i++)
-            DB::table('racas')->insert(["pet_id"=>$ids->id,
-                "especie"=>Str::random(10),
-                "porte"=>Str::random(5),
-                "cor"=>Str::random(10),
-            ]);
+        \App\Models\raca::factory()->count(5)->create();
     }
 }
