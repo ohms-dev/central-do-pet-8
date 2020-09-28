@@ -19,7 +19,7 @@ class CreateVacinasTable extends Migration
 
 	    $table->integer('historico_id');
 	    $table->foreign('historico_id')->references('id')->on('historicos')->onDelete('cascade');
-	    $table->string('vacina');
+	    $table->char('vacina',255);
 	    $table->date('data');
         });
     }

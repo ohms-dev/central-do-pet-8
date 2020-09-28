@@ -19,9 +19,9 @@ class CreateRacasTable extends Migration
 
 	    $table->integer('pet_id');
 	    $table->foreign('pet_id')->references('id')->on('pets')->onDelete('cascade');
-	    $table->string('especie');
-	    $table->string('porte');
-	    $table->string('cor');
+	    $table->char('especie',50);
+	    $table->char('porte',20);
+	    $table->char('cor',30);
         });
     }
 

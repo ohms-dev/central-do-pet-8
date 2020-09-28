@@ -19,12 +19,12 @@ class CreateDonosTable extends Migration
 
 	    $table->integer('pet_id');
 	    $table->foreign('pet_id')->references('id')->on('pets')->onDelete('cascade');
-	    $table->integer('cpf');
-	    $table->string('nome');
-	    $table->integer('contato');
-	    $table->string('endereco');
-	    $table->string('sexo');
-	    $table->string('email');
+	    $table->char('cpf',11);
+	    $table->char('nome',255);
+	    $table->char('contato',11);
+	    $table->char('endereco',255);
+	    $table->char('sexo',50);
+	    $table->char('email',50);
 	    $table->date('data_de_nascimento');
         });
     }

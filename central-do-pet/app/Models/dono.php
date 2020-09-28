@@ -11,7 +11,7 @@ class dono extends Model implements Authenticatable
 {
     use HasFactory;
 
-    protected $fillable = ['nome','sexo','contato','pet_id','cpf','endereco','data_de_nascimento'] ;
+    protected $fillable = ['nome','sexo','contato','pet_id','cpf','endereco','data_de_nascimento','email'] ;
     public static $rules = ['nome'=> 'required|min:3|max:50', 'sexo'=>'required|min:7|max:11','contato'=>'required|min:11|max:11','data_de_nascimento'=>'required',
         'endereco'=>'required|min:10|max:100','pet_id'=>'required','email'=>'required|min:5|max:30','cpf'=>'required|min:11|max:11'];
     public static $messages = ['nome.*'=>'O campo nome é obrigatório e deve ter entre 5 e 30 letras',

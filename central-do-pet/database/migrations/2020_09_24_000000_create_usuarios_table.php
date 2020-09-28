@@ -17,13 +17,13 @@ class CreateUsuariosTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-	    $table->string('nome');
-	    $table->integer('contato');
-	    $table->string('endereco');
-	    $table->integer('senha');
-	    $table->string('funcao');
-	    $table->string('email');
-	    $table->string('sexo');
+	    $table->char('nome',255);
+	    $table->char('contato',11);
+	    $table->char('endereco',255);
+	    $table->char('senha',9);
+	    $table->char('funcao',50);
+	    $table->char('email',50);
+	    $table->char('sexo',20);
 	    $table->date('data_de_nascimento');
         });
     }

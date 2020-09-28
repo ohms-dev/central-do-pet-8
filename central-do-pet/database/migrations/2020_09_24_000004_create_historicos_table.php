@@ -19,7 +19,7 @@ class CreateHistoricosTable extends Migration
 
 	    $table->integer('pet_id');
 	    $table->foreign('pet_id')->references('id')->on('pets')->onDelete('cascade');
-	    $table->string('alergias');
+	    $table->char('alergias',255);
         });
     }
 

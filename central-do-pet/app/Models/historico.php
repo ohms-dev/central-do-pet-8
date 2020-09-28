@@ -11,13 +11,6 @@ class historico extends Model implements Authenticatable
 {
 
     use HasFactory;
-<<<<<<< HEAD
-
-    use HasFactory;
-=======
->>>>>>> origin/master
-
-    use HasFactory;
 
     protected $fillable = ['pet_id', 'alergias'];
 
