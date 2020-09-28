@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 class PetAdicionarController extends Controller
 {
     public function adicionar(Request $request){
+        try {
+            \App\Validator\petValidator::validate($request->all());
+            \App\Models\pet::create($request->all());
+            return "Pet criado";
+        } catch (\App\Validator\ValidationException $exception){
+            return redirect('adicionar/pet')
+                ->withErrors($exception->getValidator())
+                ->withInput();
+        }
         $pet = new \App\Models\pet();
         $pet->nome = $request->nome;
         $pet->sexo = $request->sexo;
