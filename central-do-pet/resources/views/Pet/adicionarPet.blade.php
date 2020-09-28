@@ -11,7 +11,7 @@
       <br>
       Sexo: <input type="text" name="sexo" />
       <br>
-      Castrado: <input type="checkbox" name="castrado" />
+      Castrado: <input type="text" name="castrado" />
       <br>
       Necessidades Especiais: <input type="text" name="necessidades_especiais" />
       <br>

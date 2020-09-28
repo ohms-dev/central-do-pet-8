@@ -10,7 +10,7 @@ class PetAdicionarController extends Controller
         try {
             \App\Validator\petValidator::validate($request->all());
             \App\Models\pet::create($request->all());
-            return "Pet criado";
+            return redirect('listar/pets');
         } catch (\App\Validator\ValidationException $exception){
             return redirect('adicionar/pet')
                 ->withErrors($exception->getValidator())

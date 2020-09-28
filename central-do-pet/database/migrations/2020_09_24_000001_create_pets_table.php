@@ -17,10 +17,10 @@ class CreatePetsTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-	    $table->string('nome');
-	    $table->string('sexo');
-	    $table->boolean('castrado');
-	    $table->string('necessidades_especiais');
+	    $table->char('nome',255);
+	    $table->char('sexo',20);
+	    $table->char('castrado',10);
+	    $table->char('necessidades_especiais',255);
 	    $table->date('data_de_nascimento');
         });
     }

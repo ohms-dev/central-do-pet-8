@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-use phpDocumentor\Reflection\Types\Boolean;
-use Illuminate\Database\Eloquent\Factories\Factory;
-
 class HistoricoSeeder extends Seeder
 {
 
