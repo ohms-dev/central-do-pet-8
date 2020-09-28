@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\Boolean;
-
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PetSeeder extends Seeder
 {
@@ -18,12 +18,6 @@ class PetSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<5;$i++)
-            DB::table('pets')->insert(["nome"=>Str::random(10),
-                "sexo"=>Str::random(5),
-                "castrado"=>true,
-                "necessidades_especiais"=>Str::random(10),
-                "data_de_nascimento"=>Date::today(),
-            ]);
+        \App\Models\pet::factory()->count(5)->create();
     }
 }
