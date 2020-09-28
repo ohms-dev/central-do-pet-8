@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 class DonoAdicionarController extends Controller
 {
     public function adicionar(Request $request) {
+        try {
+            (new \App\Validator\donoValidator)->validate($request->all());
+            \App\Models\dono::create($request->all());
+            return "Dono criado";
+        } catch (\App\Validator\ValidationException $exception){
+            return redirect('adicionar/dono')
+                ->withErrors($exception->getValidator())
+                ->withInput();
+        }
         $dono = new \App\Models\dono();
         $dono-> pet_id = $request-> pet_id;
         $dono-> cpf = $request-> cpf;
