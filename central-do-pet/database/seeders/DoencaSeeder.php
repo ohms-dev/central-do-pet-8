@@ -16,11 +16,6 @@ class DoencaSeeder extends Seeder
      */
     public function run()
     {
-        $ids = DB::table('historicos')->first();
-        for($i=0;$i<5;$i++)
-            DB::table('doencas')->insert(["historico_id"=>$ids->id,
-                "doenca"=>Str::random(10),
-                "data"=>Date::today(),
-            ]);
+        \App\Models\doenca::factory()->count(5)->create();
     }
 }
