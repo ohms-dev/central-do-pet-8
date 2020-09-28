@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DoencaSeeder extends Seeder
 {
@@ -13,9 +16,11 @@ class DoencaSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 5; $i++)
-            DB::table('doencas')->insert(["historico_id"=>int_random(),
-                                          ""
-                                        ]);
+        $ids = DB::table('historicos')->first();
+        for($i=0;$i<5;$i++)
+            DB::table('doencas')->insert(["historico_id"=>$ids->id,
+                "doenca"=>Str::random(10),
+                "data"=>Date::today(),
+            ]);
     }
 }
