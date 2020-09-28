@@ -16,15 +16,6 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<5;$i++)
-            DB::table('usuarios')->insert(["nome"=>Str::random(10),
-                "contato"=>mt_rand(1,100),
-                "endereco"=>Str::random(10),
-                "senha"=>mt_rand(1,20),
-                "funcao"=>Str::random(5),
-                "email"=>Str::random(5),
-                "sexo"=>Str::random(10),
-                "data_de_nascimento"=>Date::today(),
-            ]);
+        \App\Models\usuario::factory()->count(5)->create();
     }
 }
