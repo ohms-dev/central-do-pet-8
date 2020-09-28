@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 class DoencaAdicionarController extends Controller
 {
     public function adicionar(Request $request){
-        $doenca = new \App\Models\doenca();
-        $doenca->doenca = $request->doenca;
-        $doenca->historico_id = $request->historico_id;
-        $doenca->data = $request->data;
-        $doenca->save();
-        return redirect("listar/doencas");
+      try{
+          (new \App\Validator\doencaValidator)->validate($request->all());
+          $dados = $request->all();
+          \App\Models\doenca::create($dados);
+          return redirect('listar/doencas');
+      }catch (\App\Validator\ValidationException $exception){
+          $listaHistoricos = \App\Models\doenca::all();
+          return redirect('adicionar/doencas')
+              ->withErrors($exception->getValidator())
+              ->withInput();
+      }
     }
 }
