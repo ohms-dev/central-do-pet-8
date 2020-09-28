@@ -9,11 +9,7 @@ use Illuminate\Support\Str;
 
 class UsuarioSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
         \App\Models\usuario::factory()->count(5)->create();
