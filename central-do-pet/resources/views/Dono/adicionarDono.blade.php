@@ -24,6 +24,46 @@
       Data de nascimento: <input type="date" name="data_de_nascimento" />
       <br>
       <input type="submit" value="cadastrar" />
+        @error('nome')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('sexo')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('contato')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('data_de_nascimento')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('endereco')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('email')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('pet_id')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('cpf')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
     </form>
   </body>
 </html>

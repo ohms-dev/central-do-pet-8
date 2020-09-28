@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class historico extends Model implements Authenticatable{
+class historico extends Model implements Authenticatable
+{
+
+    use HasFactory;
+<<<<<<< HEAD
+
+    use HasFactory;
+=======
+>>>>>>> origin/master
 
     use HasFactory;
 
