@@ -36,7 +36,7 @@
             <a class="nav-link" href="#">Ajuda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="/login">Login</a>
           </li>
         </ul>
       </div>
@@ -44,13 +44,13 @@
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/ohms-dev/central-do-pet-8"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/facebook-new.png"/></a>
+            <a class="nav-link" href="#"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/facebook-new.png"/></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/ohms-dev/central-do-pet-8"><img src="https://img.icons8.com/material-rounded/24/000000/instagram-new.png"/></a>
+            <a class="nav-link" href="#"><img src="https://img.icons8.com/material-rounded/24/000000/instagram-new.png"/></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/ohms-dev/central-do-pet-8"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/twitter.png"/></a>
+            <a class="nav-link" href="#"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/twitter.png"/></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/ohms-dev/central-do-pet-8"><img src="https://img.icons8.com/metro/26/000000/github.png"/></a>
