@@ -28,4 +28,10 @@ class VacinaTest extends TestCase
         (new \App\Validator\vacinaValidator)->validate($vacina->toArray());
         $this->assertTrue(True);
     }
+
+    public function testVacinaDataBaseCreate(){
+        $vacina = vacina::factory()->make();
+        vacina::factory()->create($vacina->toArray());
+        $this->assertDatabaseHas('vacinas', $vacina->toArray());
+    }
 }
