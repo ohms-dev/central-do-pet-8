@@ -37,7 +37,7 @@
         </span>
         @enderror
       <br>
-      <input type="submit" value="cadastrar" />
+      <input type="submit" value="atualizar" />
     </form>
   </body>
 </html>

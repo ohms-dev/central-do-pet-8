@@ -21,7 +21,7 @@ class User extends Authenticatable
     ];
     public static $rules = ['name'=> 'required|min:3|max:50', 'sexo'=>'required|min:7|max:11','contato'=>'required|min:11|max:11',
         'data_de_nascimento'=>'required','endereco'=>'required|min:10|max:100',
-        'password'=>'required|min:4|max:9','funcao'=>'required',
+        'password'=>'required|min:4|max:255','funcao'=>'required',
         'email'=>'required|min:5|max:30'];
 
     public static $messages = ['name.*'=>'O campo nome é obrigatório e deve ter entre 5 e 30 letras',

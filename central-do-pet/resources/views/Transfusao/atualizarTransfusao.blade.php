@@ -4,7 +4,7 @@
     <title>Hello</title>
     <head>
 <body>
-<h1>Editar Pet</h1>
+<h1>Editar Transfusão</h1>
 <form action="/atualizar/transfusao" method="post">
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{$transfusao->id}}">
