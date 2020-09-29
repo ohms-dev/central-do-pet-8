@@ -24,6 +24,7 @@
     Função: <select name="funcao">
         <option value="Médico Veterinário">Médico Veterinário</option>
         <option value="Funcionário">Funcionário</option>
+        <option value="ONG">ONG</option>
     </select>
     <br>
     Endereco: <input type="text" name="endereco" />
