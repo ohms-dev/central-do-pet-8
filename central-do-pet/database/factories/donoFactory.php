@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\dono;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class donoFactory extends Factory
 {
@@ -23,13 +24,13 @@ class donoFactory extends Factory
     public function definition()
     {
         $ids = DB::table('pets')->first();
-        $gender = $this->faker->randomElement(["masculino, feminino, nao binario"]);
+        $gender = $this->faker->randomElement(["masculino", "feminino", "nao binario"]);
         return [
             "pet_id"=>$ids->id,
             "nome"=>$this->faker->firstName,
-            "cpf"=>$this->faker->randomDigit,
+            "cpf"=>Str::random(11),
             "endereco"=>$this->faker->address,
-            "contato"=>$this->faker->randomDigit,
+            'contato' => Str::random(11),
             "sexo"=>$gender,
             "email"=>$this->faker->email,
             "data_de_nascimento"=>$this->faker->date(),
