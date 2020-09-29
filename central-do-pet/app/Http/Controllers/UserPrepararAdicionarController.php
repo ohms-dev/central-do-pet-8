@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsuarioPrepararAdicionarController extends Controller
+class UserPrepararAdicionarController extends Controller
 {
     public function prepararAdicionar(Request $request){
-        return view('Usuario/adicionarUsuario');
+        return view('User/adicionarUser');
     }
 
 }
