@@ -73,12 +73,12 @@ Route::post('/atualizar/vacina', '\App\Http\Controllers\VacinaAtualizarControlle
 Route::get('/remover/vacina/{id}', '\App\Http\Controllers\VacinaRemoverController@remover');
 
 #Rotas de usuario
-Route::get('/adicionar/usuario', '\App\Http\Controllers\UsuarioPrepararAdicionarController@prepararAdicionar');
-Route::post('/adicionar/usuario', '\App\Http\Controllers\UsuarioAdicionarController@adicionar');
-Route::get('/listar/usuarios', '\App\Http\Controllers\UsuarioListarController@listar');
-Route::get('/editar/usuario/{id}', '\App\Http\Controllers\UsuarioEditarController@editar');
-Route::post('/atualizar/usuario', '\App\Http\Controllers\UsuarioAtualizarController@atualizar');
-Route::get('/remover/usuario/{id}', '\App\Http\Controllers\UsuarioRemoverController@remover');
+Route::get('/adicionar/user', '\App\Http\Controllers\UserPrepararAdicionarController@prepararAdicionar');
+Route::post('/adicionar/user', '\App\Http\Controllers\UserAdicionarController@adicionar');
+Route::get('/listar/users', '\App\Http\Controllers\UserListarController@listar');
+Route::get('/editar/user/{id}', '\App\Http\Controllers\UserEditarController@editar');
+Route::post('/atualizar/user', '\App\Http\Controllers\UserAtualizarController@atualizar');
+Route::get('/remover/user/{id}', '\App\Http\Controllers\UserRemoverController@remover');
 
 Auth::routes();
 

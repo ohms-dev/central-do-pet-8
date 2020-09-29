@@ -5,10 +5,10 @@
     <head>
 <body>
 <h1>Atualizar usuario</h1>
-<form action="/atualizar/usuario" method="post">
+<form action="/atualizar/user" method="post">
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{$usuario->id}}">
-    Nome: <input type="text" name="nome" />
+    Nome: <input type="text" name="name" />
     <br>
     Sexo: <input type="text" name="sexo" />
     <br>
@@ -22,7 +22,7 @@
     <br>
     Data de nascimento: <input type="date" name="data_de_nascimento" />
     <br>
-    Senha: <input type="password" name="senha" />
+    Senha: <input type="password" name="password" />
     <br>
     <input type="submit" value="atualizar" />
 </form>
