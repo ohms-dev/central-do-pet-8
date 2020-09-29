@@ -38,14 +38,14 @@ class PetTest extends TestCase
 
     public function testPetSaveInDatabase(){
         $pet = \App\Models\pet::factory()->make();
+        petValidator::validate($pet->toArray());
         \App\Models\pet::factory()->create($pet->toArray());
-        $pets = DB::table('pets')->get();
         $this->assertDatabaseHas('pets',$pet->toArray());
     }
 
     public function testPetNotSaveInDatabase(){
         $pet = \App\Models\pet::factory()->make();
-        $pets = DB::table('pets')->get();
+        petValidator::validate($pet->toArray());
         $this->assertDatabaseMissing('pets',$pet->toArray());
     }
 
