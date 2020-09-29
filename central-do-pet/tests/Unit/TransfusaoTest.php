@@ -22,4 +22,10 @@ class TransfusaoTest extends TestCase
 
         (new \App\Validator\transfusaoValidator)->validate($t->toArray());
     }
+
+    public function testTransfusaoDatabaseCreate(){
+        $t = transfusao::factory()->make();
+        transfusao::factory()->create($t->toArray());
+        $this->assertDatabaseHas('transfusaos', $t->toArray());
+    }
 }
