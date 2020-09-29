@@ -23,5 +23,11 @@ class DoencaTest extends TestCase
         (new \App\Validator\doencaValidator)->validate($doenca->toArray());
     }
 
+    public function testDeoncaDatabaseCreate(){
+        $doenca = doenca::factory()->make();
+        doenca::factory()->create($doenca->toArray());
+        $this->assertDatabaseHas('doencas',$doenca->toArray());
+    }
+
 
 }
