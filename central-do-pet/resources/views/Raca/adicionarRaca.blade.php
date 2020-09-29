@@ -11,7 +11,11 @@
     <br>
     Especie: <input type="text" name="especie" />
     <br>
-    Porte: <input type="text" name="porte" />
+    Porte: <select name="porte">
+        <option value="Grande">Grande</option>
+        <option value="Médio">Médio</option>
+        <option value="Pequeno">Pequeno</option>
+    </select>
     <br>
     Cor: <input type="text" name="cor" />
     <br>

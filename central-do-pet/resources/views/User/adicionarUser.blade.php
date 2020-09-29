@@ -9,13 +9,22 @@
     {{ csrf_field() }}
     Nome: <input type="text" name="name" />
     <br>
-    Sexo: <input type="text" name="sexo" />
+    Sexo: <select name="sexo">
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Não binário">Não binário</option>
+        <option value="Outro">Outro</option>
+        <option value="Não informar">Não informar</option>
+    </select>
     <br>
     Contato: <input type="text" name="contato" />
     <br>
     Email: <input type="text" name="email">
     <br>
-    Funcao: <input type="text" name="funcao">
+    Função: <select name="funcao">
+        <option value="Médico Veterinário">Médico Veterinário</option>
+        <option value="Funcionário">Funcionário</option>
+    </select>
     <br>
     Endereco: <input type="text" name="endereco" />
     <br>
