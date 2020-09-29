@@ -2,8 +2,6 @@
 
 namespace App\Validator;
 
-use Dotenv\Validator;
-
 class petValidator
 {
     public static function validate($data) {
