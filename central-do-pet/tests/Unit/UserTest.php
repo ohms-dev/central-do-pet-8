@@ -36,9 +36,4 @@ class UserTest extends TestCase
         \App\Validator\UserValidator::validate($dados);
         $this->assertTrue(True);
     }
-
-
-
-
-
 }
