@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 class UsuarioAdicionarController extends Controller
 {
     public function adicionar(Request $request){
+        try{
+            \App\Validator\usuarioValidator::validate($request->all());
+            \App\Models\usuario::create($request->all());
+            return redirect('listar/usuarios');
+        } catch (\App\Validator\ValidationException $exception){
+            return redirect('adicionar/usuario')
+                ->withErrors($exception->getValidator())
+                ->withInput();
+        }
         $usuario = new \App\Models\usuario();
         $usuario->nome = $request->nome;
         $usuario->contato = $request->contato;

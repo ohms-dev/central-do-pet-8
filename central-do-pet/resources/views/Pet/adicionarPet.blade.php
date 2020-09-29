@@ -11,13 +11,34 @@
       <br>
       Sexo: <input type="text" name="sexo" />
       <br>
-      Castrado: <input type="checkbox" name="castrado" />
+      Castrado: <input type="text" name="castrado" />
       <br>
       Necessidades Especiais: <input type="text" name="necessidades_especiais" />
       <br>
       Data de nascimento: <input type="date" name="data_de_nascimento" />
+        @error('nome')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('sexo')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('castrado')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
+        @error('data_de_nascimento')
+        <span class="invalid-feedback" role="alert">
+            <script type='text/javascript'>alert('{{ $message }}');</script>
+        </span>
+        @enderror
       <br>
       <input type="submit" value="cadastrar" />
     </form>
   </body>
 </html>
+

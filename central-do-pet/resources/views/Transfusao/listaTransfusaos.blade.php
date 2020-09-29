@@ -8,7 +8,6 @@
     @foreach ($transfusaos as $transfusao)
         <tr>
             <td>{{ $transfusao->id }}</td>
-            <td>{{ $transfusao->nome }}</td>
             <td>{{ $transfusao->data }}</td>
             <td><a href='/editar/transfusao/{{ $transfusao->id }}'>Editar</a>
                 <a href='/remover/transfusao/{{ $transfusao->id }}'>Remover</a></td>

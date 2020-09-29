@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 class RacaAdicionarController extends Controller
 {
     public function adicionar(Request $request){
-        $raca = new raca();
-        $raca->pet_id = $request->pet_id;
-        $raca->especie = $request->especie;
-        $raca->porte = $request->porte;
-        $raca->cor = $request->cor;
-        $raca->save();
-        return redirect("listar/racas");
+        try {
+            (new \App\Validator\racaValidator)->validate($request->all());
+            $dados = $request->all();
+            \App\Models\raca::create($dados);
+            return redirect('listar/racas');
+        }catch (\App\Validator\ValidationException $exception){
+            $listaRacas = \App\Models\raca::all();
+            return redirect('adicionar/raca')
+                ->withErrors($exception->getValidator())
+                ->withInput();
+        }
     }}

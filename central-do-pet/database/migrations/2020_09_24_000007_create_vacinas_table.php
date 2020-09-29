@@ -13,13 +13,13 @@ class CreateVacinasTable extends Migration
      */
     public function up()
     {
-        Schema::create('vacina', function (Blueprint $table) {
+        Schema::create('vacinas', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
 
 	    $table->integer('historico_id');
 	    $table->foreign('historico_id')->references('id')->on('historicos')->onDelete('cascade');
-	    $table->string('vacina');
+	    $table->char('vacina',255);
 	    $table->date('data');
         });
     }

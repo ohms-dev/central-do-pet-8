@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
 #Routes doenca
 Route::get('/listar/doencas', '\App\Http\Controllers\DoencaListarController@listar');
@@ -76,3 +79,31 @@ Route::get('/listar/usuarios', '\App\Http\Controllers\UsuarioListarController@li
 Route::get('/editar/usuario/{id}', '\App\Http\Controllers\UsuarioEditarController@editar');
 Route::post('/atualizar/usuario', '\App\Http\Controllers\UsuarioAtualizarController@atualizar');
 Route::get('/remover/usuario/{id}', '\App\Http\Controllers\UsuarioRemoverController@remover');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
