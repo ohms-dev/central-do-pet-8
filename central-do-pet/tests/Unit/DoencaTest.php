@@ -29,5 +29,11 @@ class DoencaTest extends TestCase
         $this->assertDatabaseHas('doencas',$doenca->toArray());
     }
 
+    public function testDeoncaCorreta(){
+        $doenca = doenca::factory()->make();
+        (new \App\Validator\doencaValidator)->validate($doenca->toArray());
+        $this->assertTrue(True);
+    }
+
 
 }
