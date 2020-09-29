@@ -21,7 +21,7 @@
       <br>
       Endereço: <input type="text" name="endereco" />
       <br>
-      Data de nascimento: <input type="date" name="data_de_nascimento" />
+      Data: <input type="date" name="data_de_nascimento" />
       <br>
       <input type="submit" value="cadastrar" />
         @error('nome')

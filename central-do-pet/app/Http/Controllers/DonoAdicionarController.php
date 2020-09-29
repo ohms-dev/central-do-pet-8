@@ -26,7 +26,7 @@ class DonoAdicionarController extends Controller
         $dono->email = $request->email;
         $dono->data_de_nascimento = $request->data_de_nascimento;
         $dono->save();
-        return redirect('listar/donos');
+        return view('listar/donos');
     }
 
 }
