@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class UsuarioSeeder extends Seeder
+class UserSeeder extends Seeder
 {
 
     public function run()
     {
-        \App\Models\usuario::factory()->count(5)->create();
+        \App\Models\User::factory()->count(5)->create();
     }
 }
