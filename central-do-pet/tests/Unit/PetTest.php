@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use \App\Validator\petValidator;
 use \App\Models\pet;
-use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 
 class PetTest extends TestCase
@@ -16,7 +15,6 @@ class PetTest extends TestCase
      */
 
     public function testPetSemNome(){
-
         $this->expectException(\App\Validator\ValidationException::class);
         $pet= pet::factory()->make();
         $pet->nome = "";
