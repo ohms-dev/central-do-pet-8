@@ -74,8 +74,8 @@ Route::post('/atualizar/vacina', '\App\Http\Controllers\VacinaAtualizarControlle
 Route::get('/remover/vacina/{id}', '\App\Http\Controllers\VacinaRemoverController@remover')->middleware('auth');
 
 #Rotas de usuario
-Route::get('/adicionar/user', '\App\Http\Controllers\UserPrepararAdicionarController@prepararAdicionar')->middleware('auth');
-Route::post('/adicionar/user', '\App\Http\Controllers\UserAdicionarController@adicionar')->middleware('auth');
+Route::get('/adicionar/user', '\App\Http\Controllers\UserPrepararAdicionarController@prepararAdicionar')->middleware('guest');
+Route::post('/adicionar/user', '\App\Http\Controllers\UserAdicionarController@adicionar')->middleware('guest');
 Route::get('/listar/users', '\App\Http\Controllers\UserListarController@listar');
 Route::get('/editar/user/{id}', '\App\Http\Controllers\UserEditarController@editar')->middleware('auth');
 Route::post('/atualizar/user', '\App\Http\Controllers\UserAtualizarController@atualizar')->middleware('auth');
