@@ -4,6 +4,7 @@
     <title>Hello</title>
     <head>
 <body>
+    @if (App\Models\User::all()->isEmpty())
 <h1>Registrar usuario</h1>
 <form action="/adicionar/user" method="post">
     {{ csrf_field() }}
@@ -73,5 +74,6 @@
         </span>
     @enderror
 </form>
+@endif
 </body>
 </html>
