@@ -23,7 +23,7 @@
     Email: <input type="text" name="email">
     <br>
     Função: <select name="funcao">
-        <option value="Administrador">Médico Veterinário</option>
+        <option value="Administrador">Administrador</option>
     </select>
     <br>
     Endereco: <input type="text" name="endereco" />
