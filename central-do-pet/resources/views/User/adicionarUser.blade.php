@@ -33,6 +33,8 @@
     <br>
     Senha: <input type="password" name="password" />
     <br>
+    Confirme a senha: <input type="password" name="password_confirmation">
+    <br>
     <input type="submit" value="cadastrar" />
     @error('name')
     <span class="invalid-feedback" role="alert">

@@ -6,7 +6,7 @@
 <body>
     @if (App\Models\User::all()->isEmpty())
 <h1>Registrar usuario</h1>
-<form action="/adicionar/user" method="post">
+<form action="{{route('register')}}" method="post">
     {{ csrf_field() }}
     Nome: <input type="text" name="name" />
     <br>
@@ -31,6 +31,8 @@
     Data de nascimento: <input type="date" name="data_de_nascimento" />
     <br>
     Senha: <input type="password" name="password" />
+    <br>
+    Confirme a senha: <input type="password" name="password_confirmation">
     <br>
     <input type="submit" value="cadastrar" />
     @error('name')
