@@ -8,19 +8,14 @@ use Tests\TestCase;
 class ExampleTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * A basic test example.
      *
-     * @return array
+     * @return void
      */
-    public function inicializarArrayUsers() {
-        $user = user::factory()
-            ->make();
-        $dados = $user->toArray();
-        return $dados;
-    }
-    public function testCadastroUserPositivo(){
-        $response = $this
-            ->get('adicionar/user')
-            ->assertStatus(302);
+    public function testBasicTest()
+    {
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
     }
 }

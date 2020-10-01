@@ -11,12 +11,17 @@ class UserTest extends TestCase
     /**
      * A basic feature test example.
      *
-     * @return void
+     * @return array
      */
-    public function testExample()
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+    public function inicializarArrayUsers() {
+        $user = user::factory()
+            ->make();
+        $dados = $user->toArray();
+        return $dados;
+    }
+    public function testUserNaoLogado(){
+        $response = $this
+            ->get('cadastrar/user')
+            ->assertStatus(404);
     }
 }
