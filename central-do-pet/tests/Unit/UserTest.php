@@ -37,5 +37,10 @@ class UserTest extends TestCase
         $this->assertTrue(True);
     }
 
-
+    public function testUserSemPassword(){
+        $this->expectException(\App\Validator\ValidationException::class);
+        $user = User::factory()->make();
+        $user->password = "";
+        UserValidator::validate($user->toArray());
+    }
 }
