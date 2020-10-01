@@ -36,4 +36,11 @@ class DonoTest extends TestCase
         $this->assertDatabaseHas('donos', $dono->toArray());
     }
 
+    public function testDonoSemNome(){
+        $this->expectException(\App\Validator\ValidationException::class);
+        $dono= dono::factory()->make();
+        $dono->nome = "";
+        (new donoValidator)->validate($dono->toArray());
+    }
+
 }
