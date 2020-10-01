@@ -4,6 +4,7 @@
     <title>Hello</title>
   </head>
   <body>
+  <h1>Listar Pets</h1>
     <table border='1'>
       @foreach ($pets as $pet)
         <tr>

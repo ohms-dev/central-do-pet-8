@@ -6,18 +6,18 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class ListarUsersTest extends DuskTestCase
+class ListarPetsTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function testListarUsers()
+    public function testListarPets()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/listar/users')
-                ->assertSee('Usuários');
+            $browser->visit('/listar/pets')
+                ->assertSee('Pets');
         });
     }
 }
