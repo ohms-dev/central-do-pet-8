@@ -4,6 +4,7 @@
     <title>Hello</title>
 </head>
 <body>
+<h1>Usuários</h1>
 <table border='1'>
     @foreach ($users as $user)
         <tr>
