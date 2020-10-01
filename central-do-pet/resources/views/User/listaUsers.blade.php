@@ -9,6 +9,7 @@
         <tr>
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
+            <td>{{ $user->funcao}}</td>
             <td><a href='/editar/user/{{ $user->id }}'>Editar</a>
                 <a href='/remover/user/{{ $user->id }}'>Remover</a></td>
         </tr>

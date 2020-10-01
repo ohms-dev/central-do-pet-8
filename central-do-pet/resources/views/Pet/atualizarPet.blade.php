@@ -10,9 +10,15 @@
       <input type="hidden" name="id" value="{{$pet->id}}">
       Nome: <input type="text" name="nome" />
       <br>
-      Sexo: <input type="text" name="sexo" />
+      Sexo: <select name="sexo">
+            <option value="Macho">Macho</option>
+            <option value="Femea">Femea</option>
+        </select>
       <br>
-      Castrado: <input type="checkbox" name="castrado" />
+      Castrado: <select name="castrado">
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+        </select>
       <br>
       Necessidades Especiais: <input type="text" name="necessidades_especiais" />
       <br>

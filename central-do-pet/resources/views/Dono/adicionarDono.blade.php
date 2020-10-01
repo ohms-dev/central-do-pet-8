@@ -13,7 +13,13 @@
       <br>
       Pet id: <input type="text" name="pet_id" />
       <br>
-      Sexo: <input type="text" name="sexo" />
+      Sexo: <select name="sexo">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Não binário">Não binário</option>
+            <option value="Outro">Outro</option>
+            <option value="Não informar">Não informar</option>
+        </select>
       <br>
       Contato: <input type="text" name="contato" />
       <br>
