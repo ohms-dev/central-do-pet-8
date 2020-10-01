@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -13,6 +14,8 @@ class UserTest extends TestCase
      *
      * @return array
      */
+
+
     public function inicializarArrayUsers() {
         $user = user::factory()
             ->make();
@@ -24,4 +27,5 @@ class UserTest extends TestCase
             ->get('cadastrar/user')
             ->assertStatus(404);
     }
+
 }
