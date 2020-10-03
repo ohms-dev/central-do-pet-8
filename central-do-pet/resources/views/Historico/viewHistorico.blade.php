@@ -22,6 +22,8 @@
         @endforeach
     </tr>
 </table>
+@auth
 <a href='/adicionar/vacina'>Adicionar vacina</a>
+@endauth
 </body>
 </html>

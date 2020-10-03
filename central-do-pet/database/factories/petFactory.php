@@ -33,6 +33,7 @@ class petFactory extends Factory
             'necessidades_especiais'=>$this->faker->word,
             'data_de_nascimento'=>$this->faker->date(),
             'dono_id'=>null,
+            'adotado'=>$this->faker->boolean,
         ];
     }
 }

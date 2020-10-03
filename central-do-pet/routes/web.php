@@ -32,7 +32,7 @@ Route::get('/editar/pet/{id}','App\Http\Controllers\PetEditarController@editar')
 Route::get('/remover/pet/{id}','App\Http\Controllers\PetRemoverController@remover')->middleware('auth');
 Route::post('/atualizar/pet','App\Http\Controllers\PetAtualizarController@atualizar')->middleware('auth');
 Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicionar')->middleware('auth');
-Route::get('/view/pet/{id}','App\Http\Controllers\PetViewController@view')->middleware('auth');
+Route::get('/view/pet/{id}','App\Http\Controllers\PetViewController@view');
 
 #Rotas de raca
 Route::get('/adicionar/raca', '\App\Http\Controllers\RacaPrepararAdicionarController@prepararAdicionar')->middleware('auth');
@@ -57,7 +57,7 @@ Route::get('/listar/historicos', '\App\Http\Controllers\HistoricoListarControlle
 Route::get('/editar/historico/{id}', '\App\Http\Controllers\HistoricoEditarController@editar')->middleware('auth');
 Route::post('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarController@atualizar')->middleware('auth');
 Route::get('/remover/historico/{id}', '\App\Http\Controllers\HistoricoRemoverController@remover')->middleware('auth');
-Route::get('view/historico/{id}','\App\Http\Controllers\HistoricoViewController@view')->middleware('auth');
+Route::get('view/historico/{id}','\App\Http\Controllers\HistoricoViewController@view');
 
 #Rotas de vacina
 Route::get('/adicionar/vacina', '\App\Http\Controllers\VacinaPrepararAdicionarController@prepararAdicionar')->middleware('auth');
@@ -78,4 +78,3 @@ Route::get('/remover/user/{id}', '\App\Http\Controllers\UserRemoverController@re
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-

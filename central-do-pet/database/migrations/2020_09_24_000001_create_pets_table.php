@@ -23,8 +23,9 @@ class CreatePetsTable extends Migration
 	    $table->char('castrado',10);
 	    $table->char('necessidades_especiais',255);
 	    $table->date('data_de_nascimento');
-	    $table->integer('dono_id');
+	    $table->integer('dono_id')->nullable(true);
 	    $table->foreign('dono_id')->references('id')->on('users')->onDelete('cascade');
+      $table->char('adotado',10);
         });
     }
 
