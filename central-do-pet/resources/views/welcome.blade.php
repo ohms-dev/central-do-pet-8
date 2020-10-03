@@ -20,10 +20,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+            <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Adotar</a>
+            <a class="nav-link" href="/listar/pets">Adotar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Consultar</a>
@@ -39,7 +39,8 @@
           </li>
         </ul>
       </div>
-
+      </nav>
+<!-- Slider -->
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -56,7 +57,7 @@
           </li>
         </ul>
     </div>
-</nav>
+
 
 </head>
 
