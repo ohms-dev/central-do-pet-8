@@ -11,8 +11,12 @@
           <td>{{ $pet->id }}</td>
           <td>{{ $pet->rga }}</td>
           <td>{{ $pet->nome }}</td>
-          <td><a href='/editar/pet/{{ $pet->id }}'>Editar</a>
-              <a href='/remover/pet/{{ $pet->id }}'>Remover</a></td>
+          @if($auth ?? '')
+            <td>
+                <a href='/editar/pet/{{ $pet->id }}'>Editar</a>
+                <a href='/remover/pet/{{ $pet->id }}'>Remover</a>
+            </td>
+          @endif
         </tr>
       @endforeach
     </table>
