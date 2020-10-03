@@ -13,6 +13,15 @@
             <td>{{ $pet->sexo }}</td>
             <td>{{ $pet->castrado }}</td>
             <td>{{ $pet->data_de_nascimento }}</td>
+            @if($pet->dono_id == null)
+                <td> {{ 'Sem dono' }} </td>
+
+            @endif
+            @if($pet->dono_id != null)
+                <td> {{ $pet->dono_id  }} </td>
+
+            @endif
+
             <td>@if($historico != null)
                 <a href='/view/historico/{{$historico->id}}'>Histórico</a>
             @endif
