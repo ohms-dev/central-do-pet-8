@@ -19,8 +19,8 @@ class PetAdicionarController extends Controller
 
     public function adicionar(Request $request){
         try {
-            \App\Validator\petValidator::validate($request->all());
-            \App\Models\pet::create($request->all());
+            \App\Validator\petValidator::validate(array_merge($request->all(), ['rga' => $this->gerarPetRga()]));
+            \App\Models\pet::create(array_merge($request->all(), ['rga' => $this->gerarPetRga()]));
             return redirect('listar/pets');
         } catch (\App\Validator\ValidationException $exception){
             return redirect('adicionar/pet')
