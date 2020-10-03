@@ -13,7 +13,10 @@ class PetTest extends TestCase
      *
      * @return void
      */
-
+    public function testarPet(){
+        $pets = \App\Http\Controllers\PetAdicionarController::gerarPetId();
+        print($pets);
+    }
     public function testPetSemNome(){
         $this->expectException(\App\Validator\ValidationException::class);
         $pet= pet::factory()->make();

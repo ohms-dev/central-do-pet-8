@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PetAdicionarController extends Controller
 {
+    public static function gerarPetId(){
+        $pets = (new \App\Models\pet)->getArrayPets();
+    }
+
     public function adicionar(Request $request){
         try {
             \App\Validator\petValidator::validate($request->all());
@@ -16,13 +21,5 @@ class PetAdicionarController extends Controller
                 ->withErrors($exception->getValidator())
                 ->withInput();
         }
-        $pet = new \App\Models\pet();
-        $pet->nome = $request->nome;
-        $pet->sexo = $request->sexo;
-        $pet->castrado = $request->castrado;
-        $pet->necessidades_especiais = $request->necessidades_especiais;
-        $pet->data_de_nascimento = $request->data_de_nascimento;
-        $pet->save();
-        return redirect("listar/pets");
     }
 }
