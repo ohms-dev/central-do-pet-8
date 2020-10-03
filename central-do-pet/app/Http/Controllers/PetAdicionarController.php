@@ -7,8 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class PetAdicionarController extends Controller
 {
-    public static function gerarPetId(){
-        $pets = (new \App\Models\pet)->getArrayPets();
+    public static function gerarPetRga(){
+        $comRgaRange = 1000;
+        $fimRgaRange = 9999;
+        $pets = (new \App\Models\pet)->getSortedArrayPets();
+        $rga = random_int($comRgaRange,$fimRgaRange);
+        while($pets->contains($rga))
+            $rga = random_int($comRgaRange,$fimRgaRange);
+        return $rga;
     }
 
     public function adicionar(Request $request){
