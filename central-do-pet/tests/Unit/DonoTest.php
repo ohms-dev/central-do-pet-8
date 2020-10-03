@@ -23,8 +23,6 @@ class DonoTest extends TestCase
 
     public function testDonoSaveInDatabase(){
         $dono = dono::factory()->make();
-        foreach ($dono->toArray() as $i)
-            print($i.' ');
         (new donoValidator)->validate($dono->toArray());
         dono::factory()->create($dono->toArray());
         $this->assertDatabaseHas('donos', $dono->toArray());

@@ -4,8 +4,8 @@
     <title>Hello</title>
     <head>
 <body>
-    @if (App\Models\User::all()->isEmpty())
 <h1>Registrar usuario</h1>
+    @if (App\Models\User::all()->isEmpty())
 <form action="{{route('register')}}" method="post">
     {{ csrf_field() }}
     Nome: <input type="text" name="name" />

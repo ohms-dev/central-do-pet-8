@@ -19,7 +19,6 @@ class DoencaTest extends TestCase
         $this->expectException(\App\Validator\ValidationException::class);
         $doenca = doenca::factory()->make();
         $doenca->doenca = "";
-
         (new \App\Validator\doencaValidator)->validate($doenca->toArray());
     }
 
