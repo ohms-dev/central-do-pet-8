@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
@@ -24,8 +24,9 @@ class UserFactory extends Factory
 
 
     public function definition(){
-        $gender = $this->faker->randomElement(['masculino', 'feminino', "nao binario"]);
-        $funcao = $this->faker->randomElement(['Médico Veterinário', 'Funcionário', 'ONG','Dono']);
+
+        $gender = $this->faker->randomElement(['Masculino', 'Feminino', "Não Binário", "Outro", "Não informar"]);
+        $funcao = $this->faker->randomElement(['Médico veterinário', 'Funcionário', 'ONG']);
 
         return [
             'name' => $this->faker->name,
@@ -37,6 +38,22 @@ class UserFactory extends Factory
             'endereco' => $this->faker->address,
             'contato' => Str::random(11),
             'funcao' => $funcao,
+            'data_de_nascimento' => $this->faker->date(),
+        ];
+    }
+
+    public function createAdmin(){
+
+        return [
+            'name' => 'Administrador',
+            'email' => 'emailteste@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('123456'), // password, // password
+            'remember_token' => Str::random(10),
+            'sexo'=> 'Outro',
+            'endereco' => $this->faker->address,
+            'contato' => '12345678910',
+            'funcao' => 'Administrador',
             'data_de_nascimento' => $this->faker->date(),
         ];
     }

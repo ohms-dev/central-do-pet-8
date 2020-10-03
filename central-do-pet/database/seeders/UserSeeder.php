@@ -12,6 +12,9 @@ class UserSeeder extends Seeder
 
     public function run()
     {
+
+        $dados = \App\Models\User::factory()->createAdmin();
+        \App\Models\User::create($dados);
         \App\Models\User::factory()->count(5)->create();
     }
 }
