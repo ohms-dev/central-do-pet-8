@@ -19,7 +19,6 @@ class UserTest extends TestCase
         $this->expectException(\App\Validator\ValidationException::class);
         $user = User::factory()->make();
         $user->name = "";
-
         UserValidator::validate($user->toArray());
     }
 
