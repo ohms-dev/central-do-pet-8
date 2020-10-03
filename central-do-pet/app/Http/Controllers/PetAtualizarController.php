@@ -13,6 +13,7 @@ class PetAtualizarController extends Controller
         $pet->castrado = $request->castrado;
         $pet->necessidades_especiais = $request->necessidades_especiais;
         $pet->data_de_nascimento = $request->data_de_nascimento;
+        $pet->dono_id = $request->dono_id;
         $pet->update();
         return redirect("listar/pets");
     }}
