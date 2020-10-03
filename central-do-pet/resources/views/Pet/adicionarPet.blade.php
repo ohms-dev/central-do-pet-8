@@ -22,6 +22,8 @@
       Necessidades Especiais: <input type="text" name="necessidades_especiais" />
       <br>
       Data de nascimento: <input type="date" name="data_de_nascimento" />
+        <br>
+        Dono id: <input type="text" name="dono_id" />
         @error('nome')
         <span class="invalid-feedback" role="alert">
             <script type='text/javascript'>alert('{{ $message }}');</script>

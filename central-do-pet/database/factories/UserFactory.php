@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
@@ -23,9 +24,8 @@ class UserFactory extends Factory
 
 
     public function definition(){
-
         $gender = $this->faker->randomElement(['masculino', 'feminino', "nao binario"]);
-        $funcao = $this->faker->randomElement(['medico vetinário', 'funcionário', 'ong']);
+        $funcao = $this->faker->randomElement(['Médico Veterinário', 'Funcionário', 'ONG','Dono']);
 
         return [
             'name' => $this->faker->name,

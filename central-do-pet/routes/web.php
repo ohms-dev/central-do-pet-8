@@ -33,14 +33,6 @@ Route::get('/remover/pet/{id}','App\Http\Controllers\PetRemoverController@remove
 Route::post('/atualizar/pet','App\Http\Controllers\PetAtualizarController@atualizar')->middleware('auth');
 Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicionar')->middleware('auth');
 
-#Rotas de dono
-Route::get('/adicionar/dono', '\App\Http\Controllers\DonoPrepararAdicionarController@prepararAdicionar')->middleware('auth');
-Route::post('/adicionar/dono', '\App\Http\Controllers\DonoAdicionarController@adicionar')->middleware('auth');
-Route::get('/listar/donos', '\App\Http\Controllers\DonoListarController@listar')->middleware('auth');
-Route::get('/editar/dono/{id}', '\App\Http\Controllers\DonoEditarController@editar')->middleware('auth');
-Route::post('/atualizar/dono', '\App\Http\Controllers\DonoAtualizarController@atualizar')->middleware('auth');
-Route::get('/remover/dono/{id}', '\App\Http\Controllers\DonoRemoverController@remover')->middleware('auth');
-
 #Rotas de raca
 Route::get('/adicionar/raca', '\App\Http\Controllers\RacaPrepararAdicionarController@prepararAdicionar')->middleware('auth');
 Route::post('/adicionar/raca', '\App\Http\Controllers\RacaAdicionarController@adicionar')->middleware('auth');

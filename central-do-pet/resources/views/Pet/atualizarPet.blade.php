@@ -23,6 +23,8 @@
       Necessidades Especiais: <input type="text" name="necessidades_especiais" />
       <br>
       Data de nascimento: <input type="date" name="data_de_nascimento" />
+        <br>
+        Dono id: <input type="text" name="dono_id" />
       <br>
       <input type="submit" value="atualizar" />
     </form>
