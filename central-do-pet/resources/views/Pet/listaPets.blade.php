@@ -8,7 +8,7 @@
     <table border='1'>
       @foreach ($pets as $pet)
         <tr>
-          <td>{{ $pet->id }}</td>
+          <td><a href=' /view/pet/{{$pet->id}}'>{{$pet->id}}</a></td>
           <td>{{ $pet->rga }}</td>
           <td>{{ $pet->nome }}</td>
           @if($auth ?? '')
