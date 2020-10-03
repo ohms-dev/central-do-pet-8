@@ -32,6 +32,7 @@ Route::get('/editar/pet/{id}','App\Http\Controllers\PetEditarController@editar')
 Route::get('/remover/pet/{id}','App\Http\Controllers\PetRemoverController@remover')->middleware('auth');
 Route::post('/atualizar/pet','App\Http\Controllers\PetAtualizarController@atualizar')->middleware('auth');
 Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicionar')->middleware('auth');
+Route::get('/view/pet/{id}','App\Http\Controllers\PetViewController@view')->middleware('auth');
 
 #Rotas de dono
 Route::get('/adicionar/dono', '\App\Http\Controllers\DonoPrepararAdicionarController@prepararAdicionar')->middleware('auth');
@@ -64,6 +65,7 @@ Route::get('/listar/historicos', '\App\Http\Controllers\HistoricoListarControlle
 Route::get('/editar/historico/{id}', '\App\Http\Controllers\HistoricoEditarController@editar')->middleware('auth');
 Route::post('/atualizar/historico', '\App\Http\Controllers\HistoricoAtualizarController@atualizar')->middleware('auth');
 Route::get('/remover/historico/{id}', '\App\Http\Controllers\HistoricoRemoverController@remover')->middleware('auth');
+Route::get('view/historico/{id}','\App\Http\Controllers\HistoricoViewController@view')->middleware('auth');
 
 #Rotas de vacina
 Route::get('/adicionar/vacina', '\App\Http\Controllers\VacinaPrepararAdicionarController@prepararAdicionar')->middleware('auth');

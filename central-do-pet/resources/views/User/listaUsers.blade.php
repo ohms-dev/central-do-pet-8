@@ -11,8 +11,10 @@
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->funcao}}</td>
+            @if($auth ?? '')
             <td><a href='/editar/user/{{ $user->id }}'>Editar</a>
                 <a href='/remover/user/{{ $user->id }}'>Remover</a></td>
+            @endif
         </tr>
     @endforeach
 </table>
