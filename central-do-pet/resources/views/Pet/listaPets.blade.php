@@ -50,7 +50,7 @@
 <div class='jumbotron'>
 <h1>Lista de Pets </h1>
 <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
-<button type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</button>
+<a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
       <div class="container">
         <div class="row">
       @foreach ($pets as $pet)
