@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class petFactory extends Factory
@@ -25,6 +26,7 @@ class petFactory extends Factory
     {
 
         $gender = $this->faker->randomElement(["macho","femea"]);
+        $user = DB::table('users')->first();
         return [
             'rga'=>\App\Http\Controllers\PetAdicionarController::gerarPetRga(),
             'nome'=>$this->faker->firstName,
@@ -34,6 +36,7 @@ class petFactory extends Factory
             'data_de_nascimento'=>$this->faker->date(),
             'dono_id'=>null,
             'adotado'=>$this->faker->boolean,
+            'registro'=>$user->id,
         ];
     }
 }

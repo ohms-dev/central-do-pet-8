@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PetViewController extends Controller
@@ -14,6 +15,7 @@ class PetViewController extends Controller
         foreach($historicos as $temp)
             if($temp->pet_id == $pet->id)
                 $historico = $temp;
-        return view('Pet/viewPet',['pet' => $pet,'historico' => $historico]);
+        $users = \App\Models\User::all();
+        return view('Pet/viewPet',['pet' => $pet,'historico' => $historico,'users'=>$users]);
     }
 }

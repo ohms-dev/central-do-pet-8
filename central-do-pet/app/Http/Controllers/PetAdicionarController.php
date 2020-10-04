@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PetAdicionarController extends Controller
@@ -20,7 +21,7 @@ class PetAdicionarController extends Controller
     public function adicionar(Request $request){
         try {
             \App\Validator\petValidator::validate(array_merge($request->all(), ['rga' => $this->gerarPetRga()]));
-            \App\Models\pet::create(array_merge($request->all(), ['rga' => $this->gerarPetRga()]));
+            \App\Models\pet::create(array_merge($request->all(), ['rga' => $this->gerarPetRga(), 'registro'=>Auth::user()->id]));
             return redirect('listar/pets');
         } catch (\App\Validator\ValidationException $exception){
             return redirect('adicionar/pet')
