@@ -25,7 +25,7 @@
         <option value="Médico Veterinário">Médico Veterinário</option>
         <option value="Funcionário">Funcionário</option>
         <option value="ONG">ONG</option>
-        <option value="Dono">Dono</option>
+        <option value="Tutor">Tutor</option>
     </select>
     <br>
     Endereco: <input type="text" name="endereco" />

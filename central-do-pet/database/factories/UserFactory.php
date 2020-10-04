@@ -26,7 +26,7 @@ class UserFactory extends Factory
     public function definition(){
 
         $gender = $this->faker->randomElement(['Masculino', 'Feminino', "Não Binário", "Outro", "Não informar"]);
-        $funcao = $this->faker->randomElement(['Médico veterinário', 'Funcionário', 'ONG']);
+        $funcao = $this->faker->randomElement(['Médico veterinário', 'Funcionário', 'ONG', 'Tutor']);
 
         return [
             'name' => $this->faker->name,
