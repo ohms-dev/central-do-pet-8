@@ -75,6 +75,10 @@ Route::get('/editar/user/{id}', '\App\Http\Controllers\UserEditarController@edit
 Route::post('/atualizar/user', '\App\Http\Controllers\UserAtualizarController@atualizar')->middleware('auth');
 Route::get('/remover/user/{id}', '\App\Http\Controllers\UserRemoverController@remover')->middleware('auth');
 
+Route::get('/paineladm', function () {
+    return view('painelAdministrador');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
