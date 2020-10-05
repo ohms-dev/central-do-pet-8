@@ -56,6 +56,7 @@
           <td class="bg-danger text-white">Cadastrado</td>
           <td class="bg-danger text-white">Data de nascimento</td>
           <td class="bg-danger text-white">ID do Dono</td>
+          <td class="bg-danger text-white">Contato para adoção</td>
         </tr>
         <tr>
             <td>{{ $pet->id }}</td>
@@ -71,13 +72,17 @@
             @if($pet->dono_id != null)
                 <td> {{ $pet->dono_id  }} </td>
             @endif
+
             @foreach($users as $user)
                 @if($user->id == $pet->registro)
-                    <td>{{$user->contato}}</td>
+                    <td><img src="https://img.icons8.com/fluent-systems-regular/24/000000/call-female.png"/>{{$user->contato}}</td>
                 @endif
             @endforeach
+
         </tr>
 </table>
+
+
 @if($historico != null)
     <a type="button" class="btn btn-primary" href="/view/historico/{{$historico->id}}">Histórico</a>
 @endif
