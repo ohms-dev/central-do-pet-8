@@ -105,7 +105,7 @@
     <input type="password" class="form-control" id="password_confirmation" />
     </div>
 
-    <input type="submit" class="btn btn-primary" value="cadastrar" />
+    <input type="submit" class="btn btn-primary" value="Cadastrar" />
     @error('name')
     <span class="invalid-feedback" role="alert">
             <script type='text/javascript'>alert('{{ $message }}');</script>
