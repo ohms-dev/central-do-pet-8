@@ -1,20 +1,69 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-  <head>
-    <title></title>
-  </head>
-  <body>
-    <table border='1'>
+<head>
+  <title>{{ config('app.name', 'Laravel') }}</title>
+
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
+
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #E14B56;">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listar/pets">Adotar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Consultar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Equipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ajuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+</head>
+
+<body>
+  <div class='jumbotron'>
+
+  <h1>Lista de doenças <img src="https://img.icons8.com/ios-glyphs/30/000000/virus.png"/></h1>
+  <p class="lead">Lista de todos as doenças cadastradas no sistema</p>
+
+  </div>
+<div class='container'>
+
+  <table  class="table table-sm">
+      <tr>
+        <td class="bg-danger text-white">ID</td>
+        <td class="bg-danger text-white">Nome</td>
+        <td class="bg-danger text-white">Data</td>
+        <td class="bg-danger text-white">Ações</td>
+      </tr>
       @foreach ($doencas as $doenca)
         <tr>
           <td>{{ $doenca->id }}</td>
           <td>{{ $doenca->doenca }}</td>
           <td>{{ $doenca->data }}</td>
-          <td><a href='/editar/doencas/{{ $doenca->id }}'>Editar</a> -
-              <a href='/remover/doencas/{{ $doenca->id }}'>Remover</a></td>
+          <td><a type="button" class="btn btn-primary" href='/editar/doencas/{{ $doenca->id }}'>Editar</a>
+              <a type="button" class="btn btn-primary" href='/remover/doencas/{{ $doenca->id }}'>Remover</a></td>
         </tr>
       @endforeach
     </table>
-    <a href="/adicionar/doencas">Inserir Nova</a>
+    <a type="button" class="btn btn-primary" href="/adicionar/doencas">Inserir doença</a>
   </body>
 </html>
