@@ -47,7 +47,7 @@
   </div>
 
 <div class='container'>
-    <form action="/atualizar/pet" method="post">
+    <form action="/atualizar/pet" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
 
         <div class="form-group">
@@ -92,6 +92,15 @@
       <label for="dono_id">ID do Dono:</label>
       <input type="text" class="form-control" name="dono_id" />
       </div>
+
+        <div class="input-group">
+            <div class="custom-file">
+                <input type="file" name="foto" class="custom-file-input">
+                <label class="custom-file-label">Escolha uma foto</label>
+            </div>
+        </div>
+
+        <br>
 
       <input type="submit" class="btn btn-primary" value="Atualizar" />
     </form>

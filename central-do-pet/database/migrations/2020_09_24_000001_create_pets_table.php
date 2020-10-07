@@ -27,6 +27,7 @@ class CreatePetsTable extends Migration
 	    $table->foreign('dono_id')->references('id')->on('users')->onDelete('cascade');
         $table->char('adotado',10)->nullable(true);
         $table->integer('registro');
+        $table->string('image');
         });
     }
 

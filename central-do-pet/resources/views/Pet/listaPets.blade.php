@@ -55,7 +55,7 @@
         <div class="row">
       @foreach ($pets as $pet)
           <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="https://i.ibb.co/zXKX7QW/dog.png" alt="Card image cap">
+            <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{ $pet->nome }}</h5>
               <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
@@ -86,7 +86,7 @@
   @foreach ($pets as $pet)
     @if ($pet->adotado==0)
       <div class="card" style="width: 20rem;">
-        <img class="card-img-top" src="https://i.ibb.co/zXKX7QW/dog.png" alt="Card image cap">
+        <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ $pet->nome }}</h5>
           <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
