@@ -47,6 +47,11 @@
 
   </div>
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
 <form action="/atualizar/user" method="post">
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{$user->id}}">

@@ -40,6 +40,11 @@
 </head>
 
 <body>
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("ONG"))
+        <script type="text/javascript">
+         window.location = "/paineladm";
+        </script>
+    @endif
   <div class='jumbotron'>
 
   <h1>Cadastrar pet <img src="https://img.icons8.com/ios-glyphs/30/000000/hachiko.png"/></h1>

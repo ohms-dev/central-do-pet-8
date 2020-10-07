@@ -47,6 +47,11 @@
   </div>
 
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("ONG"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
     <form action="/atualizar/pet" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
 

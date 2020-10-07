@@ -47,6 +47,11 @@
 
   </div>
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
     <form action="/atualizar/historico" method="post">
           <div class="form-group">
           <label for="pet_id">ID do Pet:</label>

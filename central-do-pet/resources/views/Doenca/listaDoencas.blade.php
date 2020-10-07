@@ -46,7 +46,11 @@
 
   </div>
 <div class='container'>
-
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
   <table  class="table table-sm">
       <tr>
         <td class="bg-danger text-white">ID</td>
