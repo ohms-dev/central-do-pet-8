@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -25,7 +26,7 @@
           <a class="nav-link" href="#">Consultar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Equipe</a>
+          <a class="nav-link" href="listar/funcionarios">Equipe</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ajuda</a>
@@ -58,11 +59,46 @@
         <td>{{ $historico->alergias }}</td>
     </tr>
     <tr>
+        <td class="bg-danger text-white">Id da vacina</td>
+        <td class="bg-danger text-white">Nome da vacina</td>
+        <td class="bg-danger text-white">Data da vacina</td>
+    </tr>
+    <tr>
         @foreach($vacinas as $vacina)
             @if($vacina->historico_id == $historico->id)
                 <tr>
                     <td>{{$vacina->id}}</td>
                     <td>{{$vacina->vacina}}</td>
+                    <td>{{$vacina->data}}</td>
+                </tr>
+            @endif
+        @endforeach
+    </tr>
+    <tr>
+        <td class="bg-danger text-white">Id da doença</td>
+        <td class="bg-danger text-white">Nome da doença</td>
+        <td class="bg-danger text-white">Data da doença</td>
+    </tr>
+    <tr>
+        @foreach($doencas as $doenca)
+            @if($doenca->historico_id == $historico->id)
+                <tr>
+                    <td>{{$doenca->id}}</td>
+                    <td>{{$doenca->doenca}}</td>
+                    <td>{{$doenca->data}}</td>
+                </tr>
+            @endif
+        @endforeach
+    </tr>
+    <tr>
+        <td class="bg-danger text-white">Id da transfusão</td>
+        <td class="bg-danger text-white">Data da transfusão</td>
+    </tr>
+    <tr>
+        @foreach($transfusaos as $transfusao)
+            @if($transfusao->historico_id == $historico->id)
+                <tr>
+                    <td>{{$transfusao->data}}</td>
                 </tr>
             @endif
         @endforeach
@@ -70,6 +106,8 @@
 </table>
 @auth
 <a type="button" class="btn btn-primary" href='/adicionar/vacina'>Adicionar vacina</a>
+<a type="button" class="btn btn-primary" href='/adicionar/doencas'>Adicionar doença</a>
+<a type="button" class="btn btn-primary" href='/adicionar/transfusao'>Adicionar transfusão</a>
 @endauth
 </div>
 </body>

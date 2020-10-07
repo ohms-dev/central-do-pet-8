@@ -29,7 +29,7 @@
             <a class="nav-link" href="#">Consultar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Equipe</a>
+            <a class="nav-link" href="listar/funcionarios">Equipe</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Ajuda</a>
