@@ -70,7 +70,7 @@ Route::get('/remover/vacina/{id}', '\App\Http\Controllers\VacinaRemoverControlle
 #Rotas de usuario
 Route::get('/adicionar/user', '\App\Http\Controllers\UserPrepararAdicionarController@prepararAdicionar')->middleware('auth');
 Route::post('/adicionar/user', '\App\Http\Controllers\UserAdicionarController@adicionar')->middleware('auth');
-Route::get('/listar/users', '\App\Http\Controllers\UserListarController@listar');
+Route::get('/listar/users', '\App\Http\Controllers\UserListarController@listar')->middleware('auth');
 Route::get('/editar/user/{id}', '\App\Http\Controllers\UserEditarController@editar')->middleware('auth');
 Route::post('/atualizar/user', '\App\Http\Controllers\UserAtualizarController@atualizar')->middleware('auth');
 Route::get('/remover/user/{id}', '\App\Http\Controllers\UserRemoverController@remover')->middleware('auth');

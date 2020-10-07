@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -50,18 +51,18 @@
       {{ csrf_field() }}
 
       <div class="form-group">
-      <label for"doenca">Nome da doença:</label>
-      <input type="text" class="form-control" id="doenca" />
+      <label for="doenca">Nome da doença:</label>
+      <input type="text" class="form-control" name="doenca" />
       </div>
 
       <div class="form-group">
-      <label for"historico_id">ID do Histórico:</label>
-      <input type="text" class="form-control" id="historico_id" />
+      <label for="historico_id">ID do Histórico:</label>
+      <input type="text" class="form-control" name="historico_id" />
       </div>
 
       <div class="form-group">
       <label for="data">Data:</label>
-      <input type="date" class="form-control" id="data" />
+      <input type="date" class="form-control" name="data" />
       </div>
 
       <input type="submit" class="btn btn-primary" value="Cadastrar" />
@@ -75,5 +76,6 @@
           </div>
       @endif
     </form>
+    </div>
   </body>
 </html>
