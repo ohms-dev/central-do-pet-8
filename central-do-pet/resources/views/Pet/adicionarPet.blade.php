@@ -26,7 +26,7 @@
           <a class="nav-link" href="#">Consultar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Equipe</a>
+          <a class="nav-link" href="listar/funcionarios">Equipe</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ajuda</a>
@@ -52,7 +52,7 @@
       {{ csrf_field() }}
 
       <div class="form-group">
-      <label for="contato">Nome:</label>
+      <label for="nome">Nome:</label>
       <input type="text" class="form-control" name="nome" />
       </div>
 
@@ -61,19 +61,19 @@
       <select class="form-control" name="sexo">
                 <option value="Macho">Macho</option>
                 <option value="Femea">Femea</option>
-            </select>
+      </select>
       </div>
 
       <div class="form-group">
-      <label for="sexo">Castrado:</label>
-      <select class="form-control" name="sexo">
+      <label for="castrado">Castrado:</label>
+      <select class="form-control" name="castrado">
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
-            </select>
+      </select>
       </div>
 
       <div class="form-group">
-      <label for="contato">Necessidades Especiais:</label>
+      <label for="necessidades_especiais">Necessidades Especiais:</label>
       <input type="text" class="form-control" name="necessidades_especiais" />
       </div>
 
@@ -83,8 +83,15 @@
       </div>
 
       <div class="form-group">
-      <label for="contato">ID do Dono:</label>
+      <label for="dono_id">ID do Dono:</label>
       <input type="text" class="form-control" name="dono_id" />
+      </div>
+
+      <div class="form-group">
+        <label for="registro">Registro:</label>
+            <select class="form-control" name="registro">
+                <option value="{{\Illuminate\Support\Facades\Auth::user()->id}}">{{\Illuminate\Support\Facades\Auth::user()->id}}</option>
+            </select>
       </div>
 
       <input type="submit" class="btn btn-primary" value="Cadastrar" />

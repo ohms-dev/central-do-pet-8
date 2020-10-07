@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -25,7 +26,7 @@
           <a class="nav-link" href="#">Consultar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Equipe</a>
+          <a class="nav-link" href="listar/funcionarios">Equipe</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ajuda</a>
@@ -69,5 +70,6 @@
     @endforeach
 </table>
 <a type="button" class="btn btn-primary" href="/adicionar/user">Inserir novo usuário</a>
+</div>
 </body>
 </html>
