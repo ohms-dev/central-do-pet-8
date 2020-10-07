@@ -28,7 +28,7 @@ class PetAdicionarController extends Controller
                 $file->move('fotos/pets', $filename);
 
             }else{
-                $filename = '';
+                $filename = 'vazio.png';
             }
             \App\Validator\petValidator::validate(array_merge($request->all(), ['rga' => $this->gerarPetRga(), 'image' => $filename]));
             $rga = $this->gerarPetRga();
