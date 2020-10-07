@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -46,15 +47,15 @@
 
   </div>
 <div class='container'>
-
+    <form action="/atualizar/historico" method="post">
           <div class="form-group">
-          <label for"pet_id">ID do Pet:</label>
-          <input type="text" class="form-control" id="pet_id" />
+          <label for="pet_id">ID do Pet:</label>
+          <input type="text" class="form-control" name="pet_id" />
           </div>
 
           <div class="form-group">
-          <label for"alergias">Alergias:</label>
-          <input type="text" class="form-control" id="alergias" />
+          <label for="alergias">Alergias:</label>
+          <input type="text" class="form-control" name="alergias" />
           </div>
 
 

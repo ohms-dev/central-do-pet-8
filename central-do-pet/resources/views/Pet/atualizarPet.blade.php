@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -49,39 +50,39 @@
     <form action="/atualizar/pet" method="post">
       {{csrf_field()}}
       <div class="form-group">
-      <label for"contato">Nome:</label>
-      <input type="text" class="form-control" id="nome" />
+      <label for="contato">Nome:</label>
+      <input type="text" class="form-control" name="nome" />
       </div>
 
       <div class="form-group">
-      <label for"sexo">Sexo:</label>
-      <select class="form-control" id="sexo">
+      <label for="sexo">Sexo:</label>
+      <select class="form-control" name="sexo">
                 <option value="Macho">Macho</option>
                 <option value="Femea">Femea</option>
             </select>
       </div>
 
       <div class="form-group">
-      <label for"sexo">Castrado:</label>
-      <select class="form-control" id="sexo">
+      <label for="sexo">Castrado:</label>
+      <select class="form-control" name="sexo">
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
             </select>
       </div>
 
       <div class="form-group">
-      <label for"contato">Necessidades Especiais:</label>
-      <input type="text" class="form-control" id="necessidades_especiais" />
+      <label for="contato">Necessidades Especiais:</label>
+      <input type="text" class="form-control" name="necessidades_especiais" />
       </div>
 
       <div class="form-group">
       <label for="data_de_nascimento">Data de nascimento:</label>
-      <input type="date" class="form-control" id="data_de_nascimento" />
+      <input type="date" class="form-control" name="data_de_nascimento" />
       </div>
 
       <div class="form-group">
-      <label for"contato">ID do Dono:</label>
-      <input type="text" class="form-control" id="dono_id" />
+      <label for="contato">ID do Dono:</label>
+      <input type="text" class="form-control" name="dono_id" />
       </div>
 
       <input type="submit" class="btn btn-primary" value="Atualizar" />
