@@ -21,7 +21,16 @@ class PetAdicionarController extends Controller
 
     public function adicionar(Request $request){
         try {
-            \App\Validator\petValidator::validate(array_merge($request->all(), ['rga' => $this->gerarPetRga()]));
+            if ($request->hasFile('foto')){
+                $file = $request->file('foto');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' .$extension;
+                $file->move('fotos/pets', $filename);
+
+            }else{
+                $filename = '';
+            }
+            \App\Validator\petValidator::validate(array_merge($request->all(), ['rga' => $this->gerarPetRga(), 'image' => $filename]));
             $rga = $this->gerarPetRga();
             pet::create([
                 'nome' => $request->nome,
@@ -32,6 +41,7 @@ class PetAdicionarController extends Controller
                 'dono_id' => $request->dono_id,
                 'rga' => $rga,
                 'registro'=> $request->registro,
+                'image' => $filename,
             ]);
              return redirect('listar/pets');
         } catch (\App\Validator\ValidationException $exception){

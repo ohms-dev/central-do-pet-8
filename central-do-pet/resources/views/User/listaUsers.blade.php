@@ -53,7 +53,7 @@
         <td class="bg-danger text-white">ID</td>
         <td class="bg-danger text-white">Nome</td>
         <td class="bg-danger text-white">Função</td>
-        @if(trim(Auth::user()->funcao) == trim("Administrador"))
+        @if(trim(\Illuminate\Support\Facades\Auth::user()->funcao) == trim("Administrador"))
         <td class="bg-danger text-white">Ações</td>
         @endif
       </tr>
@@ -62,7 +62,7 @@
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->funcao}}</td>
-            @if(trim(Auth::user()->funcao) == trim("Administrador"))
+            @if(trim(\Illuminate\Support\Facades\Auth::user()->funcao) == trim("Administrador"))
             <td><a type="button" class="btn btn-primary" href='/editar/user/{{ $user->id }}'>Editar</a>
                 <a type="button" class="btn btn-primary" href='/remover/user/{{ $user->id }}'>Remover</a></td>
             @endif

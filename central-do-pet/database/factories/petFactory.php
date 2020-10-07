@@ -37,6 +37,7 @@ class petFactory extends Factory
             'dono_id'=>null,
             'adotado'=>$this->faker->boolean,
             'registro'=>$user->id,
+            'image'=> '',
         ];
     }
 }
