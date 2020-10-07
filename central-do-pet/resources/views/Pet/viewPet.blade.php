@@ -47,7 +47,12 @@
 
   </div>
 <div class='container'>
+    <center>
+        <img class="rounded-circle" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Generic placeholder image" width="250" height="250" >
+    </center>
+
 <table class="table table-sm">
+
         <tr>
           <td class="bg-danger text-white">ID</td>
           <td class="bg-danger text-white">RG</td>
