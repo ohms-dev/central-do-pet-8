@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -50,17 +51,15 @@
         {{ csrf_field() }}
 
         <div class="form-group">
-        <label for"pet_id">ID do Pet:</label>
-        <input type="text" class="form-control" id="pet_id" />
+        <label for="pet_id">ID do Pet:</label>
+        <input type="text" class="form-control" name="pet_id" />
         </div>
 
         <div class="form-group">
-        <label for"alergias">Alergias:</label>
-        <input type="text" class="form-control" id="alergias" />
+        <label for="alergias">Alergias:</label>
+        <input type="text" class="form-control" name="alergias" />
         </div>
 
-
-        <input type="submit" class="btn btn-primary" value="Cadastrar" />
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -70,6 +69,7 @@
                 </ul>
             </div>
         @endif
+        <input type="submit" class="btn btn-primary" value="Cadastrar" />
     </form>
   </div>
   </body>

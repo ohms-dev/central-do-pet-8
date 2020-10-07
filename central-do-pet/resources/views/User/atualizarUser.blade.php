@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -54,12 +55,12 @@
         {{ csrf_field() }}
         <div class="form-group">
         <label for="name">Nome:</label>
-        <input type="text" class="form-control" id="name"/>
+        <input type="text" class="form-control" name="name"/>
         </div>
 
         <div class="form-group">
         <label for="sexo">Sexo:</label>
-        <select class="form-control" id="sexo">
+        <select class="form-control" name="sexo">
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
             <option value="Não binário">Não binário</option>
@@ -69,18 +70,18 @@
         </div>
 
         <div class="form-group">
-        <label for"contato">Contato:</label>
-        <input type="text" class="form-control" id="contato" />
+        <label for="contato">Contato:</label>
+        <input type="text" class="form-control" name="contato" />
         </div>
 
         <div class="form-group">
-        <label for"email">E-mail:</label>
-        <input type="text" class="form-control" id="email" />
+        <label for="email">E-mail:</label>
+        <input type="text" class="form-control" name="email" />
         </div>
 
         <div class="form-group">
         <label for="funcao">Função:</label>
-        <select class="form-control" id="funcao">
+        <select class="form-control" name="funcao">
             <option value="Médico Veterinário">Médico Veterinário</option>
             <option value="Funcionário">Funcionário</option>
             <option value="ONG">ONG</option>
@@ -90,17 +91,17 @@
 
         <div class="form-group">
         <label for="endereco">Endereco:</label>
-        <input type="text" class="form-control" id="endereco" />
+        <input type="text" class="form-control" name="endereco" />
         </div>
 
         <div class="form-group">
         <label for="data_de_nascimento">Data de nascimento:</label>
-        <input type="date" class="form-control" id="data_de_nascimento" />
+        <input type="date" class="form-control" name="data_de_nascimento" />
         </div>
 
         <div class="form-group">
         <label for="password">Senha:</label>
-        <input type="password" class="form-control" id="password" />
+        <input type="password" class="form-control" name="password" />
         </div>
 
         <input type="submit" class="btn btn-primary" value="Atualizar" />
