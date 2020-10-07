@@ -49,8 +49,16 @@
 <div class='container'>
     <form action="/atualizar/pet" method="post">
       {{csrf_field()}}
+
+        <div class="form-group">
+            <label for="id">ID do pet:</label>
+            <select class="form-control" name="id">
+                <option value="{{$pet->id}}">{{$pet->id}}</option>
+            </select>
+        </div>
+
       <div class="form-group">
-      <label for="contato">Nome:</label>
+      <label for="nome">Nome:</label>
       <input type="text" class="form-control" name="nome" />
       </div>
 
@@ -63,15 +71,15 @@
       </div>
 
       <div class="form-group">
-      <label for="sexo">Castrado:</label>
-      <select class="form-control" name="sexo">
+      <label for="castrado">Castrado:</label>
+      <select class="form-control" name="castrado">
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
             </select>
       </div>
 
       <div class="form-group">
-      <label for="contato">Necessidades Especiais:</label>
+      <label for="necessidade_especiais">Necessidades Especiais:</label>
       <input type="text" class="form-control" name="necessidades_especiais" />
       </div>
 
@@ -81,7 +89,7 @@
       </div>
 
       <div class="form-group">
-      <label for="contato">ID do Dono:</label>
+      <label for="dono_id">ID do Dono:</label>
       <input type="text" class="form-control" name="dono_id" />
       </div>
 
