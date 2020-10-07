@@ -13,7 +13,6 @@ class PetTest extends TestCase
      *
      * @return void
      */
-
     public function testPetSemNome(){
         $this->expectException(\App\Validator\ValidationException::class);
         $pet= pet::factory()->make();
