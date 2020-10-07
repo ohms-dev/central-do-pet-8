@@ -74,6 +74,8 @@ Route::get('/listar/users', '\App\Http\Controllers\UserListarController@listar')
 Route::get('/editar/user/{id}', '\App\Http\Controllers\UserEditarController@editar')->middleware('auth');
 Route::post('/atualizar/user', '\App\Http\Controllers\UserAtualizarController@atualizar')->middleware('auth');
 Route::get('/remover/user/{id}', '\App\Http\Controllers\UserRemoverController@remover')->middleware('auth');
+Route::get('/listar/funcionarios', '\App\Http\Controllers\FuncionarioListarController@listar');
+
 
 Route::get('/paineladm', function () {
     return view('painelAdministrador');
