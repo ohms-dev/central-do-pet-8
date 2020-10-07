@@ -49,6 +49,7 @@
 </div>
 <div class='jumbotron'>
 <h1>Lista de Pets </h1>
+    @if(trim(Auth::user()->funcao) == trim("ONG") or trim(Auth::user()->funcao) == trim("Administrador"))
 <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
 <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
       <div class="container">
@@ -68,7 +69,31 @@
       @endforeach
     </div>
   </div>
+    @endif
 
+    @if(trim(Auth::user()->funcao) == trim("Tutor") or trim(Auth::user()->funcao) == trim("Médico Veterinário") )
+        <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
+        <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
+        <div class="container">
+            <div class="row">
+                @foreach ($pets as $pet)
+                    @if($pet->dono_id == Auth::user()->id)
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $pet->nome }}</h5>
+                            <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
+                            <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
+                            <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
+                            <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>
+                        </div>
+                    </div>
+                    @endif
+
+                @endforeach
+            </div>
+        </div>
+    @endif
   @endauth
 
   @guest

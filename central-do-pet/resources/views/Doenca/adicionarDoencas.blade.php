@@ -40,13 +40,18 @@
 </head>
 
 <body>
-  <div class='jumbotron'>
 
+  <div class='jumbotron'>
   <h1>Cadastrar doença <img src="https://img.icons8.com/ios-glyphs/30/000000/virus.png"/></h1>
   <p class="lead">Cadastro geral de doença em um histórico do sistema</p>
 
   </div>
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
     <form action="/adicionar/doencas" method="post">
       {{ csrf_field() }}
 

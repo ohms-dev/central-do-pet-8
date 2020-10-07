@@ -72,6 +72,10 @@
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/pets/">Pets</a>
   @endif
 
+  @if(trim(Auth::user()->funcao) == trim("Tutor"))
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/pets/">Pets</a>
+  @endif
+
 </div>
 </body>
 </html>

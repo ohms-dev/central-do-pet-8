@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/paineladm';
     protected function redirectTo(){
         if(auth()->user()->role == 'Administrador'){
             return '/listar/users';

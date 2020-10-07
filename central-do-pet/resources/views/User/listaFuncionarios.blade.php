@@ -54,7 +54,7 @@
             <td class="bg-danger text-white">Função</td>
         </tr>
         @foreach ($users as $user)
-            @if($user->funcao != "Tutor")
+            @if(trim($user->funcao) != trim("Tutor"))
             <tr>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->funcao}}</td>
