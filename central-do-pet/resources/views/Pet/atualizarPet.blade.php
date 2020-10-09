@@ -64,7 +64,7 @@
 
       <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" class="form-control" name="nome" />
+      <input type="text" class="form-control" name="nome" value="{{$pet->nome}}"/>
       </div>
 
       <div class="form-group">
@@ -85,22 +85,22 @@
 
       <div class="form-group">
       <label for="necessidade_especiais">Necessidades Especiais:</label>
-      <input type="text" class="form-control" name="necessidades_especiais" />
+      <input type="text" class="form-control" name="necessidades_especiais" value="{{$pet->necessidades_especiais}}"/>
       </div>
 
       <div class="form-group">
       <label for="data_de_nascimento">Data de nascimento:</label>
-      <input type="date" class="form-control" name="data_de_nascimento" />
+      <input type="date" class="form-control" name="data_de_nascimento" value="{{$pet->data_de_nascimento}}"/>
       </div>
 
       <div class="form-group">
       <label for="dono_id">ID do Dono:</label>
-      <input type="text" class="form-control" name="dono_id" />
+      <input type="text" class="form-control" name="dono_id" value="{{$pet->dono_id}}"/>
       </div>
 
         <div class="input-group">
             <div class="custom-file">
-                <input type="file" name="foto" class="custom-file-input">
+                <input type="file" name="foto" class="custom-file-input" value="{{$pet->image}}"/>
                 <label class="custom-file-label">Escolha uma foto</label>
             </div>
         </div>
