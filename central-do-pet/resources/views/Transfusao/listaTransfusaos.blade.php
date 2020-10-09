@@ -1,19 +1,68 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html>
 <head>
-    <title>Hello</title>
+  <title>{{ config('app.name', 'Laravel') }}</title>
+
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
+
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #E14B56;">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listar/pets">Adotar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Consultar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listar/funcionarios">Equipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ajuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+</nav>
 </head>
+
 <body>
-<table border='1'>
+  <div class='jumbotron'>
+
+  <h1>Lista de transfusões <img src="https://img.icons8.com/fluent-systems-filled/24/000000/drop-of-blood.png"/></h1>
+  <p class="lead">Lista de transfusões do sistema</p>
+
+  </div>
+<div class='container'>
+  <table  class="table table-sm">
+      <tr>
+        <td class="bg-danger text-white">ID da transfusão</td>
+        <td class="bg-danger text-white">Data</td>
+        <td class="bg-danger text-white">Ações</td>
+      </tr>
     @foreach ($transfusaos as $transfusao)
         <tr>
             <td>{{ $transfusao->id }}</td>
             <td>{{ $transfusao->data }}</td>
-            <td><a href='/editar/transfusao/{{ $transfusao->id }}'>Editar</a>
-                <a href='/remover/transfusao/{{ $transfusao->id }}'>Remover</a></td>
+            <td><a type="button" class="btn btn-primary" href='/editar/transfusao/{{ $transfusao->id }}'>Editar</a>
+                <a type="button" class="btn btn-primary" href='/remover/transfusao/{{ $transfusao->id }}'>Remover</a></td>
         </tr>
     @endforeach
 </table>
-<a href="/adicionar/transfusao">Inserir Nova</a>
+<a type="button" class="btn btn-primary" href="/adicionar/transfusao">Cadastrar nova transfusão</a>
+</div>
 </body>
 </html>

@@ -1,40 +1,110 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html>
 <head>
-    <title>Hello</title>
-    <head>
+  <title>{{ config('app.name', 'Laravel') }}</title>
+
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
+
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #E14B56;">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listar/pets">Adotar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Consultar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listar/funcionarios">Equipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ajuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+</head>
+
 <body>
-<h1>Registrar usuario</h1>
+  <div class='jumbotron'>
+
+  <h1>Cadastro <img src="https://img.icons8.com/metro/26/000000/change-user-male.png"/></h1>
+  <p class="lead">Cadastro geral de usuários</p>
+
+  </div>
+<div class='container'>
     @if (App\Models\User::all()->isEmpty())
 <form action="{{route('register')}}" method="post">
     {{ csrf_field() }}
-    Nome: <input type="text" name="name" />
-    <br>
-    Sexo: <select name="sexo">
+    <div class="form-group">
+    <label for="name">Nome:</label>
+    <input type="text" class="form-control" name="name"/>
+    </div>
+
+    <div class="form-group">
+    <label for="sexo">Sexo:</label>
+    <select class="form-control" name="sexo">
         <option value="Masculino">Masculino</option>
         <option value="Feminino">Feminino</option>
         <option value="Não binário">Não binário</option>
         <option value="Outro">Outro</option>
         <option value="Não informar">Não informar</option>
     </select>
-    <br>
-    Contato: <input type="text" name="contato" />
-    <br>
-    Email: <input type="text" name="email">
-    <br>
-    Função: <select name="funcao">
-        <option value="Administrador">Administrador</option>
+    </div>
+
+    <div class="form-group">
+    <label for="contato">Contato:</label>
+    <input type="text" class="form-control" name="contato" />
+    </div>
+
+    <div class="form-group">
+    <label for="email">E-mail:</label>
+    <input type="text" class="form-control" name="email" />
+    </div>
+
+
+    <div class="form-group">
+    <label for="funcao">Função:</label>
+    <select class="form-control" name="funcao">
+      <option value="Administrador">Administrador</option>
     </select>
-    <br>
-    Endereco: <input type="text" name="endereco" />
-    <br>
-    Data de nascimento: <input type="date" name="data_de_nascimento" />
-    <br>
-    Senha: <input type="password" name="password" />
-    <br>
-    Confirme a senha: <input type="password" name="password_confirmation">
-    <br>
-    <input type="submit" value="cadastrar" />
+    </div>
+
+    <div class="form-group">
+    <label for="endereco">Endereco:</label>
+    <input type="text" class="form-control" name="endereco" />
+    </div>
+
+    <div class="form-group">
+    <label for="data_de_nascimento">Data de nascimento:</label>
+    <input type="date" class="form-control" name="data_de_nascimento" />
+    </div>
+
+    <div class="form-group">
+    <label for="password">Senha:</label>
+    <input type="password" class="form-control" name="password" />
+    </div>
+
+    <div class="form-group">
+    <label for="password_confirmation">Confirme a senha:</label>
+    <input type="password" class="form-control" name="password_confirmation" />
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Cadastrar" />
     @error('name')
     <span class="invalid-feedback" role="alert">
             <script type='text/javascript'>alert('{{ $message }}');</script>
@@ -81,33 +151,60 @@
 @if (App\Models\User::all()->isNotEmpty())
     <form action="{{route('register')}}" method="post">
         {{ csrf_field() }}
-        Nome: <input type="text" name="name" />
-        <br>
-        Sexo: <select name="sexo">
+        <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" class="form-control" name="name"/>
+        </div>
+
+        <div class="form-group">
+        <label for="sexo">Sexo:</label>
+        <select class="form-control" name="sexo">
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
             <option value="Não binário">Não binário</option>
             <option value="Outro">Outro</option>
             <option value="Não informar">Não informar</option>
         </select>
-        <br>
-        Contato: <input type="text" name="contato" />
-        <br>
-        Email: <input type="text" name="email">
-        <br>
-        Função: <select name="funcao">
+        </div>
+
+        <div class="form-group">
+        <label for="contato">Contato:</label>
+        <input type="text" class="form-control" name="contato" />
+        </div>
+
+        <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="text" class="form-control" name="email" />
+        </div>
+
+        <div class="form-group">
+        <label for="funcao">Função:</label>
+        <select class="form-control" name="funcao">
             <option value="Tutor">Tutor</option>
         </select>
-        <br>
-        Endereco: <input type="text" name="endereco" />
-        <br>
-        Data de nascimento: <input type="date" name="data_de_nascimento" />
-        <br>
-        Senha: <input type="password" name="password" />
-        <br>
-        Confirme a senha: <input type="password" name="password_confirmation">
-        <br>
-        <input type="submit" value="cadastrar" />
+        </div>
+
+        <div class="form-group">
+        <label for="endereco">Endereco:</label>
+        <input type="text" class="form-control" name="endereco" />
+        </div>
+
+        <div class="form-group">
+        <label for="data_de_nascimento">Data de nascimento:</label>
+        <input type="date" class="form-control" name="data_de_nascimento" />
+        </div>
+
+        <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" class="form-control" name="password" />
+        </div>
+
+        <div class="form-group">
+        <label for="password_confirmation">Confirme a senha:</label>
+        <input type="password" class="form-control" name="password_confirmation" />
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Cadastrar" />
         @error('name')
         <span class="invalid-feedback" role="alert">
             <script type='text/javascript'>alert('{{ $message }}');</script>
@@ -150,5 +247,6 @@
         @enderror
     </form>
 @endif
+</div>
 </body>
 </html>
