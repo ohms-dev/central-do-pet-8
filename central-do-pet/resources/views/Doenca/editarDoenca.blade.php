@@ -65,17 +65,17 @@
 
       <div class="form-group">
       <label for="doenca">Nome da doença:</label>
-      <input type="text" class="form-control" name="doenca" />
+      <input type="text" class="form-control" name="doenca" value="{{$doenca->doenca}}"/>
       </div>
 
       <div class="form-group">
       <label for="historico_id">ID do Histórico:</label>
-      <input type="text" class="form-control" name="historico_id" />
+      <input type="text" class="form-control" name="historico_id" value="{{$doenca->historico_id}}"/>
       </div>
 
       <div class="form-group">
       <label for="data">Data:</label>
-      <input type="date" class="form-control" name="data" />
+      <input type="date" class="form-control" name="data" value="{{$doenca->data}}"/>
       </div>
 
       <input type="submit" class="btn btn-primary" value="Editar" />

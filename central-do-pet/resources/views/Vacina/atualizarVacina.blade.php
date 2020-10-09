@@ -64,17 +64,17 @@
 
         <div class="form-group">
             <label for="vacina">Nome da Vacina:</label>
-            <input type="text" class="form-control" name="vacina" />
+            <input type="text" class="form-control" name="vacina" value="{{$vacina->vacina}}"/>
         </div>
 
         <div class="form-group">
             <label for="historico_id">ID do Histórico:</label>
-            <input type="text" class="form-control" name="historico_id" />
+            <input type="text" class="form-control" name="historico_id" value="{{$vacina->historico_id}}"/>
         </div>
 
         <div class="form-group">
             <label for="data">Data:</label>
-            <input type="date" class="form-control" name="data" />
+            <input type="date" class="form-control" name="data" value="{{$vacina->data}}" />
         </div>
 
         <input type="submit" class="btn btn-primary" value="Editar" />

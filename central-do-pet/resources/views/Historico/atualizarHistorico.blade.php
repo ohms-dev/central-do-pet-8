@@ -64,12 +64,12 @@
 
           <div class="form-group">
           <label for="pet_id">ID do Pet:</label>
-          <input type="text" class="form-control" name="pet_id" />
+          <input type="text" class="form-control" name="pet_id"  value="{{$historico->pet_id}}"/>
           </div>
 
           <div class="form-group">
           <label for="alergias">Alergias:</label>
-          <input type="text" class="form-control" name="alergias" />
+          <input type="text" class="form-control" name="alergias" value="{{$historico->alergias}}"/>
           </div>
 
 

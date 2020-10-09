@@ -64,12 +64,12 @@
 
     <div class="form-group">
     <label for="historico_id">ID do Histórico:</label>
-    <input type="text" class="form-control" name="historico_id" />
+    <input type="text" class="form-control" name="historico_id" value="{{$transfusao->historico_id}}"/>
     </div>
 
     <div class="form-group">
     <label for="data">Data:</label>
-    <input type="date" class="form-control" name="data" />
+    <input type="date" class="form-control" name="data" value="{{$transfusao->data}}"/>
     </div>
 
 
