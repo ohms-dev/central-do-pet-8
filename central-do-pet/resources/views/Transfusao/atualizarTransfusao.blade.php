@@ -56,6 +56,13 @@
     {{csrf_field()}}
 
     <div class="form-group">
+        <label for="id">ID da transfusão:</label>
+        <select class="form-control" name="id">
+            <option value="{{$transfusao->id}}">{{$transfusao->id}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
     <label for="historico_id">ID do Histórico:</label>
     <input type="text" class="form-control" name="historico_id" />
     </div>

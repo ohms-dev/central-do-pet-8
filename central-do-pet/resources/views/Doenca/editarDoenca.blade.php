@@ -52,8 +52,17 @@
             window.location = "/paineladm";
         </script>
     @endif
+
     <form action="/atualizar/doencas" method="post">
       {{ csrf_field() }}
+
+      <div class="form-group">
+        <label for="id">ID da doença:</label>
+            <select class="form-control" name="id">
+                <option value="{{$doenca->id}}">{{$doenca->id}}</option>
+            </select>
+      </div>
+
       <div class="form-group">
       <label for="doenca">Nome da doença:</label>
       <input type="text" class="form-control" name="doenca" />

@@ -53,6 +53,15 @@
         </script>
     @endif
     <form action="/atualizar/historico" method="post">
+        {{csrf_field()}}
+
+          <div class="form-group">
+            <label for="id">ID do histórico:</label>
+                <select class="form-control" name="id">
+                    <option value="{{$historico->id}}">{{$historico->id}}</option>
+                </select>
+          </div>
+
           <div class="form-group">
           <label for="pet_id">ID do Pet:</label>
           <input type="text" class="form-control" name="pet_id" />

@@ -1,3 +1,4 @@
+<html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -69,5 +70,6 @@
       @endforeach
     </table>
     <a type="button" class="btn btn-primary" href="/adicionar/doencas">Inserir doença</a>
-  </body>
+</div>
+</body>
 </html>
