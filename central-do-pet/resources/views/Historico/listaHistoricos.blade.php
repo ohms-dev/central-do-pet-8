@@ -44,7 +44,7 @@
 
   <h1>Lista de históricos médicos <img src="https://img.icons8.com/android/24/000000/survival-bag.png"/></h1>
   <p class="lead">Lista de todos os históricos cadastrados no sistema</p>
-
+  <a type="button" class="btn btn-primary" href="/adicionar/historico">Adicionar histórico</a>
   </div>
 <div class='container'>
     @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
@@ -52,26 +52,24 @@
             window.location = "/paineladm";
         </script>
     @endif
-      <table  class="table table-sm">
-          <tr>
-            <td class="bg-danger text-white">ID do Histórico</td>
-            <td class="bg-danger text-white">ID do PET</td>
-            <td class="bg-danger text-white">Alergias</td>
-            <td class="bg-danger text-white">Ações</td>
-          </tr>
-
+      <div class="container">
+        <div class="row">
       @foreach ($historicos as $historico)
-
-        <tr>
-            <td><a href='/view/historico/{{ $historico->id }}'>{{$historico->id}}</a></td>
-            <td>{{ $historico->pet_id }}</td>
-            <td>{{ $historico->alergias}}</td>
-            <td><a type="button" class="btn btn-primary" href='/editar/historico/{{ $historico->id }}'>Editar</a>
-                <a type="button" class="btn btn-primary" href='/remover/historico/{{ $historico->id }}'>Remover</a></td>
-        </tr>
+                <var {{$pet = \App\Models\pet::find($historico->pet_id)}}></var>
+                <div class="card" style="width: 20rem;">
+                      <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
+                      <div class="card-body">
+                          <h5 class="card-title">{{ $pet->nome }}</h5>
+                          <p class="card-text">Pet RGA: {{ $pet->rga }} </p>
+                          <p class="card-text">Histórico ID: {{ $historico->id }}</p>
+                          <a href="/view/historico/{{ $historico->id }}" class="btn btn-primary">Visualizar</a>
+                          <a href="/editar/historico/{{ $historico->id }}" class="btn btn-primary">Editar</a>
+                          <a href="/remover/historico/{{ $historico->id }}" class="btn btn-primary">Remover</a>
+                      </div>
+                  </div>
       @endforeach
-    </table>
-    <a type="button" class="btn btn-primary" href="/adicionar/historico">Adicionar histórico</a>
+        </div>
+      </div>
 </div>
 </body>
 </html>

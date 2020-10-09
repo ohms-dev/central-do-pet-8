@@ -55,6 +55,8 @@
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/pets/">Pets</a>
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/historicos/">Históricos médicos</a>
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/doencas/">Doenças</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/vacinas/">Vacinas</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/transfusaos/">Transfussões</a>
   @endif
 
   @if(trim(Auth::user()->funcao) == trim("Funcionário"))
@@ -62,10 +64,17 @@
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/pets/">Pets</a>
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/historicos/">Históricos médicos</a>
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/doencas/">Doenças</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/vacinas/">Vacinas</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/transfusaos/">Transfussões</a>
   @endif
+
+
 
   @if(trim(Auth::user()->funcao) == trim("Médico Veterinário"))
   <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/historicos/">Históricos médicos</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/doencas/">Doenças</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/vacinas/">Vacinas</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/listar/transfusaos/">Transfussões</a>
   @endif
 
   @if(trim(Auth::user()->funcao) == trim("ONG"))
