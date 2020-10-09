@@ -70,14 +70,19 @@
       <div class="form-group">
       <label for="sexo">Sexo:</label>
       <select class="form-control" name="sexo">
+                @if(strtolower(trim($pet->sexo))==trim("macho"))
                 <option value="Macho">Macho</option>
                 <option value="Femea">Femea</option>
+                @elseif(strtolower(trim($pet->sexo))==trim("femea"))
+                <option value="Femea">Femea</option>
+                <option value="Macho">Macho</option>
+                @endif
             </select>
       </div>
 
       <div class="form-group">
       <label for="castrado">Castrado:</label>
-      <select class="form-control" name="castrado">
+      <select class="form-control" name="castrado" value="{{$pet->castrado}}">
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
             </select>
