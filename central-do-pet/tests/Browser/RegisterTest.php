@@ -17,7 +17,7 @@ class RegisterTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
-                    ->assertSee('Registrar usuario');
+                    ->assertSee('Cadastro');
         });
     }
 }

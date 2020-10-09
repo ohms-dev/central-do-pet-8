@@ -42,7 +42,7 @@
 <body>
 <div class='jumbotron'>
 
-    <h1>Lista de usuários <img src="https://img.icons8.com/metro/26/000000/change-user-male.png"/></h1>
+    <h1>Lista de funcionários <img src="https://img.icons8.com/metro/26/000000/change-user-male.png"/></h1>
     <p class="lead">Lista de todos os tipos de usuários cadastrados no sistema</p>
 
 </div>

@@ -47,9 +47,21 @@
 
   </div>
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
 <form action="/atualizar/transfusao" method="post">
     {{csrf_field()}}
-    
+
+    <div class="form-group">
+        <label for="id">ID da transfusão:</label>
+        <select class="form-control" name="id">
+            <option value="{{$transfusao->id}}">{{$transfusao->id}}</option>
+        </select>
+    </div>
+
     <div class="form-group">
     <label for="historico_id">ID do Histórico:</label>
     <input type="text" class="form-control" name="historico_id" />
