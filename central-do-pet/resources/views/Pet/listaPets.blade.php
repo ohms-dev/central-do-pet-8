@@ -49,7 +49,7 @@
 </div>
 <div class='jumbotron'>
 <h1>Lista de Pets </h1>
-    @if(trim(Auth::user()->funcao) == trim("ONG") or trim(Auth::user()->funcao) == trim("Administrador"))
+    @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
 <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
 <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
       <div class="container">

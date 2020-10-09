@@ -47,7 +47,7 @@
   </div>
 
 <div class='container'>
-    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("ONG"))
+    @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
         <script type="text/javascript">
             window.location = "/paineladm";
         </script>
