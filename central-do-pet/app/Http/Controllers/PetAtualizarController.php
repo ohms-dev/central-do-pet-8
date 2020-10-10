@@ -14,7 +14,8 @@ class PetAtualizarController extends Controller
             $file->move('fotos/pets', $filename);
 
         }else{
-            $filename = 'vazio.png';
+            $pet = \App\Models\pet::find($request->id);
+            $filename = $pet->image;
         }
         $pet = \App\Models\pet::find($request->id);
         $pet->nome = $request->nome;

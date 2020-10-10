@@ -47,15 +47,29 @@
 
   </div>
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
     <form action="/atualizar/historico" method="post">
+        {{csrf_field()}}
+
+          <div class="form-group">
+            <label for="id">ID do histórico:</label>
+                <select class="form-control" name="id">
+                    <option value="{{$historico->id}}">{{$historico->id}}</option>
+                </select>
+          </div>
+
           <div class="form-group">
           <label for="pet_id">ID do Pet:</label>
-          <input type="text" class="form-control" name="pet_id" />
+          <input type="text" class="form-control" name="pet_id"  value="{{$historico->pet_id}}"/>
           </div>
 
           <div class="form-group">
           <label for="alergias">Alergias:</label>
-          <input type="text" class="form-control" name="alergias" />
+          <input type="text" class="form-control" name="alergias" value="{{$historico->alergias}}"/>
           </div>
 
 

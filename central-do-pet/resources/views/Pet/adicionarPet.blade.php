@@ -83,50 +83,57 @@
       </div>
 
       <div class="form-group">
-      <label for="dono_id">ID do Dono:</label>
-      <input type="text" class="form-control" name="dono_id" />
-      </div>
-
-      <div class="form-group">
-        <label for="registro">Registro:</label>
-            <select class="form-control" name="registro">
+        <label for="dono_id">ID do Dono:</label>
+        @if(trim(Auth::user()->funcao) == trim("Tutor") or trim(Auth::user()->funcao) == trim("Médico Veterinário"))
+            <select class="form-control" name="dono_id">
                 <option value="{{\Illuminate\Support\Facades\Auth::user()->id}}">{{\Illuminate\Support\Facades\Auth::user()->id}}</option>
             </select>
+        @endif
+        @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+              <input type="text" class="form-control" name="dono_id" />
+        @endif
       </div>
 
-     <div class="input-group">
-         <div class="custom-file">
-             <input type="file" name="foto" class="custom-file-input">
-             <label class="custom-file-label">Escolha uma foto</label>
-         </div>
-     </div>
+<div class="form-group">
+<label for="registro">Registro:</label>
+  <select class="form-control" name="registro">
+      <option value="{{\Illuminate\Support\Facades\Auth::user()->id}}">{{\Illuminate\Support\Facades\Auth::user()->id}}</option>
+  </select>
+</div>
 
-     <br>
+<div class="input-group">
+<div class="custom-file">
+   <input type="file" name="foto" class="custom-file-input">
+   <label class="custom-file-label">Escolha uma foto</label>
+</div>
+</div>
 
-      <input type="submit" class="btn btn-primary" value="Cadastrar" />
+<br>
 
-        @error('nome')
-        <span class="invalid-feedback" role="alert">
-            <script type='text/javascript'>alert('{{ $message }}');</script>
-        </span>
-        @enderror
-        @error('sexo')
-        <span class="invalid-feedback" role="alert">
-            <script type='text/javascript'>alert('{{ $message }}');</script>
-        </span>
-        @enderror
-        @error('castrado')
-        <span class="invalid-feedback" role="alert">
-            <script type='text/javascript'>alert('{{ $message }}');</script>
-        </span>
-        @enderror
-        @error('data_de_nascimento')
-        <span class="invalid-feedback" role="alert">
-            <script type='text/javascript'>alert('{{ $message }}');</script>
-        </span>
-        @enderror
-      <br>
-    </form>
-  </div>
-  </body>
+<input type="submit" class="btn btn-primary" value="Cadastrar" />
+
+@error('nome')
+<span class="invalid-feedback" role="alert">
+  <script type='text/javascript'>alert('{{ $message }}');</script>
+</span>
+@enderror
+@error('sexo')
+<span class="invalid-feedback" role="alert">
+  <script type='text/javascript'>alert('{{ $message }}');</script>
+</span>
+@enderror
+@error('castrado')
+<span class="invalid-feedback" role="alert">
+  <script type='text/javascript'>alert('{{ $message }}');</script>
+</span>
+@enderror
+@error('data_de_nascimento')
+<span class="invalid-feedback" role="alert">
+  <script type='text/javascript'>alert('{{ $message }}');</script>
+</span>
+@enderror
+<br>
+</form>
+</div>
+</body>
 </html>

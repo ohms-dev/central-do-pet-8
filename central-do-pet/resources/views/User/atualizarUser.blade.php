@@ -47,6 +47,11 @@
 
   </div>
 <div class='container'>
+    @if(trim(Auth::user()->funcao) != trim("Administrador"))
+        <script type="text/javascript">
+            window.location = "/paineladm";
+        </script>
+    @endif
 <form action="/atualizar/user" method="post">
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{$user->id}}">
@@ -55,48 +60,94 @@
         {{ csrf_field() }}
         <div class="form-group">
         <label for="name">Nome:</label>
-        <input type="text" class="form-control" name="name"/>
+        <input type="text" class="form-control" name="name"/  value="{{$user->name}}">
         </div>
 
         <div class="form-group">
         <label for="sexo">Sexo:</label>
         <select class="form-control" name="sexo">
+            @if(strtolower(trim($user->sexo))==trim("masculino"))
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
             <option value="Não binário">Não binário</option>
             <option value="Outro">Outro</option>
             <option value="Não informar">Não informar</option>
+            @elseif(strtolower(trim($user->sexo))==trim("feminino"))
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Não binário">Não binário</option>
+            <option value="Outro">Outro</option>
+            <option value="Não informar">Não informar</option>
+            @elseif(strtolower(trim($user->sexo))==trim("não binário"))
+            <option value="Não binário">Não binário</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Outro">Outro</option>
+            <option value="Não informar">Não informar</option>
+            @elseif(strtolower(trim($user->sexo))==trim("outro"))
+            <option value="Outro">Outro</option>
+            <option value="Não binário">Não binário</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Não informar">Não informar</option>
+            @elseif(strtolower(trim($user->sexo))==trim("não informar"))
+            <option value="Não informar">Não informar</option>
+            <option value="Outro">Outro</option>
+            <option value="Não binário">Não binário</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            @endif
+
+
         </select>
         </div>
 
         <div class="form-group">
         <label for="contato">Contato:</label>
-        <input type="text" class="form-control" name="contato" />
+        <input type="text" class="form-control" name="contato" value="{{$user->contato}}" />
         </div>
 
         <div class="form-group">
         <label for="email">E-mail:</label>
-        <input type="text" class="form-control" name="email" />
+        <input type="text" class="form-control" name="email"  value="{{$user->email}}"/>
         </div>
 
         <div class="form-group">
         <label for="funcao">Função:</label>
         <select class="form-control" name="funcao">
+            @if(strtolower(trim($user->funcao))==trim("médico veterinário"))
             <option value="Médico Veterinário">Médico Veterinário</option>
             <option value="Funcionário">Funcionário</option>
             <option value="ONG">ONG</option>
             <option value="Tutor">Tutor</option>
+            @elseif(strtolower(trim($user->funcao))==trim("funcionário"))
+            <option value="Funcionário">Funcionário</option>
+            <option value="Médico Veterinário">Médico Veterinário</option>
+            <option value="ONG">ONG</option>
+            <option value="Tutor">Tutor</option>
+            @elseif(strtolower(trim($user->funcao))==trim("ong"))
+            <option value="ONG">ONG</option>
+            <option value="Funcionário">Funcionário</option>
+            <option value="Médico Veterinário">Médico Veterinário</option>
+            <option value="Tutor">Tutor</option>
+            @elseif(strtolower(trim($user->funcao))==trim("tutor"))
+            <option value="Tutor">Tutor</option>
+            <option value="ONG">ONG</option>
+            <option value="Funcionário">Funcionário</option>
+            <option value="Médico Veterinário">Médico Veterinário</option>
+            @endif
+
         </select>
         </div>
 
         <div class="form-group">
         <label for="endereco">Endereco:</label>
-        <input type="text" class="form-control" name="endereco" />
+        <input type="text" class="form-control" name="endereco"  value="{{$user->endereco}}"/>
         </div>
 
         <div class="form-group">
         <label for="data_de_nascimento">Data de nascimento:</label>
-        <input type="date" class="form-control" name="data_de_nascimento" />
+        <input type="date" class="form-control" name="data_de_nascimento"  value="{{$user->data_de_nascimento}}"/>
         </div>
 
         <div class="form-group">
