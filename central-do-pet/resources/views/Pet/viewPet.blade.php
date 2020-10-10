@@ -1,3 +1,8 @@
+@php
+session_start();
+$_SESSION['id_pet'] = $pet->id;
+@endphp
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
