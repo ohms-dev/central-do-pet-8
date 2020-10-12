@@ -30,6 +30,8 @@ class UserTest extends TestCase
 
     public function testUserCorreto(){
         $User = User::factory()->make();
+        $emails = User::all()->pluck('email');
+        print($emails);
         $dados = $User->toArray();
         $dados['password'] = 'password';
         \App\Validator\UserValidator::validate($dados);

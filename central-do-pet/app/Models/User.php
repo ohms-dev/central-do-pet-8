@@ -19,10 +19,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password','contato','funcao','endereco','data_de_nascimento','sexo',
     ];
-    public static $rules = ['name'=> 'required|min:3|max:50', 'sexo'=>'required|min:7|max:11','contato'=>'required|min:11|max:11',
+    public static $rules = ['name'=> 'required|min:3|max:50', 'sexo'=>'required','contato'=>'required|min:11|max:11',
         'data_de_nascimento'=>'required','endereco'=>'required|min:10|max:100',
         'password'=>'required|min:4|max:255','funcao'=>'required',
-        'email'=>'required|min:5|max:30'];
+        'email'=>'required|min:5|max:50'];
 
     public static $messages = ['name.*'=>'O campo nome é obrigatório e deve ter entre 5 e 30 letras',
         'sexo.*'=>'O campo sexo é obrigatório e deve ser masculino, feminino e não binário','contato.*'=>'O campo contato é obrigatório e deve possuir 11 digitos ddd + número',
