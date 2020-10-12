@@ -24,7 +24,7 @@
           <a class="nav-link" href="/listar/pets">Adotar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Consultar</a>
+            <a class="nav-link" href="/consultar">Consultar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="listar/funcionarios">Equipe</a>
