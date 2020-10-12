@@ -31,7 +31,7 @@ class petFactory extends Factory
         return [
             'rga'=>\App\Http\Controllers\PetAdicionarController::gerarPetRga(),
             'nome'=>$this->faker->firstName,
-            'raca'=>$especie,
+            'especie'=>$especie,
             'sexo'=>$gender,
             'castrado'=>$this->faker->boolean,
             'necessidades_especiais'=>$this->faker->word,
@@ -39,7 +39,7 @@ class petFactory extends Factory
             'dono_id'=>null,
             'adotado'=>$this->faker->boolean,
             'registro'=>$user->id,
-            'image'=> $this->faker->image('public/fotos/pets', 400, 300, 'animals', false) ,
+            'image'=> "vazio.png" ,
         ];
     }
 }
