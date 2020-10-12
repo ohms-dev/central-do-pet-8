@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 class PetFindController extends Controller
 {
-    public static function findPetRga($request){
-        $pet = \App\Models\pet::getPetRga($request);
-        #return view('view/pet/'.$pet->id,['pet' => $pet]);
-        return $pet;
+    public static function findPetRga(Request $request){
+        $pet = \App\Models\pet::getPetRga($request->rga);
+        if ($pet != null)
+            return (new PetViewController)->view($pet->id);
+        else
+            return view('Consulta/consultaRgaPet',['flag'=>false]);
     }
 }

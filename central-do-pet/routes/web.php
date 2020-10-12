@@ -68,6 +68,9 @@ Route::post('/atualizar/user', '\App\Http\Controllers\UserAtualizarController@at
 Route::get('/remover/user/{id}', '\App\Http\Controllers\UserRemoverController@remover')->middleware('auth');
 Route::get('/listar/funcionarios', '\App\Http\Controllers\FuncionarioListarController@listar');
 
+#Rotas de Consulta
+Route::get('/consultar', '\App\Http\Controllers\PetPrepararFindController@prepararFind');
+Route::post('/consultar', '\App\Http\Controllers\PetFindController@findPetRga');
 
 Route::get('/paineladm', function () {
     return view('painelAdministrador');
