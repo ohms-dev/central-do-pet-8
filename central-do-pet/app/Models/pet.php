@@ -26,7 +26,7 @@ class pet extends Model implements Authenticatable
 
     use Notifiable;
     protected $fillable = ['nome','rga','sexo','castrado','data_de_nascimento','necessidades_especiais', 'dono_id', 'adotado','registro', 'image'] ;
-    public static $rules = ['nome'=> 'required|min:3|max:30', 'sexo'=>'required','castrado'=>'required','data_de_nascimento'=>'required'];
+    public static $rules = ['nome'=> 'required|min:2|max:30', 'sexo'=>'required','castrado'=>'required','data_de_nascimento'=>'required'];
     public static $messages = ['nome.*'=>'O campo nome é obrigatório e deve ter entre 5 e 30 letras',
         'sexo.*'=>'O campo sexo é obrigatório e deve ser macho ou fêmea','castrado.*'=>'O campo castrado é obrigatório e deve ser informado se o pet foi castrado ou não',
         'data_de_nascimento.*'=> 'O campo data de nascimento é obrigatório'];
