@@ -13,6 +13,7 @@ class PetTest extends TestCase
      *
      * @return void
      */
+
     public function testPetSemNome(){
         $this->expectException(\App\Validator\ValidationException::class);
         $pet= pet::factory()->make();
@@ -45,6 +46,4 @@ class PetTest extends TestCase
         petValidator::validate($pet->toArray());
         $this->assertDatabaseMissing('pets',$pet->toArray());
     }
-
-
 }

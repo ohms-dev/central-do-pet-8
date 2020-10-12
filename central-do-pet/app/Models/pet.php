@@ -38,7 +38,7 @@ class pet extends Model implements Authenticatable
 
     public static function getPetRga($rgaParam){
         $pet = pet::all()->where('rga','=',$rgaParam);
-        return $pet;
+        return $pet->first();
     }
 
     public function getAuthIdentifierName()
