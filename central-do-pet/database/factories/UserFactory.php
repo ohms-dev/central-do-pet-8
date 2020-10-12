@@ -27,12 +27,10 @@ class UserFactory extends Factory
 
         $gender = $this->faker->randomElement(['Masculino', 'Feminino', "Não Binário", "Outro", "Não informar"]);
         $funcao = $this->faker->randomElement(['Médico veterinário', 'Funcionário', 'ONG', 'Tutor']);
-        $idUser = User::all()->pluck('id')->last();
-        $email = $idUser.'teste@gmail.com';
 
         return [
             'name' => $this->faker->name,
-            'email' => $email,
+            'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password, // password
             'remember_token' => Str::random(10),
