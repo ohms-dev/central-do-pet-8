@@ -19,6 +19,7 @@ class CreatePetsTable extends Migration
 
         $table->integer('rga');
         $table->char('nome',255);
+        $table->char('especie',255);
 	    $table->char('sexo',20);
 	    $table->char('castrado',10);
 	    $table->char('necessidades_especiais',255);
