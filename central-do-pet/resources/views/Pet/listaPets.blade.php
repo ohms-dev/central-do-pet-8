@@ -52,7 +52,8 @@
     @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
 <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
 <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
-      <div class="container">
+</div>
+        <div class="container">
         <div class="row">
       @foreach ($pets as $pet)
           <div class="card" style="width: 20rem;">
@@ -60,6 +61,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $pet->nome }}</h5>
               <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
+              <p class="card-text">Espécie: {{ $pet->especie }}</p>
               <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
               <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
               <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>

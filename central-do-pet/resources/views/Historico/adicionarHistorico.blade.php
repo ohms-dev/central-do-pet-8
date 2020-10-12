@@ -1,3 +1,8 @@
+@php
+session_start();
+@endphp
+
+
 <html>
 <head>
   <title>{{ config('app.name', 'Laravel') }}</title>
@@ -42,7 +47,7 @@
 <body>
   <div class='jumbotron'>
 
-  <h1>Cadastrar pet <img src="https://img.icons8.com/ios-glyphs/30/000000/hachiko.png"/></h1>
+  <h1>Cadastrar histórico do pet <img src="https://img.icons8.com/ios-glyphs/30/000000/hachiko.png"/></h1>
   <p class="lead">Cadastro geral dos históricos do sistema</p>
 
   </div>
@@ -57,7 +62,7 @@
 
         <div class="form-group">
         <label for="pet_id">ID do Pet:</label>
-        <input type="text" class="form-control" name="pet_id" />
+        <input type="text" class="form-control" name="pet_id" value="{{ $_SESSION['id_pet'] }}" />
         </div>
 
         <div class="form-group">

@@ -27,9 +27,11 @@ class petFactory extends Factory
 
         $gender = $this->faker->randomElement(["macho","femea"]);
         $user = DB::table('users')->first();
+        $especie = $this->faker->randomElement(["cachorro","gato","coelho","tartaruga","passaro","outro"]);
         return [
             'rga'=>\App\Http\Controllers\PetAdicionarController::gerarPetRga(),
             'nome'=>$this->faker->firstName,
+            'raca'=>$especie,
             'sexo'=>$gender,
             'castrado'=>$this->faker->boolean,
             'necessidades_especiais'=>$this->faker->word,

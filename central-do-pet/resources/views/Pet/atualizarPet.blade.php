@@ -67,6 +67,18 @@
       <input type="text" class="form-control" name="nome" value="{{$pet->nome}}"/>
       </div>
 
+        <div class="form-group">
+            <label for="especie">Espécie:</label>
+            <select class="form-control" name="especie">
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option value="coelho">Coelho</option>
+                <option value="tartaruga">Tartaruga</option>
+                <option value="passaro">Pássaro</option>
+                <option value="outro">Outro</option>
+            </select>
+        </div>
+
       <div class="form-group">
       <label for="sexo">Sexo:</label>
       <select class="form-control" name="sexo">

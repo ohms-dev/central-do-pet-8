@@ -1,3 +1,8 @@
+@php
+session_start();
+$_SESSION['id_pet'] = $pet->id;
+@endphp
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -57,6 +62,7 @@
           <td class="bg-danger text-white">ID</td>
           <td class="bg-danger text-white">RG</td>
           <td class="bg-danger text-white">Nome</td>
+          <td class="bg-danger text-white">Especie</td>
           <td class="bg-danger text-white">Sexo</td>
           <td class="bg-danger text-white">Cadastrado</td>
           <td class="bg-danger text-white">Data de nascimento</td>
@@ -67,6 +73,7 @@
             <td>{{ $pet->id }}</td>
             <td>{{ $pet->rga }}</td>
             <td>{{ $pet->nome }}</td>
+            <td>{{ $pet->especie }}</td>
             <td>{{ $pet->sexo }}</td>
             <td>{{ $pet->castrado }}</td>
             <td>{{ $pet->data_de_nascimento }}</td>

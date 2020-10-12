@@ -46,12 +46,20 @@
 
   </div>
 <div class='container'>
+    <tr>
+        <center>
+            <img class="rounded-circle" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Generic placeholder image" width="250" height="250" >
+        </center>
+        <center>
+            <td class="bg-danger text-white">{{$pet->nome}}</td>
+            <td class="bg-danger text-white">{{$pet->rga}}</td>
+        </center>
+    </tr>
 <table  class="table table-sm">
     <tr>
       <td class="bg-danger text-white">ID do histórico</td>
       <td class="bg-danger text-white">ID do Pet</td>
       <td class="bg-danger text-white">Alergias</td>
-      <td class="bg-danger text-white">Vacinas</td>
     </tr>
     <tr>
         <td>{{ $historico->id }}</td>
@@ -98,6 +106,7 @@
         @foreach($transfusaos as $transfusao)
             @if($transfusao->historico_id == $historico->id)
                 <tr>
+                    <td>{{$transfusao->id}}</td>
                     <td>{{$transfusao->data}}</td>
                 </tr>
             @endif
