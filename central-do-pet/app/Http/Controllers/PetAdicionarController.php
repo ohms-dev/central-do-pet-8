@@ -34,6 +34,7 @@ class PetAdicionarController extends Controller
             $rga = $this->gerarPetRga();
             pet::create([
                 'nome' => $request->nome,
+                'especie'=>$request->especie,
                 'sexo' => $request->sexo,
                 'castrado' => $request->castrado,
                 'necessidades_especiais' => $request->necessidades_especiais,

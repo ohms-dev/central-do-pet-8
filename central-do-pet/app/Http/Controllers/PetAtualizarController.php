@@ -19,6 +19,7 @@ class PetAtualizarController extends Controller
         }
         $pet = \App\Models\pet::find($request->id);
         $pet->nome = $request->nome;
+        $pet->especie = $request->especie;
         $pet->sexo = $request->sexo;
         $pet->castrado = $request->castrado;
         $pet->necessidades_especiais = $request->necessidades_especiais;

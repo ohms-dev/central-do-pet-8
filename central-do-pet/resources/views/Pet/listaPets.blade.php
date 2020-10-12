@@ -61,6 +61,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $pet->nome }}</h5>
               <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
+              <p class="card-text">Espécie: {{ $pet->especie }}</p>
               <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
               <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
               <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>

@@ -34,14 +34,6 @@ Route::post('/atualizar/pet','App\Http\Controllers\PetAtualizarController@atuali
 Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicionar')->middleware('auth');
 Route::get('/view/pet/{id}','App\Http\Controllers\PetViewController@view');
 
-#Rotas de raca
-Route::get('/adicionar/raca', '\App\Http\Controllers\RacaPrepararAdicionarController@prepararAdicionar')->middleware('auth');
-Route::post('/adicionar/raca', '\App\Http\Controllers\RacaAdicionarController@adicionar')->middleware('auth');
-Route::get('/listar/racas', '\App\Http\Controllers\RacaListarController@listar')->middleware('auth');
-Route::get('/editar/raca/{id}', '\App\Http\Controllers\RacaEditarController@editar')->middleware('auth');
-Route::post('/atualizar/raca', '\App\Http\Controllers\RacaAtualizarController@atualizar')->middleware('auth');
-Route::get('/remover/raca/{id}', '\App\Http\Controllers\RacaRemoverController@remover')->middleware('auth');
-
 #Rotas de transfusão
 Route::get('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoPrepararAdicionarController@prepararAdicionar')->middleware('auth');
 Route::post('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoAdicionarController@adicionar')->middleware('auth');
