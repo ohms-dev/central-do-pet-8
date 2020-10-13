@@ -72,7 +72,7 @@
 <body>
 <div class='jumbotron'>
 
-    <h1>Lista de vacinas <img src="https://img.icons8.com/ios-glyphs/30/000000/virus.png"/></h1>
+    <h1>Lista de vacinas <img src="https://img.icons8.com/android/24/000000/syringe.png"/></h1>
     <p class="lead">Lista de todos as vacinas cadastradas no sistema</p>
 
 </div>

@@ -72,7 +72,7 @@
 <body>
 
 <div class='jumbotron'>
-    <h1>Consultar Pet<img src="https://img.icons8.com/ios-glyphs/30/000000/virus.png"/></h1>
+    <h1>Consultar Pet <img src="https://img.icons8.com/pastel-glyph/64/000000/search--v1.png"/></h1>
     <p class="lead">Consultar RGA de pet do sistema</p>
 
 </div>
