@@ -52,9 +52,22 @@
     @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
 <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
 <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
+
+        <br>
+        <br>
+
+        <a href="/listar/pets/cachorro" class="btn btn-primary">Cachorro</a>
+        <a href="/listar/pets/gato" class="btn btn-primary">Gato</a>
+        <a href="/listar/pets/passaro" class="btn btn-primary">Passaro</a>
+        <a href="/listar/pets/tartaruga" class="btn btn-primary">Tartaruga</a>
+        <a href="/listar/pets/coelho" class="btn btn-primary">Coelho</a>
+        <a href="/listar/pets/outro" class="btn btn-primary">Outro</a>
+        <a href="/listar/pets/" class="btn btn-primary">Todos</a>
+
 </div>
         <div class="container">
         <div class="row">
+
       @foreach ($pets as $pet)
           <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
@@ -76,6 +89,18 @@
     @if(trim(Auth::user()->funcao) == trim("Tutor") or trim(Auth::user()->funcao) == trim("Médico Veterinário") )
         <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
         <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
+
+        <br>
+        <br>
+
+        <a href="/listar/pets/cachorro" class="btn btn-primary">Cachorro</a>
+        <a href="/listar/pets/gato" class="btn btn-primary">Gato</a>
+        <a href="/listar/pets/passaro" class="btn btn-primary">Passaro</a>
+        <a href="/listar/pets/tartaruga" class="btn btn-primary">Tartaruga</a>
+        <a href="/listar/pets/coelho" class="btn btn-primary">Coelho</a>
+        <a href="/listar/pets/outro" class="btn btn-primary">Outro</a>
+        <a href="/listar/pets/" class="btn btn-primary">Todos</a>
+
         <div class="container">
             <div class="row">
                 @foreach ($pets as $pet)
@@ -85,6 +110,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $pet->nome }}</h5>
                             <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
+                            <p class="card-text">Espécie: {{ $pet->especie }}</p>
                             <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
                             <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
                             <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>
@@ -106,6 +132,16 @@
 <h1>Pets disponíveis para adoção <img src="https://img.icons8.com/ios-glyphs/30/000000/pet-commands-stay.png"/></h1>
 <p class="lead">Confira cada Pet disponível para adoção! É possível ver suas informações e necessidades especiais!</p>
 
+    <br>
+    <br>
+
+    <a href="/listar/pets/cachorro" class="btn btn-primary">Cachorro</a>
+    <a href="/listar/pets/gato" class="btn btn-primary">Gato</a>
+    <a href="/listar/pets/passaro" class="btn btn-primary">Passaro</a>
+    <a href="/listar/pets/tartaruga" class="btn btn-primary">Tartaruga</a>
+    <a href="/listar/pets/coelho" class="btn btn-primary">Coelho</a>
+    <a href="/listar/pets/outro" class="btn btn-primary">Outro</a>
+    <a href="/listar/pets/" class="btn btn-primary">Todos</a>
 </div>
 
   <div class="container">
@@ -117,7 +153,9 @@
         <div class="card-body">
           <h5 class="card-title">{{ $pet->nome }}</h5>
           <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
-          <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
+            <p class="card-text">Espécie: {{ $pet->especie }}</p>
+
+            <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
 
 </div>      </div>
       @endif

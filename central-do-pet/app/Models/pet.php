@@ -15,10 +15,6 @@ class pet extends Model implements Authenticatable
       return $this->hasOne('central-do-pet\Historico');
     }
 
-    public function raca(){
-      return $this->hasOne('central-do-pet\Raca');
-    }
-
     public function dono(){
       return $this->hasOne('central-do-pet\Dono');
     }
