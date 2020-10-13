@@ -27,12 +27,15 @@
             <a class="nav-link" href="/consultar">Consultar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="listar/funcionarios">Equipe</a>
+          <a class="nav-link" href="/listar/funcionarios">Equipe</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/paineladm">Painel de usuário</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ajuda</a>
         </li>
-  
+
       </ul>
 
       <ul class="navbar-nav ml-auto">
