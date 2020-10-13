@@ -23,6 +23,7 @@ class PetAtualizarController extends Controller
         $pet->sexo = $request->sexo;
         $pet->castrado = $request->castrado;
         $pet->necessidades_especiais = $request->necessidades_especiais;
+        $pet->endereco = $request->endereco;
         $pet->data_de_nascimento = $request->data_de_nascimento;
         $pet->dono_id = $request->dono_id;
         $pet->image = $filename;

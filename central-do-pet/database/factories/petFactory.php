@@ -35,6 +35,7 @@ class petFactory extends Factory
             'sexo'=>$gender,
             'castrado'=>$this->faker->boolean,
             'necessidades_especiais'=>$this->faker->word,
+            'endereco' => $this->faker->address,
             'data_de_nascimento'=>$this->faker->date(),
             'dono_id'=>null,
             'adotado'=>$this->faker->boolean,

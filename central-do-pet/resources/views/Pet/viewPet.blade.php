@@ -65,6 +65,7 @@ $_SESSION['id_pet'] = $pet->id;
           <td class="bg-danger text-white">Especie</td>
           <td class="bg-danger text-white">Sexo</td>
           <td class="bg-danger text-white">Cadastrado</td>
+          <td class="bg-danger text-white">Endereço</td>
           <td class="bg-danger text-white">Data de nascimento</td>
           <td class="bg-danger text-white">ID do Dono</td>
           <td class="bg-danger text-white">Contato para adoção</td>
@@ -76,6 +77,7 @@ $_SESSION['id_pet'] = $pet->id;
             <td>{{ $pet->especie }}</td>
             <td>{{ $pet->sexo }}</td>
             <td>{{ $pet->castrado }}</td>
+            <td>{{ $pet->endereco }}</td>
             <td>{{ $pet->data_de_nascimento }}</td>
             @if($pet->dono_id == null)
                 <td> {{ 'Sem dono' }} </td>
