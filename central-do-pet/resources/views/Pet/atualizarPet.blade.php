@@ -106,6 +106,11 @@
       </div>
 
       <div class="form-group">
+      <label for="endereco">Endereço</label>
+      <input type="text" class="form-control" name="endereco" />
+      </div>
+
+      <div class="form-group">
       <label for="data_de_nascimento">Data de nascimento:</label>
       <input type="date" class="form-control" name="data_de_nascimento" value="{{$pet->data_de_nascimento}}"/>
       </div>

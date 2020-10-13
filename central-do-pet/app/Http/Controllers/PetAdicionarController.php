@@ -38,6 +38,7 @@ class PetAdicionarController extends Controller
                 'sexo' => $request->sexo,
                 'castrado' => $request->castrado,
                 'necessidades_especiais' => $request->necessidades_especiais,
+                'endereco'=>$request->endereco,
                 'data_de_nascimento' => $request->data_de_nascimento,
                 'dono_id' => $request->dono_id,
                 'rga' => $rga,
