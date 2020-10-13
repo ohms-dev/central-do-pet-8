@@ -9,7 +9,6 @@ class PetListarController extends Controller
 {
     public function listar($racas = null){
         $especie_unique = \App\Models\pet::all()->pluck('especie')->unique();
-        echo $especie_unique;
         if($racas != null){
             $pets = \App\Models\pet::all();
             $selecionados = array();
