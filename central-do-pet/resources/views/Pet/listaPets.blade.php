@@ -55,10 +55,14 @@
 
         <br>
         <br>
-        <a href="/listar/pets/" class="btn btn-primary">Todos</a>
-        @foreach($especies as $e)
-            <a href="/listar/pets/{{$e}}" class="btn btn-primary">{{$e}}</a>
-        @endforeach
+        <h3>Filtro de busca:</h3>
+        <a title="Cachorros" href="/listar/pets/cachorro" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/dog.png"/></a>
+        <a title="Gatos" href="/listar/pets/gato" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/cat.png"/></a>
+        <a title="Pássaros" href="/listar/pets/passaro" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/bird.png"/></a>
+        <a title="Tartarugas" href="/listar/pets/tartaruga" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/turtle.png"/></a>
+        <a title="Coelhos" href="/listar/pets/coelho" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/year-of-rabbit.png"/></a>
+        <a title="Outros" href="/listar/pets/outro" class="btn btn-primary" ><img src="https://img.icons8.com/material-rounded/24/000000/plus.png"/></a>
+        <a title="Limpar filtros" href="/listar/pets/" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/trash.png"/></a>
 
 </div>
         <div class="container">
@@ -88,10 +92,14 @@
 
         <br>
         <br>
-        <a href="/listar/pets/" class="btn btn-primary">Todos</a>
-        @foreach($especies as $e)
-            <a href="/listar/pets/{{$e}}" class="btn btn-primary">{{$e}}</a>
-        @endforeach
+        <h3>Filtro de busca:</h3>
+        <a title="Cachorros" href="/listar/pets/cachorro" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/dog.png"/></a>
+        <a title="Gatos" href="/listar/pets/gato" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/cat.png"/></a>
+        <a title="Pássaros" href="/listar/pets/passaro" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/bird.png"/></a>
+        <a title="Tartarugas" href="/listar/pets/tartaruga" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/turtle.png"/></a>
+        <a title="Coelhos" href="/listar/pets/coelho" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/year-of-rabbit.png"/></a>
+        <a title="Outros" href="/listar/pets/outro" class="btn btn-primary" ><img src="https://img.icons8.com/material-rounded/24/000000/plus.png"/></a>
+        <a title="Limpar filtros" href="/listar/pets/" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/trash.png"/></a>
 
         <div class="container">
             <div class="row">
@@ -126,10 +134,14 @@
 
     <br>
     <br>
-    <a href="/listar/pets/" class="btn btn-primary">Todos</a>
-    @foreach($especies as $e)
-        <a href="/listar/pets/{{$e}}" class="btn btn-primary">{{$e}}</a>
-    @endforeach
+    <h3>Filtro de busca:</h3>
+    <a title="Cachorros" href="/listar/pets/cachorro" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/dog.png"/></a>
+    <a title="Gatos" href="/listar/pets/gato" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/cat.png"/></a>
+    <a title="Pássaros" href="/listar/pets/passaro" class="btn btn-primary"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/bird.png"/></a>
+    <a title="Tartarugas" href="/listar/pets/tartaruga" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/turtle.png"/></a>
+    <a title="Coelhos" href="/listar/pets/coelho" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/year-of-rabbit.png"/></a>
+    <a title="Outros" href="/listar/pets/outro" class="btn btn-primary" ><img src="https://img.icons8.com/material-rounded/24/000000/plus.png"/></a>
+    <a title="Limpar filtros" href="/listar/pets/" class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/trash.png"/></a>
 </div>
 
   <div class="container">
