@@ -55,14 +55,10 @@
 
         <br>
         <br>
-
-        <a href="/listar/pets/cachorro" class="btn btn-primary">Cachorro</a>
-        <a href="/listar/pets/gato" class="btn btn-primary">Gato</a>
-        <a href="/listar/pets/passaro" class="btn btn-primary">Passaro</a>
-        <a href="/listar/pets/tartaruga" class="btn btn-primary">Tartaruga</a>
-        <a href="/listar/pets/coelho" class="btn btn-primary">Coelho</a>
-        <a href="/listar/pets/outro" class="btn btn-primary">Outro</a>
         <a href="/listar/pets/" class="btn btn-primary">Todos</a>
+        @foreach($especies as $e)
+            <a href="/listar/pets/{{$e}}" class="btn btn-primary">{{$e}}</a>
+        @endforeach
 
 </div>
         <div class="container">
@@ -92,14 +88,10 @@
 
         <br>
         <br>
-
-        <a href="/listar/pets/cachorro" class="btn btn-primary">Cachorro</a>
-        <a href="/listar/pets/gato" class="btn btn-primary">Gato</a>
-        <a href="/listar/pets/passaro" class="btn btn-primary">Passaro</a>
-        <a href="/listar/pets/tartaruga" class="btn btn-primary">Tartaruga</a>
-        <a href="/listar/pets/coelho" class="btn btn-primary">Coelho</a>
-        <a href="/listar/pets/outro" class="btn btn-primary">Outro</a>
         <a href="/listar/pets/" class="btn btn-primary">Todos</a>
+        @foreach($especies as $e)
+            <a href="/listar/pets/{{$e}}" class="btn btn-primary">{{$e}}</a>
+        @endforeach
 
         <div class="container">
             <div class="row">
@@ -134,14 +126,10 @@
 
     <br>
     <br>
-
-    <a href="/listar/pets/cachorro" class="btn btn-primary">Cachorro</a>
-    <a href="/listar/pets/gato" class="btn btn-primary">Gato</a>
-    <a href="/listar/pets/passaro" class="btn btn-primary">Passaro</a>
-    <a href="/listar/pets/tartaruga" class="btn btn-primary">Tartaruga</a>
-    <a href="/listar/pets/coelho" class="btn btn-primary">Coelho</a>
-    <a href="/listar/pets/outro" class="btn btn-primary">Outro</a>
     <a href="/listar/pets/" class="btn btn-primary">Todos</a>
+    @foreach($especies as $e)
+        <a href="/listar/pets/{{$e}}" class="btn btn-primary">{{$e}}</a>
+    @endforeach
 </div>
 
   <div class="container">

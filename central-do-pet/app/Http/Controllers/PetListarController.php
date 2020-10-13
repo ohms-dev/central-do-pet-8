@@ -8,6 +8,8 @@ use function Symfony\Component\String\s;
 class PetListarController extends Controller
 {
     public function listar($racas = null){
+        $especie_unique = \App\Models\pet::all()->pluck('especie')->unique();
+        echo $especie_unique;
         if($racas != null){
             $pets = \App\Models\pet::all();
             $selecionados = array();
@@ -18,10 +20,10 @@ class PetListarController extends Controller
 
             }
 
-            return view('Pet/listaPets', ['pets' => $selecionados]);
+            return view('Pet/listaPets', ['pets' => $selecionados, 'especies' => $especie_unique]);
         }else{
             $pets = \App\Models\pet::all();
-            return view('Pet/listaPets',['pets' => $pets]);
+            return view('Pet/listaPets',['pets' => $pets, 'especies' => $especie_unique]);
         }
 
     }
