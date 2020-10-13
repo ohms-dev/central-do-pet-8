@@ -52,9 +52,25 @@
     @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
 <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
 <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
+        <form method="get" action="/listar/pets/">
+            <div class="form-group">
+                <label for="especie">Espécie:</label>
+                <select class="form-control" name="especie">
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="coelho">Coelho</option>
+                    <option value="tartaruga">Tartaruga</option>
+                    <option value="passaro">Pássaro</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <br>
+                <input type="submit" class="btn btn-primary" value="Filtrar"/>
+            </div>
+        </form>
 </div>
         <div class="container">
         <div class="row">
+
       @foreach ($pets as $pet)
           <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
@@ -85,6 +101,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $pet->nome }}</h5>
                             <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
+                            <p class="card-text">Espécie: {{ $pet->especie }}</p>
                             <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
                             <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
                             <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>
@@ -117,7 +134,9 @@
         <div class="card-body">
           <h5 class="card-title">{{ $pet->nome }}</h5>
           <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
-          <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
+            <p class="card-text">Espécie: {{ $pet->especie }}</p>
+
+            <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
 
 </div>      </div>
       @endif
