@@ -178,7 +178,7 @@
   <div class="container">
     <div class="row">
   @foreach ($pets as $pet)
-    @if ($pet->adotado==0 and $pet->dono_id == null)
+    @if ($pet->dono_id == null)
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
         <div class="card-body">
