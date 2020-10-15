@@ -37,6 +37,9 @@ $_SESSION['id_pet'] = $pet->id;
           <li class="nav-item">
               <a class="nav-link" href="/paineladm">Painel de usuário</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/listar/Meuspets">Meus Pets</a>
+          </li>
 
 
       </ul>
@@ -126,16 +129,18 @@ $_SESSION['id_pet'] = $pet->id;
 
         </tr>
 </table>
+    @if(trim(Auth::user()->funcao) != trim("Tutor"))
+        @if($historico != null)
+            <a type="button" class="btn btn-primary" href="/view/historico/{{$historico->id}}">Histórico</a>
+        @endif
+    @auth
+    @if($historico == null)
 
 
-@if($historico != null)
-    <a type="button" class="btn btn-primary" href="/view/historico/{{$historico->id}}">Histórico</a>
-@endif
-@auth
-@if($historico == null)
-    <a type="button" class="btn btn-primary" href="/adicionar/historico/">Adicionar histórico</a>
-@endauth
-@endif
+        <a type="button" class="btn btn-primary" href="/adicionar/historico/">Adicionar histórico</a>
+    @endauth
+    @endif
+    @endif
 
 </div>
 </body>

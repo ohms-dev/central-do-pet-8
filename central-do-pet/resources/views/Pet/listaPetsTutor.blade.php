@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -23,7 +24,7 @@
                     <a class="nav-link" href="/listar/pets">Adotar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Consultar</a>
+                    <a class="nav-link" href="/consultar">Consultar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/listar/funcionarios">Equipe</a>
@@ -57,7 +58,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -70,27 +71,63 @@
             </ul>
         </div>
     </nav>
+
 </head>
 
 <body>
 
-<div class='jumbotron'>
-    <h1>Consultar Pet <img src="https://img.icons8.com/pastel-glyph/64/000000/search--v1.png"/></h1>
-    <p class="lead">Consultar RGA de pet do sistema</p>
 
 </div>
-<div class='container'>
-    <form action="/consultar" method="post">
-        {{ csrf_field() }}
-        @if($flag == false)
-            <script type='text/javascript'>alert('Pet não encontrado');</script>
-        @endif
-        <div class="form-group">
-            <label for="rga"> RGA:</label>
-            <input type="text" class="form-control" name="rga" />
-        </div>
-        <input type="submit" class="btn btn-primary" value="Consultar" />
-    </form>
+@auth
 </div>
+<div class='jumbotron'>
+    <h1>Lista de Pets </h1>
+
+@if(trim(Auth::user()->funcao) == trim("Tutor") or trim(Auth::user()->funcao) == trim("Médico Veterinário") )
+    <p class="lead">Página com todos os pets do sistema. O usuário pode inserir, editar e visualizar as informações de cada um.</p>
+    <a type="button" class="btn btn-primary" href="/adicionar/pet">Adicionar novo pet</a>
+
+
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="row">
+            @foreach ($pets as $pet)
+                @if($pet->dono_id == Auth::user()->id)
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $pet->nome }}</h5>
+                            <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
+                            <p class="card-text">Espécie: {{ $pet->especie }}</p>
+                            <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
+                            <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
+                            <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>
+                        </div>
+                    </div>
+                @endif
+
+            @endforeach
+        </div>
+    </div>
+    @endif
+    @endauth
+
+
+    @guest
+        <div class="jumbotron">
+            <h1>Meus Pets </h1>
+            <div class="container">
+            <p class="lead">É necessario fazer o login para vizualizar seus pets</p>
+                <a href="/register" class="btn btn-primary">Cadastro</a>
+            </div>
+        </div>
+
+
+
+    @endguest
 </body>
 </html>

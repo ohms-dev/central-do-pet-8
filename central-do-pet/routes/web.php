@@ -28,6 +28,7 @@ Route::post('/adicionar/doencas', '\App\Http\Controllers\DoencaAdicionarControll
 #Routes pets
 
 Route::get('/listar/pets/{especie?}','App\Http\Controllers\PetListarController@listar');
+Route::get('/listar/Meuspets','App\Http\Controllers\PetListarController@listarTutor');
 Route::get('/adicionar/pet','App\Http\Controllers\PetPrepararAdicionarController@prepararAdicionar')->middleware('auth');
 Route::get('/editar/pet/{id}','App\Http\Controllers\PetEditarController@editar')->middleware('auth');
 Route::get('/remover/pet/{id}','App\Http\Controllers\PetRemoverController@remover')->middleware('auth');

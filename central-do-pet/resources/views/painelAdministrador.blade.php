@@ -32,6 +32,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/paineladm">Painel de usuário</a>
         </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/listar/Meuspets">Meus Pets</a>
+          </li>
 
 
       </ul>
