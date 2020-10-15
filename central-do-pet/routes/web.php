@@ -34,7 +34,7 @@ Route::get('/editar/pet/{id}','App\Http\Controllers\PetEditarController@editar')
 Route::get('/remover/pet/{id}','App\Http\Controllers\PetRemoverController@remover')->middleware('auth');
 Route::post('/atualizar/pet','App\Http\Controllers\PetAtualizarController@atualizar')->middleware('auth');
 Route::post('/adicionar/pet','App\Http\Controllers\PetAdicionarController@adicionar')->middleware('auth');
-Route::get('/view/pet/{id}','App\Http\Controllers\PetViewController@view');
+Route::get('/view/pet/{id}','App\Http\Controllers\PetViewController@view')->middleware('auth');
 
 #Rotas de transfusão
 Route::get('/adicionar/transfusao', '\App\Http\Controllers\TransfusaoPrepararAdicionarController@prepararAdicionar')->middleware('auth');
