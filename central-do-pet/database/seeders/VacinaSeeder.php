@@ -16,6 +16,6 @@ class VacinaSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\vacina::factory()->count(5)->create();
+        \App\Models\vacina::factory()->count(10)->create();
     }
 }

@@ -16,6 +16,6 @@ class TransfusaoSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\transfusao::factory()->count(5)->create();
+        \App\Models\transfusao::factory()->count(10)->create();
     }
 }

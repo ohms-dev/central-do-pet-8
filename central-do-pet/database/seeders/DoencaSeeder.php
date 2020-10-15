@@ -16,6 +16,6 @@ class DoencaSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\doenca::factory()->count(5)->create();
+        \App\Models\doenca::factory()->count(10)->create();
     }
 }

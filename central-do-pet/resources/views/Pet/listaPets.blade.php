@@ -33,7 +33,6 @@
                 <a class="nav-link" href="/paineladm">Painel de usuário</a>
             </li>
 
-
         </ul>
 
         <ul class="navbar-nav ml-auto">

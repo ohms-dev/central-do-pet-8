@@ -15,6 +15,6 @@ class UserSeeder extends Seeder
 
         $dados = \App\Models\User::factory()->createAdmin();
         \App\Models\User::create($dados);
-        \App\Models\User::factory()->count(5)->create();
+        \App\Models\User::factory()->count(10)->create();
     }
 }
