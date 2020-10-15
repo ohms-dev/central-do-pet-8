@@ -34,9 +34,8 @@
           <li class="nav-item">
             <a class="nav-link" href="/paineladm">Painel de usuário</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ajuda</a>
-          </li>
+
+
 
         </ul>
 

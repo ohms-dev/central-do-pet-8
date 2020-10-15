@@ -29,9 +29,6 @@
           <a class="nav-link" href="listar/funcionarios">Equipe</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ajuda</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
       </ul>
