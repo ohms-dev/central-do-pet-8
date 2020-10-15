@@ -32,6 +32,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/paineladm">Painel de usuário</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listar/Meuspets">Meus Pets</a>
+                </li>
 
             </ul>
 
@@ -113,7 +116,16 @@
     @endif
     @endauth
 
+
     @guest
+        <div class="jumbotron">
+            <h1>Meus Pets </h1>
+            <div class="container">
+            <p class="lead">É necessario fazer o login para vizualizar seus pets</p>
+                <a href="/register" class="btn btn-primary">Cadastro</a>
+            </div>
+        </div>
+
 
 
     @endguest

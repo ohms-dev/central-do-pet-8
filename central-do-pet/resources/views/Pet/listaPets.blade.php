@@ -32,6 +32,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/paineladm">Painel de usuário</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar/Meuspets">Meus Pets</a>
+            </li>
 
         </ul>
 
@@ -134,7 +137,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($pets as $pet)
-                    @if($pet->dono_id == Auth::user()->id)
+                    @if($pet->dono_id == null)
                     <div class="card" style="width: 20rem;">
                         <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
                         <div class="card-body">
@@ -142,8 +145,6 @@
                             <p class="card-text">RG do Pet: {{ $pet->rga }} </p>
                             <p class="card-text">Espécie: {{ $pet->especie }}</p>
                             <a href="/view/pet/{{ $pet->id }}" class="btn btn-primary">Visualizar</a>
-                            <a href="/editar/pet/{{ $pet->id }}" class="btn btn-primary">Editar</a>
-                            <a href="/remover/pet/{{ $pet->id }}" class="btn btn-primary">Remover</a>
                         </div>
                     </div>
                     @endif
@@ -177,7 +178,7 @@
   <div class="container">
     <div class="row">
   @foreach ($pets as $pet)
-    @if ($pet->adotado==0)
+    @if ($pet->adotado==0 and $pet->dono_id == null)
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="{{\Illuminate\Support\Facades\URL::to('fotos/pets/' . $pet->image )}}" alt="Card image cap">
         <div class="card-body">

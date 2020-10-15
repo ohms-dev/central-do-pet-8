@@ -31,7 +31,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/paineladm">Painel de usuário</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/listar/Meuspets">Meus Pets</a>
+                </li>
 
             </ul>
 
@@ -100,7 +102,7 @@
             </tr>
         @endforeach
     </table>
-    <a type="button" class="btn btn-primary" href="/adicionar/vacinas">Inserir vacina</a>
+    <a type="button" class="btn btn-primary" href="/adicionar/vacina">Inserir vacina</a>
 </div>
 </body>
 </html>
