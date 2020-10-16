@@ -19,6 +19,7 @@ class PetAtualizarController extends Controller
                 $filename = $pet->image;
             }
             $pet = \App\Models\pet::find($request->id);
+
             $pet->nome = $request->nome;
             $pet->especie = $request->especie;
             $pet->sexo = $request->sexo;

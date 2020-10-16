@@ -76,7 +76,7 @@ Route::post('/consultar', '\App\Http\Controllers\PetFindController@findPetRga');
 
 Route::get('/paineladm', function () {
     return view('painelAdministrador');
-});
+})->middleware('auth');
 
 Auth::routes();
 
