@@ -139,7 +139,7 @@
                 <option value="{{\Illuminate\Support\Facades\Auth::user()->id}}">{{\Illuminate\Support\Facades\Auth::user()->id}}</option>
             </select>
         @endif
-        @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário"))
+        @if(trim(Auth::user()->funcao) != trim("Tutor") and trim(Auth::user()->funcao) != trim("Médico Veterinário")  and trim(Auth::user()->funcao) != trim("Funcionário"))
               <input type="text" class="form-control" name="dono_id" />
         @endif
       </div>
@@ -182,6 +182,11 @@
   <script type='text/javascript'>alert('{{ $message }}');</script>
 </span>
 @enderror
+        @error('endereco')
+        <span class="invalid-feedback" role="alert">
+  <script type='text/javascript'>alert('{{ $message }}');</script>
+</span>
+        @enderror
 <br>
 </form>
 </div>

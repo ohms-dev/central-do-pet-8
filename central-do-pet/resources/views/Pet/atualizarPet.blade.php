@@ -163,6 +163,32 @@
         <br>
 
       <input type="submit" class="btn btn-primary" value="Atualizar" />
+        @error('nome')
+            <span class="invalid-feedback" role="alert">
+                <script type='text/javascript'>alert('{{ $message }}');</script>
+            </span>
+        @enderror
+        @error('sexo')
+            <span class="invalid-feedback" role="alert">
+                <script type='text/javascript'>alert('{{ $message }}');</script>
+            </span>
+        @enderror
+        @error('castrado')
+            <span class="invalid-feedback" role="alert">
+                <script type='text/javascript'>alert('{{ $message }}');</script>
+            </span>
+        @enderror
+        @error('data_de_nascimento')
+            <span class="invalid-feedback" role="alert">
+                <script type='text/javascript'>alert('{{ $message }}');</script>
+            </span>
+        @enderror
+        @error('endereco')
+            <span class="invalid-feedback" role="alert">
+                <script type='text/javascript'>alert('{{ $message }}');</script>
+            </span>
+        @enderror
+    <br>
     </form>
   </div>
   </body>

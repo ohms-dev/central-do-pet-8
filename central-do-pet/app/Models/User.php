@@ -22,13 +22,13 @@ class User extends Authenticatable
     public static $rules = ['name'=> 'required|min:3|max:50', 'sexo'=>'required','contato'=>'required|min:11|max:11',
         'data_de_nascimento'=>'required','endereco'=>'required|min:10|max:100',
         'password'=>'required|min:4|max:255','funcao'=>'required',
-        'email'=>'required|min:5|max:50'];
+        'email'=>'required|min:5|max:50|unique:users'];
 
     public static $messages = ['name.*'=>'O campo nome é obrigatório e deve ter entre 5 e 30 letras',
         'sexo.*'=>'O campo sexo é obrigatório e deve ser masculino, feminino e não binário','contato.*'=>'O campo contato é obrigatório e deve possuir 11 digitos ddd + número',
         'data_de_nascimento.*'=> 'O campo data de nascimento é obrigatório','endereco.*'=>'O campo endereço é obrigatório e deve possuir entre 5 e 30 dígitos',
         'password.*'=>'O campo senha é obrigatório e deve ter entre 4 e 9 dígitos','funcao.*'=>'O campo função é obrigatório',
-        'email.*'=>'O campo email é obrigatório'];
+        'email.*'=>'O campo email é obrigatório ou já está em uso'];
 
     /**
      * The attributes that should be hidden for arrays.
