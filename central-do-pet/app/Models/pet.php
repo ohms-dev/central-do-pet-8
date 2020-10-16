@@ -24,7 +24,7 @@ class pet extends Model implements Authenticatable
     public static $rules = ['nome'=> 'required|min:3|max:30', 'sexo'=>'required','castrado'=>'required','data_de_nascimento'=>'required','especie'=>'required','endereco'=>'required'];
     public static $messages = ['nome.*'=>'O campo nome é obrigatório e deve ter entre 5 e 30 letras',
         'sexo.*'=>'O campo sexo é obrigatório e deve ser macho ou fêmea','castrado.*'=>'O campo castrado é obrigatório e deve ser informado se o pet foi castrado ou não',
-        'data_de_nascimento.*'=> 'O campo data de nascimento é obrigatório'];
+        'data_de_nascimento.*'=> 'O campo data de nascimento é obrigatório', 'endereco.*'=>'O campo endereço é obrigatório'];
 
     public function getSortedArrayPets(){
         $pets = pet::all()->sortBy('rga')->pluck('rga');

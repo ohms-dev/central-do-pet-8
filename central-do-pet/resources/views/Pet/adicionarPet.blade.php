@@ -182,6 +182,11 @@
   <script type='text/javascript'>alert('{{ $message }}');</script>
 </span>
 @enderror
+        @error('endereco')
+        <span class="invalid-feedback" role="alert">
+  <script type='text/javascript'>alert('{{ $message }}');</script>
+</span>
+        @enderror
 <br>
 </form>
 </div>
